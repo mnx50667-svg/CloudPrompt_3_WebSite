@@ -161,7 +161,7 @@
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#features">Features</a>
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#how-it-works">How It Works</a>
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#faq">FAQ</a>
-          <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="#" id="nav-cta">Get CloudPrompt</a>
+          <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="nav-cta">Get CloudPrompt</a>
         </div>
         <button class="md:hidden p-2" id="mobile-menu-btn">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -446,11 +446,11 @@
 
   <script>
     // Chrome Web Store URL - Update this when approved
-    const chromeStoreUrl = '#'; // Replace with actual URL when available
+    const chromeStoreUrl = 'https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog'; // Replace with actual URL when available
 
     // Update all CTA buttons
     document.querySelectorAll('#nav-cta, #hero-cta, #footer-cta, .mobile-menu a[href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog"]').forEach(btn => {
-      if (chromeStoreUrl !== '#') {
+      if (chromeStoreUrl !== 'https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog') {
         btn.href = chromeStoreUrl;
       }
     });
