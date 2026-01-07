@@ -153,7 +153,6 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="./">
-          <!-- FIX: Use logo in navbar -->
           <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
@@ -161,6 +160,7 @@
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#features">Features</a>
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#how-it-works">How It Works</a>
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#faq">FAQ</a>
+          <a class="text-apple-gray hover:text-apple-dark transition-colors" href="help.html">Help</a>
           <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="nav-cta">Get CloudPrompt</a>
         </div>
         <button class="md:hidden p-2" id="mobile-menu-btn">
@@ -184,7 +184,8 @@
         <a class="text-apple-dark hover:text-apple-blue transition-colors" href="#features">Features</a>
         <a class="text-apple-dark hover:text-apple-blue transition-colors" href="#how-it-works">How It Works</a>
         <a class="text-apple-dark hover:text-apple-blue transition-colors" href="#faq">FAQ</a>
-        <a class="bg-apple-blue text-white px-4 py-3 rounded-full text-center font-medium" href="https://chromewebstore.google.com/detail/pihepfhlibcboglgpnpdamkgjlgaadog?utm_source=item-share-cb">Get CloudPrompt</a>
+        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="help.html">Help</a>
+        <a class="bg-apple-blue text-white px-4 py-3 rounded-full text-center font-medium" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt</a>
       </div>
     </div>
   </div>
@@ -215,7 +216,6 @@
 
       <!-- Hero Screenshot -->
       <div class="relative max-w-sm mx-auto">
-        <!-- FIX: Hero screenshot must load from images/ -->
         <img alt="CloudPrompt Extension Preview" class="w-full hero-screenshot rounded-2xl border border-black/10" src="images/hero-screenshot.png"/>
       </div>
     </div>
@@ -432,6 +432,7 @@
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
           <a class="hover:text-apple-dark transition-colors" href="#features">Features</a>
           <a class="hover:text-apple-dark transition-colors" href="#faq">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="help.html">Help</a>
           <a class="hover:text-apple-dark transition-colors" href="privacy.html">Privacy</a>
           <a class="hover:text-apple-dark transition-colors" href="terms.html">Terms</a>
           <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
@@ -445,16 +446,6 @@
   </footer>
 
   <script>
-    // Chrome Web Store URL - Update this when approved
-    const chromeStoreUrl = 'https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog'; // Replace with actual URL when available
-
-    // Update all CTA buttons
-    document.querySelectorAll('#nav-cta, #hero-cta, #footer-cta, .mobile-menu a[href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog"]').forEach(btn => {
-      if (chromeStoreUrl !== 'https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog') {
-        btn.href = chromeStoreUrl;
-      }
-    });
-
     // Mobile menu
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
