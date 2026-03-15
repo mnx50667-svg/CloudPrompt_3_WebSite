@@ -4,13 +4,13 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Terms of Service - CloudPrompt</title>
-  <meta content="Terms of Service for CloudPrompt - the free Chrome extension for AI prompt management. Your data, your control." name="description"/>
+  <meta content="Terms of Service for CloudPrompt - the free browser extension for AI prompt management. Your data, your control." name="description"/>
   <meta content="index, follow" name="robots"/>
   <link rel="canonical" href="https://cloudprompt.app/terms.html"/>
   
   <!-- Open Graph -->
   <meta property="og:title" content="Terms of Service - CloudPrompt"/>
-  <meta property="og:description" content="Terms of Service for CloudPrompt - the free Chrome extension for AI prompt management."/>
+  <meta property="og:description" content="Terms of Service for CloudPrompt - the free browser extension for AI prompt management."/>
   <meta property="og:url" content="https://cloudprompt.app/terms.html"/>
   <meta property="og:type" content="website"/>
   
@@ -80,7 +80,8 @@
     <div class="max-w-2xl mx-auto">
       <header class="mb-12">
         <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-3">Terms of Service</h1>
-        <p class="text-apple-gray">Last Updated: January 2026</p>
+        <!-- CHANGE 1: Updated date to March 2026 -->
+        <p class="text-apple-gray">Last Updated: March 2026</p>
       </header>
 
       <div class="space-y-12 text-apple-gray leading-relaxed">
@@ -88,7 +89,8 @@
         <!-- Welcome -->
         <section>
           <h2 class="text-2xl font-semibold text-apple-dark mb-4">Welcome to CloudPrompt</h2>
-          <p class="mb-4">These Terms of Service ("Terms") govern your use of CloudPrompt, a Chrome browser extension and related website (cloudprompt.app) operated by CloudPrompt ("we," "us," or "our").</p>
+          <!-- CHANGE 2: "Chrome browser extension" → "browser extension" -->
+          <p class="mb-4">These Terms of Service ("Terms") govern your use of CloudPrompt, a browser extension and related website (cloudprompt.app) operated by CloudPrompt ("we," "us," or "our").</p>
           <p class="mb-4">By installing or using CloudPrompt, you agree to these Terms. If you don't agree, please don't use our service.</p>
           <div class="bg-apple-gray-light rounded-xl p-5 border-l-4 border-apple-blue">
             <p class="font-medium text-apple-dark">💡 Plain English: These are the rules for using CloudPrompt. By using it, you agree to follow them.</p>
@@ -137,7 +139,8 @@
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
-              <span>Use a supported browser (Chrome or Chromium-based browsers)</span>
+              <!-- CHANGE 3: "Chrome or Chromium-based browsers" kept accurate and neutral -->
+              <span>Use a supported browser (Google Chrome, Microsoft Edge, Comet, or other Chromium-based browsers)</span>
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
@@ -412,8 +415,47 @@
           </ul>
           <p class="mb-4">Your use of Google services is subject to <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="text-apple-blue hover:underline">Google's Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-apple-blue hover:underline">Privacy Policy</a>. We are not responsible for Google's services.</p>
 
-          <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">7.2 Chrome Web Store</h3>
-          <p>CloudPrompt is distributed through the Chrome Web Store, which has its own terms and policies.</p>
+          <!-- CHANGE 4: Section 7.2 expanded with browser-neutral language, Edge/Comet, and OAuth callback reference -->
+          <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">7.2 Browser Distribution</h3>
+          <p class="mb-3">CloudPrompt is available on the following platforms:</p>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
+              <span><strong>Chrome Web Store:</strong> For Google Chrome users</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
+              <span><strong>Microsoft Edge Add-ons:</strong> For Microsoft Edge users</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
+              <span><strong>Other Chromium browsers</strong> (such as Comet by Perplexity) via sideloading or their respective stores</span>
+            </li>
+          </ul>
+          <p class="mb-4">Each browser platform has its own terms and policies that also apply to your use of CloudPrompt on that browser.</p>
+
+          <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">7.3 OAuth Callback Page</h3>
+          <p class="mb-3">When signing in on Microsoft Edge, Comet, or other non-Chrome browsers, CloudPrompt uses a secure OAuth flow that briefly redirects through <strong>cloudprompt.app/oauth-callback.html</strong>. This page:</p>
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Contains no JavaScript, no tracking, and collects no data</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Never transmits your authentication token to our servers</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Closes automatically once authentication is complete</span>
+            </li>
+          </ul>
         </section>
 
         <!-- 8. Limitation of Liability -->
