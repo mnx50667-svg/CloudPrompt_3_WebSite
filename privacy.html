@@ -80,7 +80,7 @@
     <div class="max-w-2xl mx-auto">
       <header class="mb-12">
         <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-3">Privacy Policy</h1>
-        <p class="text-apple-gray">Last Updated: March 2026</p>
+        <p class="text-apple-gray">Last Updated: May 2026</p>
         <p class="text-apple-gray">Effective Date: January 2026</p>
       </header>
 
@@ -95,7 +95,7 @@
         <!-- 1. Introduction -->
         <section>
           <h2 class="text-2xl font-semibold text-apple-dark mb-4">1. Introduction</h2>
-          <p>CloudPrompt ("we", "our", or "the extension") is committed to protecting your privacy. This Privacy Policy explains how CloudPrompt handles your data when you use our browser extension (available for Chrome, Microsoft Edge, and Comet by Perplexity).</p>
+          <p>CloudPrompt ("we", "our", or "the extension") is committed to protecting your privacy. This Privacy Policy explains how CloudPrompt handles your data when you use our browser extension (available for Chrome, Microsoft Edge, Comet by Perplexity, Brave, and Opera).</p>
         </section>
 
         <!-- 2. Information We Collect -->
@@ -218,7 +218,7 @@
           </ul>
 
           <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">3.4 Authentication on Non-Chrome Browsers</h3>
-          <p class="mb-3">For users on Microsoft Edge, Comet, and other Chromium-based browsers, CloudPrompt uses a secure OAuth flow that briefly opens a sign-in tab. After you authorize access, the browser redirects to <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">cloudprompt.app/oauth-callback.html</code> &mdash; a static page with no JavaScript, no tracking, and no data collection.</p>
+          <p class="mb-3">For users on Microsoft Edge, Comet, Brave, Opera, and other Chromium-based browsers, CloudPrompt uses a secure OAuth flow that briefly opens a sign-in tab. After you authorize access, the browser redirects to <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">cloudprompt.app/oauth-callback.html</code> &mdash; a static page with no JavaScript, no tracking, and no data collection.</p>
           <ul class="space-y-2">
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
@@ -465,9 +465,18 @@
             <div class="bg-apple-gray-light rounded-xl p-5">
               <p class="font-mono text-sm text-apple-dark mb-2">tabs</p>
               <ul class="text-sm space-y-1">
-                <li><strong>Why:</strong> Handle secure Google sign-in on non-Chrome browsers (Edge, Comet). CloudPrompt opens a temporary sign-in tab, extracts the authentication token, and closes the tab automatically.</li>
+                <li><strong>Why:</strong> Handle secure Google sign-in on non-Chrome browsers (Edge, Comet, Brave, Opera). CloudPrompt opens a temporary sign-in tab, extracts the authentication token, and closes the tab automatically.</li>
                 <li><strong>What we access:</strong> Only the URL of the temporary sign-in tab to complete authentication</li>
                 <li><strong>What we DON'T access:</strong> Your browsing activity, open tabs, tab history, or any other tab content</li>
+              </ul>
+            </div>
+
+            <div class="bg-apple-gray-light rounded-xl p-5">
+              <p class="font-mono text-sm text-apple-dark mb-2">contextMenus</p>
+              <ul class="text-sm space-y-1">
+                <li><strong>Why:</strong> Power the "Insert CloudPrompt" right-click menu option. When you right-click a text field on any page, CloudPrompt adds a menu item that lets you insert a saved prompt directly — no copy-paste required.</li>
+                <li><strong>What we access:</strong> Only the text field you chose to insert into, at the moment you select a prompt</li>
+                <li><strong>What we DON'T access:</strong> Page content, other form fields, browsing history, or anything outside the chosen text field</li>
               </ul>
             </div>
 
@@ -483,8 +492,8 @@
             <div class="bg-apple-gray-light rounded-xl p-5">
               <p class="font-mono text-sm text-apple-dark mb-2">Host Permissions (All Websites)</p>
               <ul class="text-sm space-y-1">
-                <li><strong>Why:</strong> Allow keyboard shortcut (Ctrl+Shift+Y) to work on any webpage</li>
-                <li><strong>What we access:</strong> Inject modal overlay when you press the shortcut</li>
+                <li><strong>Why:</strong> Allow the keyboard shortcut (Ctrl+Shift+Y) and right-click insert to work on any webpage</li>
+                <li><strong>What we access:</strong> Inject modal overlay when you use the shortcut; insert text into a field when you use right-click insert</li>
                 <li><strong>What we DON'T access:</strong> Page content, form data, browsing history</li>
               </ul>
             </div>
@@ -568,7 +577,7 @@
                   <td class="p-3">Until disconnect</td>
                 </tr>
                 <tr>
-                  <td class="p-3">OAuth Token (Edge/Comet)</td>
+                  <td class="p-3">OAuth Token (Edge / Comet / Brave / Opera)</td>
                   <td class="p-3">Local browser storage</td>
                   <td class="p-3">Only you</td>
                   <td class="p-3">Until disconnect or session expiry</td>
