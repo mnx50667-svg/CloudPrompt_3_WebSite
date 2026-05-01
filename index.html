@@ -118,8 +118,66 @@
       transform: translateX(0);
     }
 
-    .hero-screenshot {
-      filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25));
+    /* ── Hero Screenshot Scene ── */
+    .hero-scene {
+      position: relative;
+      max-width: 780px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .hero-library {
+      width: 88%;
+      transform: perspective(1400px) rotateY(2deg) scale(0.95);
+      transform-origin: center top;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.10), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero-library img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-popup {
+      position: absolute;
+      z-index: 2;
+      right: 3%;
+      top: 16px;
+      width: 28%;
+      max-width: 220px;
+      transform: perspective(1400px) rotateY(-3deg) translateZ(50px);
+      transform-origin: center top;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35), 0 0 0 0.5px rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-popup img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 160px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 85%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    @media (max-width: 640px) {
+      .hero-popup {
+        width: 32%;
+        right: 2%;
+      }
     }
   </style>
 
@@ -191,7 +249,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="pt-32 pb-20 px-6">
+  <section class="pt-32 pb-0 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h1 class="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight mb-6">
         Your AI Prompts.
@@ -201,7 +259,7 @@
       <p class="text-xl text-apple-gray max-w-xl mx-auto mb-10 leading-relaxed">
         Save, search, and access your prompts instantly. Context-aware. Synced to Google Drive. Works on Chrome, Edge, and Comet. Free forever.
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
         <a class="bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors inline-flex items-center space-x-2" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="hero-cta">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -214,9 +272,15 @@
         <a class="text-apple-blue hover:underline font-medium" href="#how-it-works">Learn more →</a>
       </div>
 
-      <!-- Hero Screenshot -->
-      <div class="relative max-w-sm mx-auto">
-        <img alt="CloudPrompt Extension Preview" class="w-full hero-screenshot rounded-2xl border border-black/10" src="images/hero-screenshot.png"/>
+      <!-- Hero Screenshots — Library + Popup Layered -->
+      <div class="hero-scene">
+        <div class="hero-library">
+          <img alt="CloudPrompt Library — organize all your AI prompts with folders, tags, and search" src="images/hero-library.png"/>
+        </div>
+        <div class="hero-popup">
+          <img alt="CloudPrompt Popup — quick access to your prompts with Ctrl+Shift+Y" src="images/hero-popup.png"/>
+        </div>
+        <div class="hero-fade"></div>
       </div>
     </div>
   </section>
@@ -295,7 +359,7 @@
           <p class="text-apple-gray leading-relaxed">Your data, your control. Export anytime as JSON or CSV.</p>
         </div>
 
-        <!-- Feature 7 — NEW: Context-Aware -->
+        <!-- Feature 7 — Context-Aware -->
         <div class="text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-teal-500 to-cyan-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -306,7 +370,7 @@
           <p class="text-apple-gray leading-relaxed">On ChatGPT? Claude? Gemini? CloudPrompt surfaces your most relevant prompts automatically.</p>
         </div>
 
-        <!-- Feature 8 — NEW: Cross-Browser -->
+        <!-- Feature 8 — Cross-Browser -->
         <div class="text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-slate-500 to-gray-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -428,7 +492,7 @@
             <p class="pb-4">Absolutely! CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to access your prompts.</p>
           </div>
         </div>
-        <!-- NEW FAQ: Context-Aware -->
+        <!-- Context-Aware FAQ -->
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
           <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
             <span class="font-medium">What does "context-aware" mean?</span>
@@ -438,7 +502,7 @@
             <p class="pb-4">When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first. For example, on Claude it surfaces your Claude folder first. You can turn this off in Settings → Smart Features.</p>
           </div>
         </div>
-        <!-- NEW FAQ: Edge/Comet -->
+        <!-- Edge/Comet FAQ -->
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
           <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
             <span class="font-medium">Does it work on Microsoft Edge or Comet?</span>
