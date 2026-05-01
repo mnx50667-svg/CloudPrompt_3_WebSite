@@ -1,7 +1,7 @@
 {
   "name": "CloudPrompt - Your AI Prompts, Organized",
   "short_name": "CloudPrompt",
-  "description": "Save, organize, and access your AI prompts instantly. Free Chrome extension with Google Drive sync.",
+  "description": "Save, organize, and access your AI prompts instantly. Free browser extension with Google Drive sync. Works on Chrome, Edge, Comet, Brave, and Opera.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
