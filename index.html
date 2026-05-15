@@ -162,6 +162,19 @@
       display: block;
     }
 
+    /* Top fade — dissolves top edge into white background */
+    .hero-fade-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #ffffff 90%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* Bottom fade — dissolves bottom edge into white background */
     .hero-fade {
       position: absolute;
       bottom: 0;
@@ -276,6 +289,7 @@
 
       <!-- Hero Screenshots — Library + Popup Layered -->
       <div class="hero-scene">
+        <div class="hero-fade-top"></div>
         <div class="hero-library">
           <img alt="CloudPrompt Library — organize all your AI prompts with folders, tags, and search" src="images/hero-library.png"/>
         </div>
