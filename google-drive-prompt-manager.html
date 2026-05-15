@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Google Drive Prompt Manager — Your Prompts, Your Drive, Your Privacy | CloudPrompt</title>
+  <meta content="The only prompt manager that stores everything in your own Google Drive. No servers, no accounts, no data collection. Free Chrome extension." name="description"/>
+  <meta content="Google Drive prompt manager, private prompt manager, prompt storage Google Drive, private AI prompts, prompt manager no servers" name="keywords"/>
+  <meta content="CloudPrompt" name="author"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://cloudprompt.app/google-drive-prompt-manager.html" rel="canonical"/>
+
+  <!-- Open Graph -->
+  <meta content="Google Drive Prompt Manager — Your Prompts, Your Drive, Your Privacy | CloudPrompt" property="og:title"/>
+  <meta content="The only prompt manager that stores everything in your own Google Drive. No servers, no accounts, no data collection. Free Chrome extension." property="og:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
+  <meta content="https://cloudprompt.app/google-drive-prompt-manager.html" property="og:url"/>
+  <meta content="website" property="og:type"/>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+
+  <!-- Theme Color -->
+  <meta content="#ffffff" name="theme-color"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'apple-blue': '#0071E3',
+            'apple-blue-hover': '#0077ED',
+            'apple-gray': '#86868B',
+            'apple-gray-light': '#F5F5F7',
+            'apple-dark': '#1D1D1F',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CN3771NXMX');
+  </script>
+
+  <style>
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #0071E3, #34C759, #5856D6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 320px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body class="bg-white text-apple-dark">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-12">
+        <a class="flex items-center space-x-2" href="index.html">
+          <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
+          <span class="font-semibold text-apple-dark">CloudPrompt</span>
+        </a>
+        <div class="flex items-center space-x-6 text-sm">
+          <a class="text-apple-gray hover:text-apple-dark transition-colors hidden sm:inline" href="index.html">← Back to Home</a>
+          <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-16 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center bg-white border border-green-200 rounded-full px-4 py-1.5 text-sm text-green-700 mb-6 shadow-sm">
+        <svg class="w-4 h-4 mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+        </svg>
+        <span class="font-medium">Privacy-first by design</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-6 leading-tight">
+        The Prompt Manager That Stores Everything in Your <span class="gradient-text">Google Drive</span>
+      </h1>
+      <p class="text-xl text-apple-gray max-w-2xl mx-auto mb-10 leading-relaxed">
+        Most prompt managers store your data on their servers. CloudPrompt doesn't. Every prompt you save goes directly to your own Google Drive — encrypted, private, and under your control.
+      </p>
+      <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        <span>Get CloudPrompt — Free</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 1: The Privacy Problem -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Your prompts contain your best ideas. Where are they stored?</h2>
+        <p class="text-lg text-apple-gray">It's a question almost no prompt manager wants you to ask.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex items-start bg-white border border-black/5 rounded-2xl p-6 fade-in">
+          <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mr-5 flex-shrink-0">
+            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Most tools store your prompts on <em>their</em> servers</h3>
+            <p class="text-apple-gray text-sm leading-relaxed">When you save a prompt to a typical prompt manager, it gets uploaded to a database the company controls. The marketing copy says "synced to the cloud." The reality is "stored on a server you can't see."</p>
+          </div>
+        </div>
+
+        <div class="flex items-start bg-white border border-black/5 rounded-2xl p-6 fade-in">
+          <div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center mr-5 flex-shrink-0">
+            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">You don't really own your data</h3>
+            <p class="text-apple-gray text-sm leading-relaxed">If the data lives in someone else's database, you don't own it — you have access to it. Access can be revoked, throttled, paywalled, or breached. That's a fundamentally different thing from ownership.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start bg-white border border-black/5 rounded-2xl p-6 fade-in">
+          <div class="w-10 h-10 bg-yellow-50 rounded-xl flex items-center justify-center mr-5 flex-shrink-0">
+            <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">If the service shuts down, you lose everything</h3>
+            <p class="text-apple-gray text-sm leading-relaxed">Small SaaS tools come and go. The prompt library you spent months building can disappear with 30 days' notice. Some tools offer export — many don't. Either way, you're betting on someone else's runway.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start bg-white border border-black/5 rounded-2xl p-6 fade-in">
+          <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mr-5 flex-shrink-0">
+            <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">AI prompts can contain sensitive information</h3>
+            <p class="text-apple-gray text-sm leading-relaxed">Internal product names. Code snippets. Client briefs. Strategy documents. The prompts you write reflect what you're working on — and you probably don't want all of that sitting in a third-party database with unclear retention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: How CloudPrompt Uses Google Drive -->
+  <section class="py-20 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Your prompts live in a folder you can see and control</h2>
+        <p class="text-lg text-apple-gray">No proprietary database. No black box. Just a folder in your Google Drive.</p>
+      </div>
+
+      <!-- Architecture diagram -->
+      <div class="bg-white border border-black/5 rounded-2xl p-8 mb-6 fade-in">
+        <p class="text-xs font-semibold text-apple-gray uppercase tracking-wide mb-5">The data path</p>
+        <div class="space-y-2 font-mono text-sm">
+          <div class="flex items-center text-apple-dark">
+            <svg class="w-5 h-5 text-blue-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.5 4.5h-15A1.5 1.5 0 003 6v12a1.5 1.5 0 001.5 1.5h15A1.5 1.5 0 0021 18V6a1.5 1.5 0 00-1.5-1.5z" opacity="0.3"/>
+              <path d="M19.5 4.5h-15A1.5 1.5 0 003 6v12a1.5 1.5 0 001.5 1.5h15A1.5 1.5 0 0021 18V6a1.5 1.5 0 00-1.5-1.5zM12 16.5l-4-4h2.5v-3h3v3H16l-4 4z"/>
+            </svg>
+            <span class="font-semibold">Google Drive</span>
+            <span class="text-apple-gray ml-3 text-xs font-sans">— your account, your storage</span>
+          </div>
+          <div class="flex items-center pl-6 text-apple-dark">
+            <span class="text-apple-gray mr-2">└</span>
+            <svg class="w-5 h-5 text-amber-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+            </svg>
+            <span class="font-semibold">CloudPrompt/</span>
+            <span class="text-apple-gray ml-3 text-xs font-sans">— the only folder we touch</span>
+          </div>
+          <div class="flex items-center pl-12 text-apple-dark">
+            <span class="text-apple-gray mr-2">└</span>
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
+            </svg>
+            <span class="font-semibold">prompts.json</span>
+            <span class="text-apple-gray ml-3 text-xs font-sans">— a file you can open and read</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 architecture facts -->
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <p class="font-semibold text-sm mb-2">Creates a single folder</p>
+          <p class="text-apple-gray text-sm leading-relaxed">CloudPrompt makes one folder named <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">CloudPrompt</code> in the root of your Drive. That's the entire footprint.</p>
+        </div>
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <p class="font-semibold text-sm mb-2">Stores prompts as JSON</p>
+          <p class="text-apple-gray text-sm leading-relaxed"><code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">prompts.json</code> is plain, human-readable JSON. You can open it in any text editor — no proprietary format.</p>
+        </div>
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <p class="font-semibold text-sm mb-2">Uses <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> scope</p>
+          <p class="text-apple-gray text-sm leading-relaxed">Google's most restrictive Drive scope. CloudPrompt can <strong>only</strong> access files it created. Period.</p>
+        </div>
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <p class="font-semibold text-sm mb-2">Cannot see your other files</p>
+          <p class="text-apple-gray text-sm leading-relaxed">Your tax docs, photos, work files — invisible to CloudPrompt. Google enforces this at the API level, not as a promise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: What This Means For You -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Full data ownership, zero trust required</h2>
+        <p class="text-lg text-apple-gray">When the data really is yours, things get simpler.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <!-- Export -->
+        <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm fade-in">
+          <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Export anytime</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Download your entire library as JSON or CSV from <strong>Settings → Backup &amp; Restore → Export</strong>. Or just open <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">prompts.json</code> directly from Google Drive. Your data is never locked in.</p>
+        </div>
+
+        <!-- Sync -->
+        <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm fade-in">
+          <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Sync across devices</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Same Google account = same prompts everywhere. Install CloudPrompt on your laptop, desktop, and work machine — all three sync through your Drive automatically. No CloudPrompt account, no separate login.</p>
+        </div>
+
+        <!-- Offline -->
+        <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm fade-in">
+          <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-violet-400 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Works offline</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">CloudPrompt caches your library locally so you can read prompts without an internet connection. When you're back online, changes sync to Drive automatically — no manual conflict resolution.</p>
+        </div>
+
+        <!-- Delete -->
+        <div class="bg-white border border-black/5 rounded-2xl p-6 shadow-sm fade-in">
+          <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-rose-400 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Delete = deleted</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Uninstall the extension and delete the <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">CloudPrompt</code> folder from your Drive. Your data is gone — there's no copy on our servers, because there are no servers. No "30-day deletion window," no support ticket required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Still a Full Prompt Manager -->
+  <section class="py-20 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Privacy-first doesn't mean feature-light</h2>
+        <p class="text-lg text-apple-gray">You don't have to trade functionality for data ownership.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm fade-in">
+        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-3">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Right-click insert into any text field</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Keyboard shortcut (<code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+Y</code>)</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Context-aware platform detection</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Templates with variables</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Pin up to 3 prompts at the top</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Full-text search across your library</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Folders and tags</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Drag-and-drop reordering</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Dark mode</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-apple-gray">Full keyboard navigation</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-6 border-t border-black/5">
+          <a class="text-apple-blue hover:underline text-sm font-medium" href="index.html#features">See the full feature list →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Permissions Explained -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">We request the minimum permissions possible</h2>
+        <p class="text-lg text-apple-gray">If we don't need it, we don't ask for it.</p>
+      </div>
+
+      <div class="space-y-3">
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+            <code class="bg-apple-gray-light px-2.5 py-1 rounded text-xs font-mono inline-block self-start whitespace-nowrap">storage</code>
+            <p class="text-sm text-apple-gray leading-relaxed">Caches your prompts locally for fast access and offline use. Stays on your device. We can't read it.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+            <code class="bg-apple-gray-light px-2.5 py-1 rounded text-xs font-mono inline-block self-start whitespace-nowrap">identity</code>
+            <p class="text-sm text-apple-gray leading-relaxed">Authenticates with Google via OAuth 2.0. We see only the OAuth token — never your password.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+            <code class="bg-apple-gray-light px-2.5 py-1 rounded text-xs font-mono inline-block self-start whitespace-nowrap">tabs</code>
+            <p class="text-sm text-apple-gray leading-relaxed">Used <em>only</em> for the sign-in flow on Edge, Brave, Comet, and Opera (where Chrome's native auth doesn't work). Reads the URL of the temporary sign-in tab to extract the token, then closes it. We don't see your other tabs.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+            <code class="bg-apple-gray-light px-2.5 py-1 rounded text-xs font-mono inline-block self-start whitespace-nowrap">contextMenus</code>
+            <p class="text-sm text-apple-gray leading-relaxed">Powers the right-click <strong>Insert CloudPrompt</strong> and <strong>Save to CloudPrompt</strong> menu items. We only see the text field you chose to insert into — at the moment you select a prompt.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+            <code class="bg-apple-gray-light px-2.5 py-1 rounded text-xs font-mono inline-block self-start whitespace-nowrap">drive.file</code>
+            <p class="text-sm text-apple-gray leading-relaxed">Google's most restrictive Drive scope. Lets CloudPrompt read and write <em>only</em> files it creates. Your other Drive files are invisible to us — Google enforces this, not us.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center fade-in">
+        <a class="text-apple-blue hover:underline text-sm font-medium" href="privacy.html">Read the full Privacy Policy →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 bg-apple-gray-light">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Questions?</h2>
+      </div>
+
+      <div class="space-y-3">
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">Can I see my prompts directly in Google Drive?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">Yes. Open Google Drive, navigate to the <strong>CloudPrompt</strong> folder, and open <strong>prompts.json</strong>. It's a plain JSON file — readable in any text editor or directly in Drive's preview pane. Every prompt, folder, and tag you've created is right there. You can even edit the file directly if you want (though using the extension is much easier).</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">What happens if I uninstall CloudPrompt?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">Uninstalling the extension clears the local cache from your browser. Your <strong>prompts.json</strong> file remains in your Google Drive — your data isn't lost. Reinstall CloudPrompt later (or on another device) and reconnect the same Google account, and your full library reappears. To delete everything permanently, just remove the CloudPrompt folder from Drive.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">Can you access my other Google Drive files?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">No, and not because we promise we won't — because Google won't let us. CloudPrompt uses the <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> OAuth scope, which only grants access to files the extension itself creates. Your other documents, photos, and folders are invisible at the API level. Even if we wanted to access them, we couldn't.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">Is my data encrypted?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">Yes, with the same encryption Google Drive uses for everything else: TLS in transit and AES-256 at rest. Your prompts.json file inherits Google's enterprise-grade Drive encryption. CloudPrompt itself doesn't add a separate encryption layer because the OAuth-protected, drive.file-scoped storage is already secure — and adding our own encryption would mean storing keys somewhere, which is exactly the architecture we're avoiding.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">What if Google Drive goes down?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">CloudPrompt caches your prompts locally, so you can keep accessing your library even if Drive is briefly unavailable. When Drive comes back, your changes sync automatically. For the longer-tail scenario — Google Drive itself disappearing — you can export your full library to JSON or CSV at any time from <strong>Settings → Backup &amp; Restore</strong>. Your data is portable by design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Own your prompts. Literally.</h2>
+      <p class="text-xl text-apple-gray mb-8">Free forever. No CloudPrompt account. Your Drive, your data, your call.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          <span>Get CloudPrompt — Free</span>
+        </a>
+        <a class="text-apple-blue hover:underline font-medium" href="privacy.html">Read the Privacy Policy →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-2">
+          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <span class="font-medium text-apple-dark">CloudPrompt</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
+          <a class="hover:text-apple-dark transition-colors" href="index.html">Home</a>
+          <a class="hover:text-apple-dark transition-colors" href="index.html#features">Features</a>
+          <a class="hover:text-apple-dark transition-colors" href="index.html#faq">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="whats-new.html">What's New</a>
+          <a class="hover:text-apple-dark transition-colors" href="help.html">Help</a>
+          <a class="hover:text-apple-dark transition-colors" href="privacy.html">Privacy</a>
+          <a class="hover:text-apple-dark transition-colors" href="terms.html">Terms</a>
+          <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
+          <a class="hover:text-apple-dark transition-colors" href="https://www.linkedin.com/company/cloudprompt-ai" rel="noopener" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-black/5 text-center text-sm text-apple-gray">
+        <p>© 2026 CloudPrompt. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
