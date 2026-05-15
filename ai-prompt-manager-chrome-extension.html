@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>AI Prompt Manager Chrome Extension — Save &amp; Organize Prompts | CloudPrompt</title>
+  <meta content="Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to insert prompts instantly." name="description"/>
+  <meta content="AI prompt manager Chrome extension, prompt organizer, ChatGPT prompts, Claude prompts, Gemini prompts, prompt library, Google Drive sync" name="keywords"/>
+  <meta content="CloudPrompt" name="author"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://cloudprompt.app/ai-prompt-manager-chrome-extension.html" rel="canonical"/>
+
+  <!-- Open Graph -->
+  <meta content="AI Prompt Manager Chrome Extension — Save &amp; Organize Prompts | CloudPrompt" property="og:title"/>
+  <meta content="Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to insert prompts instantly." property="og:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
+  <meta content="https://cloudprompt.app/ai-prompt-manager-chrome-extension.html" property="og:url"/>
+  <meta content="website" property="og:type"/>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+
+  <!-- Theme Color -->
+  <meta content="#ffffff" name="theme-color"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'apple-blue': '#0071E3',
+            'apple-blue-hover': '#0077ED',
+            'apple-gray': '#86868B',
+            'apple-gray-light': '#F5F5F7',
+            'apple-dark': '#1D1D1F',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CN3771NXMX');
+  </script>
+
+  <style>
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #0071E3, #34C759, #5856D6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body class="bg-white text-apple-dark">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-12">
+        <a class="flex items-center space-x-2" href="index.html">
+          <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
+          <span class="font-semibold text-apple-dark">CloudPrompt</span>
+        </a>
+        <div class="flex items-center space-x-6 text-sm">
+          <a class="text-apple-gray hover:text-apple-dark transition-colors hidden sm:inline" href="index.html">← Back to Home</a>
+          <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-16 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-6 leading-tight">
+        The <span class="gradient-text">AI Prompt Manager</span> Chrome Extension That Saves to Your Google Drive
+      </h1>
+      <p class="text-xl text-apple-gray max-w-2xl mx-auto mb-10 leading-relaxed">
+        Stop rewriting the same prompts. CloudPrompt saves, organizes, and inserts your AI prompts instantly — across ChatGPT, Claude, Gemini, and every other AI tool. Free forever. Your data stays in your Google Drive.
+      </p>
+      <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        <span>Get CloudPrompt — Free</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 1: The Problem -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">AI power users waste hours rewriting prompts</h2>
+        <p class="text-lg text-apple-gray">You've figured out what works. The problem is remembering it.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bg-white border border-black/5 rounded-2xl p-6 fade-in">
+          <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Prompts scattered everywhere</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Your best prompts are buried across browser tabs, Notion pages, Google Docs, and sticky notes. There's no single place to find them when you need them.</p>
+        </div>
+
+        <div class="bg-white border border-black/5 rounded-2xl p-6 fade-in">
+          <div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">"That perfect prompt from last week"</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">You wrote a prompt that got an incredible result, used it twice, and now can't find it. So you spend 20 minutes rewriting something almost as good.</p>
+        </div>
+
+        <div class="bg-white border border-black/5 rounded-2xl p-6 fade-in">
+          <div class="w-10 h-10 bg-yellow-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Copy-pasting is tedious</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Switching between ChatGPT, Claude, and Gemini means hunting down your prompt in another tab, copying it, switching back, and pasting. Every. Single. Time.</p>
+        </div>
+
+        <div class="bg-white border border-black/5 rounded-2xl p-6 fade-in">
+          <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">No way to organize by project or tool</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Coding prompts mixed in with writing prompts mixed in with marketing prompts. When you have 50+ prompts, finding the right one without organization is impossible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: How CloudPrompt Solves It -->
+  <section class="py-20 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Save once. Use anywhere. Organized your way.</h2>
+        <p class="text-lg text-apple-gray">CloudPrompt lives in your browser and works on every AI tool — no switching tabs, no copy-pasting.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <!-- Right-click to insert -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm fade-in">
+          <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-400 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Right-click to insert</h3>
+          <p class="text-apple-gray leading-relaxed text-sm">Right-click inside any text field on any page and select <strong>Insert CloudPrompt</strong>. Pick your prompt, and it's placed directly into the field — no copy-pasting, no tab switching. No other prompt manager has this.</p>
+          <p class="text-xs text-apple-gray mt-3 pt-3 border-t border-black/5">Also works in reverse: highlight text on any page → right-click → <strong>Save to CloudPrompt</strong>.</p>
+        </div>
+
+        <!-- Keyboard shortcut -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm fade-in">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Keyboard shortcut — instant access</h3>
+          <p class="text-apple-gray leading-relaxed text-sm">Press <code class="bg-apple-gray-light px-2 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> (or <code class="bg-apple-gray-light px-2 py-0.5 rounded text-xs">Cmd+Shift+Y</code> on Mac) on any page to open your full prompt library. Search by keyword, title, or tag. Click to copy. Works everywhere your browser works.</p>
+        </div>
+
+        <!-- Context-aware -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm fade-in">
+          <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-400 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Context-aware prompts</h3>
+          <p class="text-apple-gray leading-relaxed text-sm">On ChatGPT, CloudPrompt surfaces your ChatGPT folder first. Switch to Claude — your Claude folder moves to the top. Open Gemini — Gemini prompts appear first. The right prompts, at the right time, automatically. You can also set custom mappings for any other site.</p>
+        </div>
+
+        <!-- Templates -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm fade-in">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-400 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Templates with variables</h3>
+          <p class="text-apple-gray leading-relaxed text-sm">Build reusable prompt templates with placeholders like <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">[TOPIC]</code>, <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">[AUDIENCE]</code>, or <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">[TONE]</code>. When you use a template, CloudPrompt prompts you to fill in the blanks and builds the final prompt for you.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center fade-in">
+        <a class="text-apple-blue hover:underline text-sm font-medium" href="whats-new.html">See everything that's shipped →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Works With Every AI Tool -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">One extension for ChatGPT, Claude, Gemini, and more</h2>
+        <p class="text-lg text-apple-gray">CloudPrompt works on every page in your browser — not just the AI tools it explicitly knows about.</p>
+      </div>
+
+      <div class="bg-apple-gray-light rounded-2xl p-8 fade-in">
+        <p class="text-sm font-medium text-apple-gray mb-5 uppercase tracking-wide">Works with all your AI tools</p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-medium shadow-sm">ChatGPT</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Claude</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Gemini</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Perplexity</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Copilot</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Poe</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-medium text-apple-gray shadow-sm">+ any website</span>
+        </div>
+
+        <p class="text-sm font-medium text-apple-gray mb-5 uppercase tracking-wide">Available on</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-semibold text-apple-dark shadow-sm">Google Chrome</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-semibold text-apple-dark shadow-sm">Microsoft Edge</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-semibold text-apple-dark shadow-sm">Comet by Perplexity</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-semibold text-apple-dark shadow-sm">Brave</span>
+          <span class="bg-white border border-black/5 rounded-full px-4 py-2 text-sm font-semibold text-apple-dark shadow-sm">Opera</span>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-4 fade-in">
+        <p class="text-blue-800 text-sm">
+          <strong>Install once from the Chrome Web Store.</strong> Edge, Comet, Brave, and Opera all support Chrome extensions — no separate download needed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Privacy-First -->
+  <section class="py-20 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Your prompts stay in YOUR Google Drive</h2>
+        <p class="text-lg text-apple-gray">Most tools store your data on their servers. CloudPrompt doesn't — because we don't have any.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-8 fade-in">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="flex items-start">
+            <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-green-900 text-sm mb-1">Stored in your Google Drive</p>
+              <p class="text-green-700 text-sm">Your prompts live in a <code class="bg-white px-1.5 py-0.5 rounded text-xs">CloudPrompt/prompts.json</code> file that only you can see.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-green-900 text-sm mb-1">We never see your data</p>
+              <p class="text-green-700 text-sm">CloudPrompt has no servers, no database, and no access to your prompt content.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-green-900 text-sm mb-1">Minimal permissions</p>
+              <p class="text-green-700 text-sm">We only request access to files <em>we</em> create. We cannot read your other Drive files.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-green-900 text-sm mb-1">Export anytime</p>
+              <p class="text-green-700 text-sm">Download your entire library as JSON or CSV. Your data is never locked in.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 pt-6 border-t border-green-200">
+          <a class="text-green-700 hover:text-green-900 text-sm font-medium hover:underline" href="privacy.html">Read our full Privacy Policy →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: How to Get Started -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Set up in under 2 minutes</h2>
+        <p class="text-lg text-apple-gray">No configuration, no learning curve, no account to create.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 mb-8">
+        <div class="text-center fade-in">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-apple-blue text-white flex items-center justify-center font-semibold text-lg">1</div>
+          <h3 class="font-semibold mb-2">Install</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Add CloudPrompt from the Chrome Web Store. Works on Chrome, Edge, Comet, Brave, and Opera.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-green-500 text-white flex items-center justify-center font-semibold text-lg">2</div>
+          <h3 class="font-semibold mb-2">Connect Google Drive</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Click <strong>Connect Google Drive</strong> and sign in. CloudPrompt creates a single folder in your Drive to store your prompts.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-purple-500 text-white flex items-center justify-center font-semibold text-lg">3</div>
+          <h3 class="font-semibold mb-2">Start saving prompts</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Click <strong>New Prompt</strong>, add a title, paste your prompt, assign a folder. Done. Use <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> anywhere to access it.</p>
+        </div>
+      </div>
+
+      <div class="text-center fade-in">
+        <a class="text-apple-blue hover:underline text-sm font-medium" href="help.html">Need more detail? Read the full setup guide →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 bg-apple-gray-light">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Questions?</h2>
+      </div>
+
+      <div class="space-y-3">
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">Is CloudPrompt really free?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">Yes, completely free with no hidden limits on prompt storage. We may add optional premium features in the future, but the core functionality — saving, organizing, syncing, and inserting prompts — will always be free.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">Does it work with Claude and Gemini too, or just ChatGPT?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">CloudPrompt works on every website — not just the AI tools it explicitly detects. Press <strong>Ctrl+Shift+Y</strong> on ChatGPT, Claude, Gemini, Perplexity, Poe, or any other site to access your prompts. You can also right-click any text field anywhere and select <strong>Insert CloudPrompt</strong> to insert a prompt directly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">Where is my data stored?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">In your Google Drive, in a file called <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">CloudPrompt/prompts.json</code>. We never see your prompts and we have no servers to send them to. Your data stays private and under your control. You can delete the file from Drive at any time to remove everything.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">Can I use it on Edge, Brave, or Opera?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">Yes. CloudPrompt is available on Chrome, Edge, Comet, Brave, and Opera — all from the Chrome Web Store. Sign-in works slightly differently on non-Chrome browsers: a Google sign-in tab opens, you complete the flow, and the tab closes automatically. Everything else works identically.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+            <span class="font-medium">How is this different from AIPRM?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray">
+            <p class="pb-4">AIPRM is a community prompt library built primarily for ChatGPT, with prompts stored on AIPRM's servers. CloudPrompt is a <em>personal</em> prompt library that works on any AI tool or website, with your data stored in your own Google Drive — not our servers. CloudPrompt also offers right-click insert (place prompts directly into any text field), context-aware sorting, and Google Drive sync. If you want a shared community library for ChatGPT, AIPRM is worth trying. If you want a private, organized library of your own prompts that works everywhere, CloudPrompt is built for that.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Ready to organize your AI prompts?</h2>
+      <p class="text-xl text-apple-gray mb-8">Join hundreds of AI users who stopped losing their best prompts. Free forever, synced to your Google Drive.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          <span>Get CloudPrompt — Free</span>
+        </a>
+        <a class="text-apple-blue hover:underline font-medium" href="help.html">See how it works →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-2">
+          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <span class="font-medium text-apple-dark">CloudPrompt</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
+          <a class="hover:text-apple-dark transition-colors" href="index.html">Home</a>
+          <a class="hover:text-apple-dark transition-colors" href="index.html#features">Features</a>
+          <a class="hover:text-apple-dark transition-colors" href="index.html#faq">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="whats-new.html">What's New</a>
+          <a class="hover:text-apple-dark transition-colors" href="help.html">Help</a>
+          <a class="hover:text-apple-dark transition-colors" href="privacy.html">Privacy</a>
+          <a class="hover:text-apple-dark transition-colors" href="terms.html">Terms</a>
+          <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
+          <a class="hover:text-apple-dark transition-colors" href="https://www.linkedin.com/company/cloudprompt-ai" rel="noopener" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-black/5 text-center text-sm text-apple-gray">
+        <p>© 2026 CloudPrompt. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
