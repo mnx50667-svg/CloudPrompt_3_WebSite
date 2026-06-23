@@ -53,6 +53,41 @@
     gtag('js', new Date());
     gtag('config', 'G-CN3771NXMX');
   </script>
+
+  <!-- Structured Data: Privacy Policy page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PrivacyPolicy",
+    "name": "CloudPrompt Privacy Policy",
+    "url": "https://cloudprompt.app/privacy.html",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CloudPrompt",
+      "url": "https://cloudprompt.app/"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "CloudPrompt",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Windows, macOS, Linux, ChromeOS"
+    },
+    "description": "How CloudPrompt handles your data: your prompts and their automatic backups stay in your own Google Drive, and CloudPrompt never sees or stores your data."
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cloudprompt.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://cloudprompt.app/privacy.html" }
+    ]
+  }
+  </script>
   
   <style>
     body {
@@ -80,7 +115,7 @@
     <div class="max-w-2xl mx-auto">
       <header class="mb-12">
         <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-3">Privacy Policy</h1>
-        <p class="text-apple-gray">Last Updated: May 2026</p>
+        <p class="text-apple-gray">Last Updated: June 2026</p>
         <p class="text-apple-gray">Effective Date: January 2026</p>
       </header>
 
@@ -95,7 +130,7 @@
         <!-- 1. Introduction -->
         <section>
           <h2 class="text-2xl font-semibold text-apple-dark mb-4">1. Introduction</h2>
-          <p>CloudPrompt ("we", "our", or "the extension") is committed to protecting your privacy. This Privacy Policy explains how CloudPrompt handles your data when you use our browser extension (available for Chrome, Microsoft Edge, Comet by Perplexity, Brave, and Opera).</p>
+          <p>CloudPrompt ("we", "our", or "the extension") is committed to protecting your privacy. This Privacy Policy explains how CloudPrompt handles your data when you use our browser extension (available for Chrome, Microsoft Edge, and Comet by Perplexity).</p>
         </section>
 
         <!-- 2. Information We Collect -->
@@ -181,6 +216,27 @@
             </li>
           </ul>
 
+          <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">3.1a Automatic Backups</h3>
+          <p class="mb-3">To protect against accidental data loss, CloudPrompt automatically saves timestamped backup copies of your prompts (for example, <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">cloudprompt-autobackup-2026-06-17.json</code>) in the same <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">CloudPrompt</code> folder in YOUR Google Drive.</p>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
+              <span>These backups are created only when your prompt data changes in a way that could risk loss</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
+              <span>Only the most recent few backups are kept &mdash; older ones are removed automatically</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
+              <span>Like all your prompt data, these backups live in YOUR Google Drive &mdash; we never receive, see, or store them</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
+              <span>You can delete these backup files at any time from your Google Drive</span>
+            </li>
+          </ul>
+
           <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">3.2 Local Storage</h3>
           <ul class="space-y-2 mb-4">
             <li class="flex items-start">
@@ -218,7 +274,7 @@
           </ul>
 
           <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">3.4 Authentication on Non-Chrome Browsers</h3>
-          <p class="mb-3">For users on Microsoft Edge, Comet, Brave, Opera, and other Chromium-based browsers, CloudPrompt uses a secure OAuth flow that briefly opens a sign-in tab. After you authorize access, the browser redirects to <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">cloudprompt.app/oauth-callback.html</code> &mdash; a static page with no JavaScript, no tracking, and no data collection.</p>
+          <p class="mb-3">For users on Microsoft Edge and Comet (Chromium-based browsers), CloudPrompt uses a secure OAuth flow that briefly opens a sign-in tab. After you authorize access, the browser redirects to <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">cloudprompt.app/oauth-callback.html</code> &mdash; a static page with no JavaScript, no tracking, and no data collection.</p>
           <ul class="space-y-2">
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
@@ -242,7 +298,7 @@
           <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">4.1 Where Your Data is Stored</h3>
           <div class="bg-apple-gray-light rounded-xl p-5 mb-4">
             <ol class="space-y-2">
-              <li><strong>1. Google Drive:</strong> Your prompts are saved in your personal Google Drive</li>
+              <li><strong>1. Google Drive:</strong> Your prompts and their automatic backups are saved in your personal Google Drive</li>
               <li><strong>2. Local Browser Storage:</strong> Cached copy for offline access and performance</li>
               <li><strong>3. No External Servers:</strong> We do not operate any servers or databases</li>
             </ol>
@@ -289,6 +345,10 @@
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
+              <span>Automatic backup files remain in your Google Drive until they are removed automatically (only the most recent few are kept) or you delete them</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
               <span>Local cache is cleared when you uninstall the extension</span>
             </li>
             <li class="flex items-start">
@@ -306,7 +366,7 @@
             </li>
             <li class="flex items-start">
               <span class="font-semibold text-apple-blue mr-3">2.</span>
-              <span><strong>Delete all data:</strong> Uninstall the extension and delete <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">CloudPrompt/prompts.json</code> from your Google Drive</span>
+              <span><strong>Delete all data:</strong> Uninstall the extension and delete the <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">CloudPrompt</code> folder (including <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">prompts.json</code> and any <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">cloudprompt-autobackup-*.json</code> files) from your Google Drive</span>
             </li>
             <li class="flex items-start">
               <span class="font-semibold text-apple-blue mr-3">3.</span>
@@ -465,7 +525,7 @@
             <div class="bg-apple-gray-light rounded-xl p-5">
               <p class="font-mono text-sm text-apple-dark mb-2">tabs</p>
               <ul class="text-sm space-y-1">
-                <li><strong>Why:</strong> Handle secure Google sign-in on non-Chrome browsers (Edge, Comet, Brave, Opera). CloudPrompt opens a temporary sign-in tab, extracts the authentication token, and closes the tab automatically.</li>
+                <li><strong>Why:</strong> Handle secure Google sign-in on non-Chrome browsers (Edge, Comet). CloudPrompt opens a temporary sign-in tab, extracts the authentication token, and closes the tab automatically.</li>
                 <li><strong>What we access:</strong> Only the URL of the temporary sign-in tab to complete authentication</li>
                 <li><strong>What we DON'T access:</strong> Your browsing activity, open tabs, tab history, or any other tab content</li>
               </ul>
@@ -474,9 +534,9 @@
             <div class="bg-apple-gray-light rounded-xl p-5">
               <p class="font-mono text-sm text-apple-dark mb-2">contextMenus</p>
               <ul class="text-sm space-y-1">
-                <li><strong>Why:</strong> Power the "Insert CloudPrompt" right-click menu option. When you right-click a text field on any page, CloudPrompt adds a menu item that lets you insert a saved prompt directly — no copy-paste required.</li>
-                <li><strong>What we access:</strong> Only the text field you chose to insert into, at the moment you select a prompt</li>
-                <li><strong>What we DON'T access:</strong> Page content, other form fields, browsing history, or anything outside the chosen text field</li>
+                <li><strong>Why:</strong> Power CloudPrompt's right-click menu options. When you highlight text and right-click, you can choose <strong>"Save to CloudPrompt"</strong> to save the highlighted text as a new prompt. When you right-click a text field, you can choose <strong>"Insert CloudPrompt"</strong> to place a saved prompt directly into it — no copy-paste required.</li>
+                <li><strong>What we access:</strong> Only the text you have selected (when you choose "Save to CloudPrompt"), or the text field you chose to insert into (when you choose "Insert CloudPrompt") — and only at the moment you make that choice</li>
+                <li><strong>What we DON'T access:</strong> Page content, other form fields, browsing history, or anything you didn't explicitly select or choose</li>
               </ul>
             </div>
 
@@ -492,9 +552,9 @@
             <div class="bg-apple-gray-light rounded-xl p-5">
               <p class="font-mono text-sm text-apple-dark mb-2">Host Permissions (All Websites)</p>
               <ul class="text-sm space-y-1">
-                <li><strong>Why:</strong> Allow the keyboard shortcut (Ctrl+Shift+Y) and right-click insert to work on any webpage</li>
-                <li><strong>What we access:</strong> Inject modal overlay when you use the shortcut; insert text into a field when you use right-click insert</li>
-                <li><strong>What we DON'T access:</strong> Page content, form data, browsing history</li>
+                <li><strong>Why:</strong> To let the keyboard shortcut (Ctrl+Shift+Y) open CloudPrompt on any webpage; to let "Save to CloudPrompt" save text you have highlighted; to let "Insert CloudPrompt" place a prompt into a text field; and to show prompts relevant to the AI platform you're currently using (Context-Aware Prompts).</li>
+                <li><strong>What we access (only when you act):</strong> The text you have selected (when you save it), the text field you insert into (when you insert), and the website address (URL) of your active tab (to surface relevant prompts). We inject CloudPrompt's own overlay when you press the shortcut.</li>
+                <li><strong>What we DON'T access:</strong> We do not read, collect, or transmit page content, form data, or browsing history. Selected text is stored only in YOUR Google Drive, and the active-tab URL is used locally on your device and is never transmitted to us.</li>
               </ul>
             </div>
           </div>
@@ -559,25 +619,31 @@
                   <td class="p-3">Until you delete</td>
                 </tr>
                 <tr class="border-b bg-apple-gray-light/50">
+                  <td class="p-3">Auto-backups</td>
+                  <td class="p-3">Your Google Drive</td>
+                  <td class="p-3">Only you</td>
+                  <td class="p-3">Most recent few kept; older removed automatically</td>
+                </tr>
+                <tr class="border-b">
                   <td class="p-3">Cache</td>
                   <td class="p-3">Local browser storage</td>
                   <td class="p-3">Only you</td>
                   <td class="p-3">Until uninstall</td>
                 </tr>
-                <tr class="border-b">
+                <tr class="border-b bg-apple-gray-light/50">
                   <td class="p-3">Settings</td>
                   <td class="p-3">Local browser storage</td>
                   <td class="p-3">Only you</td>
                   <td class="p-3">Until uninstall</td>
                 </tr>
-                <tr class="border-b bg-apple-gray-light/50">
+                <tr class="border-b">
                   <td class="p-3">OAuth Token (Chrome)</td>
                   <td class="p-3">Browser's encrypted storage</td>
                   <td class="p-3">Only you</td>
                   <td class="p-3">Until disconnect</td>
                 </tr>
                 <tr>
-                  <td class="p-3">OAuth Token (Edge / Comet / Brave / Opera)</td>
+                  <td class="p-3">OAuth Token (Edge / Comet)</td>
                   <td class="p-3">Local browser storage</td>
                   <td class="p-3">Only you</td>
                   <td class="p-3">Until disconnect or session expiry</td>
