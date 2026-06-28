@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>CloudPrompt - Your AI Prompts, Organized | Free Browser Extension</title>
-  <meta content="Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works with ChatGPT, Claude, Gemini, and more. Context-aware. Privacy-first. Chrome, Edge, Comet, Brave, and Opera." name="description"/>
+  <meta content="Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works with ChatGPT, Claude, Gemini, and more. Context-aware. Privacy-first. Chrome, Edge, and Comet." name="description"/>
   <meta content="AI prompts, prompt manager, ChatGPT, Claude, Gemini, Chrome extension, Edge extension, productivity, Google Drive, prompt engineering, free, context-aware" name="keywords"/>
   <meta content="CloudPrompt" name="author"/>
   <meta content="index, follow" name="robots"/>
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta content="CloudPrompt - Your AI Prompts, Organized" property="og:title"/>
-  <meta content="Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works on Chrome, Edge, Comet, Brave, and Opera." property="og:description"/>
+  <meta content="Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works on Chrome, Edge, and Comet." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app" property="og:url"/>
   <meta content="website" property="og:type"/>
@@ -194,16 +194,19 @@
     }
   </style>
 
-  <!-- Structured Data -->
+  <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "CloudPrompt",
-    "description": "Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works on Chrome, Edge, Comet, Brave, and Opera.",
+    "description": "Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works on Chrome, Microsoft Edge, and Comet.",
     "url": "https://cloudprompt.app",
+    "downloadUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
     "applicationCategory": "ProductivityApplication",
-    "operatingSystem": "Chrome, Edge, Comet, Brave, Opera, Vivaldi",
+    "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+    "browserRequirements": "Requires a Chromium-based browser (Chrome, Microsoft Edge, or Comet), Chrome 115 or later",
+    "softwareVersion": "1.2.1",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -215,6 +218,88 @@
       "url": "https://cloudprompt.app",
       "email": "support@cloudprompt.app"
     }
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is CloudPrompt really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, 100% free with no hidden limits. We may add optional premium features in the future, but the core functionality will always be free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does right-click insert work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Right-click inside any text field on any page, then select Insert CloudPrompt from the context menu. Pick the prompt you want, and it's placed directly into the field — no copy-pasting needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is my data stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your prompts are stored in your personal Google Drive, in a folder called CloudPrompt. We never see or access your data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. CloudPrompt caches your prompts locally. Access them offline and changes sync when you're back online."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What permissions does it need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save and insert. We cannot access your other Drive files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use it with Claude, Gemini, or other AI tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to access your prompts, or right-click any text field and select Insert CloudPrompt to insert directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does context-aware mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first. For example, on Claude it surfaces your Claude folder first. You can turn context-aware off in Settings, Smart Features."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work on Edge or Comet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. CloudPrompt fully supports Microsoft Edge and Comet by Perplexity. Install it from the Chrome Web Store. Sign-in works slightly differently: CloudPrompt opens a Google sign-in tab, you complete the sign-in, and the tab closes automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I export my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to Settings, Backup & Restore, Export. You can download all your prompts as JSON or CSV anytime."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -272,7 +357,7 @@
         <span class="gradient-text">Organized.</span>
       </h1>
       <p class="text-xl text-apple-gray max-w-xl mx-auto mb-10 leading-relaxed">
-        Save, search, and access your prompts instantly — including with a right-click. Context-aware. Synced to Google Drive. Works on Chrome, Edge, Comet, Brave, and Opera. Free forever.
+        Save, search, and access your prompts instantly — including with a right-click. Context-aware. Synced to Google Drive. Works on Chrome, Edge, and Comet. Free forever.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
         <a class="bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors inline-flex items-center space-x-2" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="hero-cta">
@@ -361,7 +446,7 @@
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Organize</h3>
-          <p class="text-apple-gray leading-relaxed">Folders, tags, drag-and-drop reordering, and powerful search. Find what you need in seconds.</p>
+          <p class="text-apple-gray leading-relaxed">Folders, tags, and powerful search. Find what you need in seconds.</p>
         </div>
 
         <!-- Feature 5 -->
@@ -394,7 +479,7 @@
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Context-Aware</h3>
-          <p class="text-apple-gray leading-relaxed">On ChatGPT? Claude? Gemini? CloudPrompt surfaces your most relevant prompts automatically. Set custom mappings for any other site.</p>
+          <p class="text-apple-gray leading-relaxed">On ChatGPT? Claude? Gemini? CloudPrompt surfaces your most relevant prompts automatically.</p>
         </div>
 
         <!-- Feature 8 — Cross-Browser -->
@@ -404,8 +489,8 @@
               <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-2">5 Browsers Supported</h3>
-          <p class="text-apple-gray leading-relaxed">Works on Chrome, Edge, Comet, Brave, and Opera. One extension, every browser.</p>
+          <h3 class="text-xl font-semibold mb-2">Cross-Browser</h3>
+          <p class="text-apple-gray leading-relaxed">Works on Chrome, Microsoft Edge, and Comet. One extension, every supported browser.</p>
         </div>
 
       </div>
@@ -468,10 +553,6 @@
         <span class="font-medium text-apple-dark">Microsoft Edge</span>
         <span class="text-apple-gray">·</span>
         <span class="font-medium text-apple-dark">Comet by Perplexity</span>
-        <span class="text-apple-gray">·</span>
-        <span class="font-medium text-apple-dark">Brave</span>
-        <span class="text-apple-gray">·</span>
-        <span class="font-medium text-apple-dark">Opera</span>
       </div>
     </div>
   </section>
@@ -552,7 +633,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click insert. We cannot access your other Drive files.</p>
+            <p class="pb-4">Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save and insert. We cannot access your other Drive files.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
@@ -571,17 +652,17 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first. For example, on Claude it surfaces your Claude folder first. You can also set custom mappings for any other site in Settings → Smart Features → Custom Mappings. Turn context-aware off in Settings → Smart Features.</p>
+            <p class="pb-4">When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first. For example, on Claude it surfaces your Claude folder first. Turn context-aware off in Settings → Smart Features.</p>
           </div>
         </div>
         <!-- Edge/Comet FAQ -->
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
           <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
-            <span class="font-medium">Does it work on Edge, Brave, or other browsers?</span>
+            <span class="font-medium">Does it work on Edge or Comet?</span>
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">Yes! CloudPrompt fully supports Microsoft Edge, Comet by Perplexity, Brave, and Opera. Install it from the Chrome Web Store — all these browsers support Chrome extensions. Sign-in works slightly differently: CloudPrompt opens a Google sign-in tab, you complete the sign-in, and the tab closes automatically. If you run into trouble, check that pop-ups are not blocked and try again.</p>
+            <p class="pb-4">Yes! CloudPrompt fully supports Microsoft Edge and Comet by Perplexity. Install it from the Chrome Web Store — both browsers support Chrome extensions. Sign-in works slightly differently: CloudPrompt opens a Google sign-in tab, you complete the sign-in, and the tab closes automatically. If you run into trouble, check that pop-ups are not blocked and try again.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
@@ -601,7 +682,7 @@
   <section class="py-20">
     <div class="max-w-3xl mx-auto px-6 text-center fade-in">
       <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Ready to get organized?</h2>
-      <p class="text-xl text-apple-gray mb-8">Join thousands of AI users who stopped losing their best prompts.</p>
+      <p class="text-xl text-apple-gray mb-8">Join the growing community of AI users who stopped losing their best prompts.</p>
       <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="footer-cta">
         <span>Get CloudPrompt — Free</span>
       </a>
