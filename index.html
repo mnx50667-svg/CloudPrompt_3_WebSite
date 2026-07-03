@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>CloudPrompt - Your AI Prompts, Organized | Free Browser Extension</title>
-  <meta content="Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works with ChatGPT, Claude, Gemini, and more. Context-aware. Privacy-first. Chrome, Edge, and Comet." name="description"/>
+  <meta content="Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync. Works with ChatGPT, Claude, Gemini, and more. Privacy-first. Chrome, Edge, and Comet." name="description"/>
   <meta content="AI prompts, prompt manager, ChatGPT, Claude, Gemini, Chrome extension, Edge extension, productivity, Google Drive, prompt engineering, free, context-aware" name="keywords"/>
   <meta content="CloudPrompt" name="author"/>
   <meta content="index, follow" name="robots"/>
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta content="CloudPrompt - Your AI Prompts, Organized" property="og:title"/>
-  <meta content="Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works on Chrome, Edge, and Comet." property="og:description"/>
+  <meta content="Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app" property="og:url"/>
   <meta content="website" property="og:type"/>
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="CloudPrompt - Your AI Prompts, Organized" name="twitter:title"/>
-  <meta content="Save, organize, and access your AI prompts instantly. Free browser extension." name="twitter:description"/>
+  <meta content="Save prompts with a right-click. Summon them with one keystroke. Free browser extension." name="twitter:description"/>
   <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
 
   <!-- Favicons -->
@@ -77,7 +77,16 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
+    /* Gradient headline — dark-bg variant (brighter stops for contrast) */
     .gradient-text {
+      background: linear-gradient(90deg, #4DA3FF, #34C759, #A78BFA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Gradient headline — light-bg variant (original brand stops) */
+    .gradient-text-light {
       background: linear-gradient(90deg, #0071E3, #34C759, #5856D6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -102,7 +111,7 @@
     }
 
     .faq-item.active .faq-answer {
-      max-height: 200px;
+      max-height: 220px;
     }
 
     .faq-item.active .faq-icon {
@@ -118,95 +127,152 @@
       transform: translateX(0);
     }
 
-    /* ── Hero Screenshot Scene ── */
-    .hero-scene {
+    /* ── Dark hero ── */
+    .hero-dark {
+      background: linear-gradient(180deg, #1D1D1F 0%, #111113 100%);
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 820px;
+      height: 560px;
+      background: radial-gradient(ellipse at center, rgba(0,113,227,0.22) 0%, rgba(88,86,214,0.10) 45%, transparent 70%);
+      filter: blur(24px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .chip {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .kbd {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-bottom-width: 3px;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      display: inline-block;
+    }
+
+    /* ── Live demo shell (dark, matches real popup) ── */
+    .demo-shell {
       position: relative;
-      max-width: 780px;
-      margin: 0 auto;
+      z-index: 1;
+      border-radius: 20px;
+      background: #1A1A1C;
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.55);
       overflow: hidden;
-      border-radius: 16px;
+      text-align: left;
     }
 
-    .hero-library {
-      width: 88%;
-      transform: perspective(1400px) rotateY(2deg) scale(0.95);
-      transform-origin: center top;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.10), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
-    }
-
-    .hero-library img {
+    .demo-search {
+      background: #2A2A2D;
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
+      border-radius: 9999px;
+      padding: 10px 18px;
+      font-size: 14px;
       width: 100%;
-      height: auto;
-      display: block;
+      outline: none;
+      transition: border-color 0.2s ease;
     }
 
-    .hero-popup {
-      position: absolute;
-      z-index: 2;
-      right: 3%;
-      top: 16px;
-      width: 28%;
-      max-width: 220px;
-      transform: perspective(1400px) rotateY(-3deg) translateZ(50px);
-      transform-origin: center top;
-      border-radius: 16px;
+    .demo-search::placeholder { color: rgba(255,255,255,0.45); }
+    .demo-search:focus { border-color: #0071E3; }
+
+    .demo-pill {
+      border-radius: 9999px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.04);
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .demo-pill.active {
+      background: #0071E3;
+      border-color: #0071E3;
+      color: #fff;
+    }
+
+    .demo-card {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 13px 15px;
+      background: #232326;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .demo-card:hover { transform: translateY(-2px); background: #29292d; }
+    .demo-card.pin-border { border-left: 3px solid #F5B301; }
+    .demo-card.tpl-border { border-left: 3px solid #8B5CF6; }
+
+    .demo-clamp {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
       overflow: hidden;
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35), 0 0 0 0.5px rgba(255, 255, 255, 0.06);
     }
 
-    .hero-popup img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .try-hint { animation: bounce-soft 2.2s ease-in-out infinite; }
+    @keyframes bounce-soft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+    /* ── Light features cards ── */
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    /* Top fade — subtle dissolve of top edge into white background */
-    .hero-fade-top {
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+
+    /* ── 3-step gradient connector ── */
+    .step-line {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 30px;
-      background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #ffffff 95%);
-      z-index: 3;
-      pointer-events: none;
-    }
-
-    /* Bottom fade — dissolves bottom edge into white background */
-    .hero-fade {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 160px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 85%);
-      z-index: 3;
-      pointer-events: none;
-    }
-
-    @media (max-width: 640px) {
-      .hero-popup {
-        width: 32%;
-        right: 2%;
-      }
+      top: 20px;
+      left: 16.66%;
+      right: 16.66%;
+      height: 2px;
+      background: linear-gradient(90deg, #0071E3, #34C759, #5856D6);
+      z-index: 0;
     }
   </style>
 
-  <!-- Structured Data: SoftwareApplication -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "CloudPrompt",
-    "description": "Save, organize, and access your AI prompts instantly — including with a right-click. Free browser extension with Google Drive sync. Works on Chrome, Microsoft Edge, and Comet.",
+    "description": "Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync. Works on Chrome, Edge, and Comet.",
     "url": "https://cloudprompt.app",
-    "downloadUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
     "applicationCategory": "ProductivityApplication",
-    "operatingSystem": "Windows, macOS, Linux, ChromeOS",
-    "browserRequirements": "Requires a Chromium-based browser (Chrome, Microsoft Edge, or Comet), Chrome 115 or later",
-    "softwareVersion": "1.2.1",
+    "operatingSystem": "Chrome, Edge, Comet",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "ratingCount": "20"
+    },
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -220,91 +286,9 @@
     }
   }
   </script>
-
-  <!-- Structured Data: FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is CloudPrompt really free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, 100% free with no hidden limits. We may add optional premium features in the future, but the core functionality will always be free."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does right-click insert work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Right-click inside any text field on any page, then select Insert CloudPrompt from the context menu. Pick the prompt you want, and it's placed directly into the field — no copy-pasting needed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where is my data stored?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your prompts are stored in your personal Google Drive, in a folder called CloudPrompt. We never see or access your data."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does it work offline?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. CloudPrompt caches your prompts locally. Access them offline and changes sync when you're back online."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What permissions does it need?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save and insert. We cannot access your other Drive files."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use it with Claude, Gemini, or other AI tools?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to access your prompts, or right-click any text field and select Insert CloudPrompt to insert directly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does context-aware mean?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first. For example, on Claude it surfaces your Claude folder first. You can turn context-aware off in Settings, Smart Features."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does it work on Edge or Comet?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. CloudPrompt fully supports Microsoft Edge and Comet by Perplexity. Install it from the Chrome Web Store. Sign-in works slightly differently: CloudPrompt opens a Google sign-in tab, you complete the sign-in, and the tab closes automatically."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I export my data?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Go to Settings, Backup & Restore, Export. You can download all your prompts as JSON or CSV anytime."
-        }
-      }
-    ]
-  }
-  </script>
 </head>
 <body class="bg-white text-apple-dark font-sf">
-  <!-- Navigation -->
+  <!-- Navigation (light — consistent with help/privacy/terms/whats-new) -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" id="navbar">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
@@ -320,7 +304,7 @@
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="help.html">Help</a>
           <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="nav-cta">Get CloudPrompt</a>
         </div>
-        <button class="md:hidden p-2" id="mobile-menu-btn">
+        <button class="md:hidden p-2" id="mobile-menu-btn" aria-label="Open menu">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
           </svg>
@@ -332,7 +316,7 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 md:hidden" id="mobile-menu">
     <div class="p-6">
-      <button class="absolute top-4 right-4 p-2" id="mobile-menu-close">
+      <button class="absolute top-4 right-4 p-2" id="mobile-menu-close" aria-label="Close menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
         </svg>
@@ -348,18 +332,49 @@
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <section class="pt-32 pb-0 px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight mb-6">
+  <!-- ═══════════ DARK HERO — live demo + keystroke + spotlight ═══════════ -->
+  <section class="hero-dark pt-28 pb-24 px-6 relative overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="max-w-3xl mx-auto text-center relative z-10">
+
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight mb-6 text-white">
         Your AI Prompts.
         <br/>
         <span class="gradient-text">Organized.</span>
       </h1>
-      <p class="text-xl text-apple-gray max-w-xl mx-auto mb-10 leading-relaxed">
-        Save, search, and access your prompts instantly — including with a right-click. Context-aware. Synced to Google Drive. Works on Chrome, Edge, and Comet. Free forever.
+      <p class="text-xl text-white/60 max-w-xl mx-auto mb-8 leading-relaxed">
+        Save any prompt with a right-click. Summon your whole library with one keystroke — on any page. Synced to <span class="text-white">your</span> Google Drive, never ours. Free forever.
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+
+      <!-- Keystroke row -->
+      <div class="flex items-center justify-center gap-2 mb-10">
+        <span class="kbd">Ctrl</span><span class="text-white/40 text-lg">+</span>
+        <span class="kbd">Shift</span><span class="text-white/40 text-lg">+</span>
+        <span class="kbd">Y</span>
+      </div>
+
+      <p class="try-hint text-sm font-medium text-white/70 mb-4">↓ This demo is real — try searching "email"</p>
+
+      <!-- LIVE DEMO — dark, matches the real popup -->
+      <div class="demo-shell max-w-xl mx-auto">
+        <div class="p-4 flex items-center gap-3 border-b border-white/5">
+          <img src="images/logo.png" alt="" class="w-6 h-6 flex-shrink-0"/>
+          <input id="demoSearch" type="text" placeholder="Search your prompts..." class="demo-search" aria-label="Demo prompt search"/>
+        </div>
+        <div class="px-4 pt-3 flex gap-2 flex-wrap" id="demoPills">
+          <span class="demo-pill active" data-cat="all">All</span>
+          <span class="demo-pill" data-cat="ChatGPT">ChatGPT</span>
+          <span class="demo-pill" data-cat="Claude">Claude</span>
+          <span class="demo-pill" data-cat="Marketing">Marketing</span>
+          <span class="demo-pill" data-cat="Coding">Coding</span>
+        </div>
+        <div class="p-4 space-y-2.5" id="demoList" style="min-height: 290px;"></div>
+        <div class="px-4 py-3 border-t border-white/5 text-center text-xs text-white/40">
+          Demo data — install to build your own library, synced to your Google Drive
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
         <a class="bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors inline-flex items-center space-x-2" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="hero-cta">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -369,185 +384,187 @@
           </svg>
           <span>Get CloudPrompt — Free</span>
         </a>
-        <a class="text-apple-blue hover:underline font-medium" href="#how-it-works">Learn more →</a>
+        <a class="text-white/70 hover:text-white font-medium transition-colors" href="#how-it-works">See how it works →</a>
       </div>
 
-      <!-- Hero Screenshots — Library + Popup Layered -->
-      <div class="hero-scene">
-        <div class="hero-fade-top"></div>
-        <div class="hero-library">
-          <img alt="CloudPrompt Library — organize all your AI prompts with folders, tags, and search" src="images/hero-library.png"/>
-        </div>
-        <div class="hero-popup">
-          <img alt="CloudPrompt Popup — quick access to your prompts with Ctrl+Shift+Y" src="images/hero-popup.png"/>
-        </div>
-        <div class="hero-fade"></div>
+      <!-- Trust chips -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <span class="chip">★ 4.5 on Chrome Web Store</span>
+        <span class="chip">300+ active users</span>
+        <span class="chip">0 servers — 100% your Drive</span>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="py-20 bg-apple-gray-light" id="features">
+  <!-- ═══════════ LIGHT TRANSITION — full Library showcase ═══════════ -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-sm font-semibold text-apple-blue tracking-widest uppercase mb-3">Full Library</p>
+        <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Dark when you work.<br/><span class="gradient-text-light">Light when you organize.</span></h2>
+        <p class="text-xl text-apple-gray max-w-2xl mx-auto">The popup follows your system theme. The Library gives you the full picture — folders, tags, templates, and search across everything.</p>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-2xl border border-black/5 max-w-4xl mx-auto fade-in">
+        <img src="images/hero-library.png" alt="CloudPrompt Library — organize all your AI prompts with folders, tags, and search" class="w-full block"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ HOW IT WORKS — 3-step habit loop ═══════════ -->
+  <section class="py-20 bg-apple-gray-light" id="how-it-works">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Save it once. Summon it forever.</h2>
+        <p class="text-xl text-apple-gray">Three steps between you and a perfectly organized prompt library.</p>
+      </div>
+      <div class="relative grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+        <div class="step-line hidden md:block"></div>
+        <div class="relative z-10 fade-in">
+          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-apple-dark text-white flex items-center justify-center font-semibold">1</div>
+          <h3 class="font-semibold mb-1">Highlight &amp; right-click</h3>
+          <p class="text-apple-gray text-sm">Found a great prompt anywhere on the web? Right-click → <strong>Save to CloudPrompt</strong>. Done.</p>
+        </div>
+        <div class="relative z-10 fade-in">
+          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-apple-dark text-white flex items-center justify-center font-semibold">2</div>
+          <h3 class="font-semibold mb-1">It organizes itself</h3>
+          <p class="text-apple-gray text-sm">Auto-categorized by platform. Add folders and tags if you want. Everything syncs to your Google Drive.</p>
+        </div>
+        <div class="relative z-10 fade-in">
+          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-apple-blue text-white flex items-center justify-center font-semibold">3</div>
+          <h3 class="font-semibold mb-1 text-apple-blue">Summon with Ctrl+Shift+Y</h3>
+          <p class="text-apple-gray text-sm">Instant search over everything, on any page. Click to copy, paste, and go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FEATURES — 9 white hover-lift cards ═══════════ -->
+  <section class="py-20" id="features">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16 fade-in">
+        <p class="text-sm font-semibold text-apple-blue tracking-widest uppercase mb-3">Features</p>
         <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Everything you need.</h2>
         <p class="text-xl text-apple-gray">Simple, powerful, and private.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Feature 0 — Right-Click Insert (Flagship) -->
-        <div class="text-center fade-in">
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Right-Click Save (Flagship) -->
+        <div class="feature-card text-center fade-in" style="background: linear-gradient(160deg, #FFF7F3 0%, #FFFFFF 60%); border-color: rgba(249,115,22,0.15);">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-red-500 to-orange-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Right-Click Insert</h3>
-          <p class="text-apple-gray leading-relaxed">Right-click any text field and insert a prompt directly — no copy-paste. No competitor has this.</p>
+          <h3 class="text-xl font-semibold mb-2">Right-Click Save</h3>
+          <p class="text-apple-gray leading-relaxed text-sm">Highlight text on any page, right-click, and it's saved as a prompt. No competitor has this.</p>
         </div>
 
-        <!-- Feature 1 -->
-        <div class="text-center fade-in">
+        <!-- Instant Access -->
+        <div class="feature-card text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Instant Access</h3>
-          <p class="text-apple-gray leading-relaxed">Press <span class="font-mono text-sm bg-white px-2 py-1 rounded">Ctrl+Shift+Y</span> anywhere. Your prompts appear instantly.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">Press <span class="font-mono text-xs bg-apple-gray-light px-2 py-1 rounded">Ctrl+Shift+Y</span> anywhere. Your prompts appear instantly.</p>
         </div>
 
-        <!-- Feature 2 -->
-        <div class="text-center fade-in">
+        <!-- Cloud Sync -->
+        <div class="feature-card text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-green-500 to-emerald-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Cloud Sync</h3>
-          <p class="text-apple-gray leading-relaxed">Auto-synced to your Google Drive. Access your prompts from any device.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">Auto-synced to your Google Drive. Access your prompts from any device.</p>
         </div>
 
-        <!-- Feature 3 -->
-        <div class="text-center fade-in">
+        <!-- Privacy First -->
+        <div class="feature-card text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-purple-500 to-violet-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Privacy First</h3>
-          <p class="text-apple-gray leading-relaxed">Your data stays in your Google Drive. We never see your prompts.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">Your data stays in your Google Drive. We never see your prompts.</p>
         </div>
 
-        <!-- Feature 4 -->
-        <div class="text-center fade-in">
+        <!-- Organize -->
+        <div class="feature-card text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-orange-500 to-amber-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Organize</h3>
-          <p class="text-apple-gray leading-relaxed">Folders, tags, and powerful search. Find what you need in seconds.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">Folders, tags, and powerful search. Find what you need in seconds.</p>
         </div>
 
-        <!-- Feature 5 -->
-        <div class="text-center fade-in">
+        <!-- Templates -->
+        <div class="feature-card text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-pink-500 to-rose-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Templates</h3>
-          <p class="text-apple-gray leading-relaxed">Create reusable templates with variables. Fill in the blanks and go.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">Create reusable templates with [variables]. Fill in the blanks and go.</p>
         </div>
 
-        <!-- Feature 6 -->
-        <div class="text-center fade-in">
+        <!-- Export -->
+        <div class="feature-card text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-indigo-500 to-blue-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Export</h3>
-          <p class="text-apple-gray leading-relaxed">Your data, your control. Export anytime as JSON or CSV.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">Your data, your control. Export anytime as JSON or CSV.</p>
         </div>
 
-        <!-- Feature 7 — Context-Aware -->
-        <div class="text-center fade-in">
+        <!-- Context-Aware -->
+        <div class="feature-card text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-teal-500 to-cyan-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Context-Aware</h3>
-          <p class="text-apple-gray leading-relaxed">On ChatGPT? Claude? Gemini? CloudPrompt surfaces your most relevant prompts automatically.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">On ChatGPT, Claude, Gemini, or Copilot? Your most relevant prompts surface first, automatically.</p>
         </div>
 
-        <!-- Feature 8 — Cross-Browser -->
-        <div class="text-center fade-in">
+        <!-- Cross-Browser -->
+        <div class="feature-card text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-5 bg-gradient-to-br from-slate-500 to-gray-400 rounded-2xl flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Cross-Browser</h3>
-          <p class="text-apple-gray leading-relaxed">Works on Chrome, Microsoft Edge, and Comet. One extension, every supported browser.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">Works on Chrome, Edge, and Comet by Perplexity. One extension, one library.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- How It Works Section -->
-  <section class="py-20" id="how-it-works">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Get started in seconds.</h2>
-        <p class="text-xl text-apple-gray">Five simple steps to organize your prompts.</p>
-      </div>
-      <div class="grid sm:grid-cols-3 lg:grid-cols-5 gap-8">
-        <div class="text-center fade-in">
-          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-apple-dark text-white flex items-center justify-center font-semibold">1</div>
-          <h3 class="font-semibold mb-1">Install</h3>
-          <p class="text-apple-gray text-sm">Add from Chrome Web Store</p>
-        </div>
-        <div class="text-center fade-in">
-          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-apple-dark text-white flex items-center justify-center font-semibold">2</div>
-          <h3 class="font-semibold mb-1">Connect</h3>
-          <p class="text-apple-gray text-sm">Sign in with Google</p>
-        </div>
-        <div class="text-center fade-in">
-          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-apple-dark text-white flex items-center justify-center font-semibold">3</div>
-          <h3 class="font-semibold mb-1">Save</h3>
-          <p class="text-apple-gray text-sm">Click + to save prompts</p>
-        </div>
-        <div class="text-center fade-in">
-          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-apple-dark text-white flex items-center justify-center font-semibold">4</div>
-          <h3 class="font-semibold mb-1">Access</h3>
-          <p class="text-apple-gray text-sm">Ctrl+Shift+Y anywhere</p>
-        </div>
-        <div class="text-center fade-in">
-          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-apple-blue text-white flex items-center justify-center font-semibold">5</div>
-          <h3 class="font-semibold mb-1 text-apple-blue">Insert</h3>
-          <p class="text-apple-gray text-sm">Right-click any text field</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Compatibility -->
-  <section class="py-16 border-t border-black/5">
+  <!-- ═══════════ COMPATIBILITY ═══════════ -->
+  <section class="py-16 border-t border-black/5 bg-apple-gray-light">
     <div class="max-w-4xl mx-auto px-6 text-center fade-in">
       <p class="text-apple-gray mb-6">Works with all your favorite AI tools</p>
       <div class="flex flex-wrap justify-center items-center gap-8 text-apple-gray mb-8">
         <span class="font-medium">ChatGPT</span>
         <span class="font-medium">Claude</span>
         <span class="font-medium">Gemini</span>
+        <span class="font-medium">Copilot</span>
         <span class="font-medium">Perplexity</span>
-        <span class="font-medium">Poe</span>
         <span class="text-sm">and any website</span>
       </div>
       <p class="text-apple-gray text-sm mb-3">Available on</p>
-      <div class="flex flex-wrap justify-center items-center gap-6 text-apple-gray">
+      <div class="flex flex-wrap justify-center items-center gap-4 text-apple-gray">
         <span class="font-medium text-apple-dark">Google Chrome</span>
         <span class="text-apple-gray">·</span>
         <span class="font-medium text-apple-dark">Microsoft Edge</span>
@@ -557,7 +574,7 @@
     </div>
   </section>
 
-  <!-- Use Cases Section -->
+  <!-- ═══════════ USE CASES (SEO) ═══════════ -->
   <section class="py-20">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16 fade-in">
@@ -584,7 +601,7 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- ═══════════ FAQ ═══════════ -->
   <section class="py-20 bg-apple-gray-light" id="faq">
     <div class="max-w-2xl mx-auto px-6">
       <div class="text-center mb-12 fade-in">
@@ -602,11 +619,11 @@
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
           <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
-            <span class="font-medium">How does right-click insert work?</span>
+            <span class="font-medium">How does right-click save work?</span>
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">Right-click inside any text field on any page, then select <strong>Insert CloudPrompt</strong> from the context menu. Pick the prompt you want, and it's placed directly into the field — no copy-pasting needed. No other prompt manager offers this.</p>
+            <p class="pb-4">Highlight any text on any webpage, right-click, and choose <strong>Save to CloudPrompt</strong>. A save dialog appears with the title, content preview, and an auto-detected category — click save and it's in your library. No other prompt manager offers this.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
@@ -633,7 +650,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save and insert. We cannot access your other Drive files.</p>
+            <p class="pb-4">Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save. We cannot access your other Drive files.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
@@ -642,27 +659,25 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">Absolutely! CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to access your prompts, or right-click any text field and select <strong>Insert CloudPrompt</strong> to insert directly.</p>
+            <p class="pb-4">Absolutely! CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to open your library, click a prompt to copy it, and paste it into any AI tool.</p>
           </div>
         </div>
-        <!-- Context-Aware FAQ -->
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
           <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
             <span class="font-medium">What does "context-aware" mean?</span>
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first. For example, on Claude it surfaces your Claude folder first. Turn context-aware off in Settings → Smart Features.</p>
+            <p class="pb-4">When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first — pinned prompts, then platform matches, then everything else. Toggle it in Settings → Smart Features.</p>
           </div>
         </div>
-        <!-- Edge/Comet FAQ -->
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
           <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
             <span class="font-medium">Does it work on Edge or Comet?</span>
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">Yes! CloudPrompt fully supports Microsoft Edge and Comet by Perplexity. Install it from the Chrome Web Store — both browsers support Chrome extensions. Sign-in works slightly differently: CloudPrompt opens a Google sign-in tab, you complete the sign-in, and the tab closes automatically. If you run into trouble, check that pop-ups are not blocked and try again.</p>
+            <p class="pb-4">Yes! CloudPrompt fully supports Microsoft Edge and Comet by Perplexity, in addition to Google Chrome. Install it from the Chrome Web Store — both browsers support Chrome extensions. Sign-in opens a Google tab that closes automatically when done. If you run into trouble, check that pop-ups are not blocked and try again.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
@@ -671,38 +686,33 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray">
-            <p class="pb-4">Go to Settings → Backup & Restore → Export. You can download all your prompts as JSON or CSV anytime.</p>
+            <p class="pb-4">Go to Settings → Backup &amp; Restore → Export. You can download all your prompts as JSON or CSV anytime.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- ═══════════ CTA ═══════════ -->
   <section class="py-20">
     <div class="max-w-3xl mx-auto px-6 text-center fade-in">
       <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Ready to get organized?</h2>
-      <p class="text-xl text-apple-gray mb-8">Join the growing community of AI users who stopped losing their best prompts.</p>
+      <p class="text-xl text-apple-gray mb-8">Join hundreds of AI users who stopped losing their best prompts.</p>
       <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="footer-cta">
         <span>Get CloudPrompt — Free</span>
       </a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ═══════════ FOOTER (centered) ═══════════ -->
   <footer class="py-12 border-t border-black/5">
     <div class="max-w-5xl mx-auto px-6">
-      <!-- Top section: Logo + grouped links, all centered -->
       <div class="flex flex-col items-center gap-8 mb-8">
-        <!-- Logo centered -->
         <div class="flex items-center space-x-2">
           <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
-
-        <!-- Two grouped link rows for clear hierarchy -->
         <div class="flex flex-col items-center gap-3 text-sm text-apple-gray">
-          <!-- Primary links -->
           <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <a class="hover:text-apple-dark transition-colors" href="#features">Features</a>
             <a class="hover:text-apple-dark transition-colors" href="#faq">FAQ</a>
@@ -713,7 +723,6 @@
             <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
             <a class="hover:text-apple-dark transition-colors" href="https://www.linkedin.com/company/cloudprompt-ai" rel="noopener" target="_blank">LinkedIn</a>
           </div>
-          <!-- Use Cases links — smaller, clearly grouped -->
           <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs">
             <a class="hover:text-apple-dark transition-colors" href="ai-prompt-manager-chrome-extension.html">AI Prompt Manager</a>
             <a class="hover:text-apple-dark transition-colors" href="chatgpt-prompt-saver.html">ChatGPT Prompt Saver</a>
@@ -721,7 +730,6 @@
           </div>
         </div>
       </div>
-
       <div class="pt-8 border-t border-black/5 text-center text-sm text-apple-gray">
         <p>© 2026 CloudPrompt. All rights reserved.</p>
       </div>
@@ -729,7 +737,7 @@
   </footer>
 
   <script>
-    // Mobile menu
+    // ── Mobile menu ──
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -740,7 +748,7 @@
       link.addEventListener('click', () => mobileMenu.classList.remove('open'));
     });
 
-    // FAQ accordion
+    // ── FAQ accordion ──
     document.querySelectorAll('.faq-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const item = button.closest('.faq-item');
@@ -750,7 +758,7 @@
       });
     });
 
-    // Fade in on scroll
+    // ── Fade in on scroll ──
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -760,6 +768,48 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── Live hero demo ──
+    const DEMO_PROMPTS = [
+      { t: "Expert CV writer (ATS)", c: "Act like a professional career strategist and expert CV writer with deep knowledge of recruitment psychology and HR screening...", cat: "ChatGPT", pin: true, tpl: false },
+      { t: "Email Template", c: "Hi [NAME], I hope this email finds you well. I wanted to reach out about [topic]. Looking forward to hearing from you!", cat: "Marketing", pin: true, tpl: true },
+      { t: "Social Media Marketing specialist", c: "Act like a Social Media Marketing specialist and write a blog post under 500 words explaining the benefits of using TikTok for raising brand awareness...", cat: "Marketing", pin: false, tpl: false },
+      { t: "Claude long-context summarizer", c: "Summarize the following document preserving all key figures, dates, and decisions. Structure: TL;DR first, then detailed sections...", cat: "Claude", pin: false, tpl: false },
+      { t: "Code review checklist", c: "Review this code for security issues, performance bottlenecks, naming clarity, and missing edge cases. Output findings as a table...", cat: "Coding", pin: false, tpl: false },
+      { t: "Blog Post", c: "Write a [word_count] word blog post about [topic] for [audience]. The tone should be [tone] and include: an introduction with hook...", cat: "Marketing", pin: false, tpl: true }
+    ];
+
+    let demoActiveCat = "all";
+    const demoList = document.getElementById("demoList");
+    const demoSearch = document.getElementById("demoSearch");
+
+    function renderDemo() {
+      const q = demoSearch.value.toLowerCase();
+      const items = DEMO_PROMPTS.filter(p =>
+        (demoActiveCat === "all" || p.cat === demoActiveCat) &&
+        (p.t.toLowerCase().includes(q) || p.c.toLowerCase().includes(q))
+      );
+      demoList.innerHTML = items.length ? items.map(p => `
+        <div class="demo-card ${p.pin ? 'pin-border' : ''} ${p.tpl && !p.pin ? 'tpl-border' : ''}">
+          <div class="flex items-center gap-2 mb-1">
+            ${p.pin ? '<span style="color:#F5B301;font-size:13px;">&#9733;</span>' : ''}
+            ${p.tpl ? '<span style="color:#8B5CF6;font-size:13px;">&#9889;</span>' : ''}
+            <span class="font-semibold text-sm text-white">${p.t}</span>
+            <span class="ml-auto text-xs rounded-full px-2 py-0.5" style="color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.07);">${p.cat}</span>
+          </div>
+          <p class="text-xs demo-clamp" style="color:rgba(255,255,255,0.5);line-height:1.5;">${p.c}</p>
+        </div>`).join("") :
+        '<p class="text-center text-sm py-10" style="color:rgba(255,255,255,0.4);">No prompts match — try "email" or "code"</p>';
+    }
+
+    demoSearch.addEventListener("input", renderDemo);
+    document.getElementById("demoPills").addEventListener("click", e => {
+      if (!e.target.dataset.cat) return;
+      demoActiveCat = e.target.dataset.cat;
+      document.querySelectorAll(".demo-pill").forEach(p => p.classList.toggle("active", p === e.target));
+      renderDemo();
+    });
+    renderDemo();
   </script>
 </body>
 </html>
