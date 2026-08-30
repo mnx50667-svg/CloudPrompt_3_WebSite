@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Disallow: /oauth-callback.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /oauth-callback.html
+
+User-agent: GPTBot
+Allow: /
+Disallow: /oauth-callback.html
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /oauth-callback.html
+
+User-agent: Claude-User
+Allow: /
+Disallow: /oauth-callback.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /oauth-callback.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /oauth-callback.html
+
+Sitemap: https://cloudprompt.app/sitemap.xml
