@@ -16,11 +16,20 @@
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app/help.html" property="og:url"/>
   <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="CloudPrompt Help — Get Started & FAQs" name="twitter:title"/>
+  <meta content="Learn how to save, organize, and access AI prompts anywhere with CloudPrompt. Right-click insert, context-aware prompts, sync, privacy, and troubleshooting." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
 
   <!-- Theme Color -->
   <meta content="#ffffff" name="theme-color"/>
@@ -57,56 +66,93 @@
     gtag('config', 'G-CN3771NXMX');
   </script>
 
-  <!-- Structured Data: FAQ -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "Does CloudPrompt work on ChatGPT, Claude, or Gemini?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, because it works on any website. Use the keyboard shortcut to copy a prompt and paste it anywhere, or right-click any text field and select Insert CloudPrompt to insert it directly."
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/help.html#webpage",
+        "url": "https://cloudprompt.app/help.html",
+        "name": "CloudPrompt Help — Get Started & FAQs",
+        "description": "Learn how to save, organize, and access AI prompts anywhere with CloudPrompt. Quick start, right-click insert, templates, context-aware prompts, sync, automatic backups, privacy details, and troubleshooting. Works on Chrome, Edge, and Comet.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://cloudprompt.app/#website",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        },
+        "about": {
+          "@type": "SoftwareApplication",
+          "@id": "https://cloudprompt.app/#software",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/help.html#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://cloudprompt.app/help.html#faq"
         }
       },
       {
-        "@type": "Question",
-        "name": "What's the difference between the keyboard shortcut and right-click insert?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Both let you access your prompts instantly. The keyboard shortcut (Ctrl+Shift+Y) opens a full search panel where you can browse and copy a prompt to your clipboard. Right-click insert places the prompt directly into the text field you clicked on, skipping the copy-paste step."
-        }
+        "@type": "FAQPage",
+        "@id": "https://cloudprompt.app/help.html#faq",
+        "url": "https://cloudprompt.app/help.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does CloudPrompt work on ChatGPT / Claude / Gemini?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — because it works on any website. Use the keyboard shortcut to copy a prompt and paste it anywhere, or right-click any text field and select Insert CloudPrompt to insert it directly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the difference between the keyboard shortcut and right-click insert?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Both let you access your prompts instantly. The keyboard shortcut (Ctrl+Shift+Y) opens a full search panel where you can browse and copy a prompt to your clipboard. Right-click insert goes one step further — it places the prompt directly into the text field you clicked on, skipping the copy-paste step entirely."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No separate CloudPrompt account. Google Drive connection is used for storage + sync."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is CloudPrompt free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Core features stay free forever."
+            }
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "Do I need an account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No separate CloudPrompt account is needed. A Google Drive connection is used for storage and sync."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is CloudPrompt free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Core features stay free forever."
-        }
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/help.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Help",
+            "item": "https://cloudprompt.app/help.html"
+          }
+        ]
       }
-    ]
-  }
-  </script>
-
-  <!-- Structured Data: Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cloudprompt.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Help", "item": "https://cloudprompt.app/help.html" }
     ]
   }
   </script>
@@ -154,11 +200,11 @@
 </head>
 <body class="bg-white text-apple-dark">
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="index.html">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" class="h-7 w-7 flex-shrink-0"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <div class="flex items-center space-x-6 text-sm">
@@ -168,6 +214,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section class="pt-28 pb-16 px-6 bg-apple-gray-light">
@@ -630,11 +678,11 @@
       <div class="space-y-3">
         <!-- Accordion Item 1 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-1" aria-expanded="false" aria-controls="accordion-panel-1">
             <span class="font-medium">Keyboard shortcut doesn't open CloudPrompt</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-1" aria-labelledby="accordion-button-1" aria-hidden="true">
             <div class="pb-4">
               <ol class="space-y-2 list-decimal list-inside">
                 <li>Open your browser → <strong>Extensions</strong> → <strong>Keyboard shortcuts</strong></li>
@@ -647,11 +695,11 @@
 
         <!-- Accordion Item 2 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-2" aria-expanded="false" aria-controls="accordion-panel-2">
             <span class="font-medium">CloudPrompt won't work on a specific page</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-2" aria-labelledby="accordion-button-2" aria-hidden="true">
             <div class="pb-4">
               <p class="mb-2">Some pages don't allow extensions:</p>
               <ul class="space-y-1 list-disc list-inside mb-2">
@@ -666,11 +714,11 @@
 
         <!-- Accordion Item 3 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-3" aria-expanded="false" aria-controls="accordion-panel-3">
             <span class="font-medium">"Connect Google Drive" fails on Chrome</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-3" aria-labelledby="accordion-button-3" aria-hidden="true">
             <div class="pb-4">
               <ul class="space-y-2 list-disc list-inside">
                 <li>Make sure you're signed into the <strong>right Google account</strong> in Chrome</li>
@@ -683,11 +731,11 @@
 
         <!-- Accordion Item — Edge/Comet OAuth troubleshooting -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-4" aria-expanded="false" aria-controls="accordion-panel-4">
             <span class="font-medium">"Connect Google Drive" fails on Edge or Comet</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-4" aria-labelledby="accordion-button-4" aria-hidden="true">
             <div class="pb-4">
               <p class="mb-3">On Edge and Comet, sign-in works differently — CloudPrompt opens a Google sign-in tab instead of a popup.</p>
               <ol class="space-y-2 list-decimal list-inside mb-3">
@@ -707,11 +755,11 @@
 
         <!-- Right-click insert troubleshooting — NEW in v1.2.0 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-5" aria-expanded="false" aria-controls="accordion-panel-5">
             <span class="font-medium">"Insert CloudPrompt" doesn't appear in the right-click menu</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-5" aria-labelledby="accordion-button-5" aria-hidden="true">
             <div class="pb-4">
               <p class="mb-3">The right-click insert option appears only on editable text fields (input boxes, textareas, rich text editors). It won't appear on images, links, or read-only text.</p>
               <ul class="space-y-2 list-disc list-inside">
@@ -725,11 +773,11 @@
 
         <!-- Accordion Item 4 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-6" aria-expanded="false" aria-controls="accordion-panel-6">
             <span class="font-medium">My prompts aren't showing on a new computer</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-6" aria-labelledby="accordion-button-6" aria-hidden="true">
             <div class="pb-4">
               <ol class="space-y-2 list-decimal list-inside">
                 <li>Confirm you connected the <strong>same Google Drive account</strong></li>
@@ -742,11 +790,11 @@
 
         <!-- Accordion Item 5 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-7" aria-expanded="false" aria-controls="accordion-panel-7">
             <span class="font-medium">Import/Export questions</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-7" aria-labelledby="accordion-button-7" aria-hidden="true">
             <div class="pb-4">
               <ul class="space-y-2 list-disc list-inside">
                 <li>Go to <strong>Settings → Backup & Restore</strong></li>
@@ -770,44 +818,44 @@
       <div class="space-y-3">
         <!-- FAQ Item 1 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-8" aria-expanded="false" aria-controls="accordion-panel-8">
             <span class="font-medium">Does CloudPrompt work on ChatGPT / Claude / Gemini?</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-8" aria-labelledby="accordion-button-8" aria-hidden="true">
             <p class="pb-4">Yes — because it works on <strong>any website</strong>. Use the keyboard shortcut to copy a prompt and paste it anywhere, or right-click any text field and select <strong>Insert CloudPrompt</strong> to insert it directly.</p>
           </div>
         </div>
 
         <!-- FAQ Item — Right-click insert -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-9" aria-expanded="false" aria-controls="accordion-panel-9">
             <span class="font-medium">What's the difference between the keyboard shortcut and right-click insert?</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-9" aria-labelledby="accordion-button-9" aria-hidden="true">
             <p class="pb-4">Both let you access your prompts instantly. The <strong>keyboard shortcut</strong> (Ctrl+Shift+Y) opens a full search panel where you can browse and copy a prompt to your clipboard. <strong>Right-click insert</strong> goes one step further — it places the prompt directly into the text field you clicked on, skipping the copy-paste step entirely.</p>
           </div>
         </div>
 
         <!-- FAQ Item 2 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-10" aria-expanded="false" aria-controls="accordion-panel-10">
             <span class="font-medium">Do I need an account?</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-10" aria-labelledby="accordion-button-10" aria-hidden="true">
             <p class="pb-4">No separate CloudPrompt account. Google Drive connection is used for storage + sync.</p>
           </div>
         </div>
 
         <!-- FAQ Item 3 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-11" aria-expanded="false" aria-controls="accordion-panel-11">
             <span class="font-medium">Is CloudPrompt free?</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl">+</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content px-6 text-apple-gray">
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-11" aria-labelledby="accordion-button-11" aria-hidden="true">
             <p class="pb-4">Yes. Core features stay free forever.</p>
           </div>
         </div>
@@ -836,12 +884,14 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="py-12 border-t border-black/5">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center space-x-2">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" class="h-6 w-6 flex-shrink-0"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
@@ -862,17 +912,26 @@
 
   <script>
     // Accordion functionality
+    function setAccordionState(item, expanded) {
+      const button = item.querySelector('.accordion-toggle');
+      const panel = item.querySelector('.accordion-content');
+
+      item.classList.toggle('active', expanded);
+      button.setAttribute('aria-expanded', String(expanded));
+      panel.setAttribute('aria-hidden', String(!expanded));
+    }
+
     document.querySelectorAll('.accordion-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const item = button.closest('.accordion-item');
         const wasActive = item.classList.contains('active');
-        
+
         // Close all accordions in the same section
         const section = item.closest('section');
-        section.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
-        
+        section.querySelectorAll('.accordion-item').forEach(i => setAccordionState(i, false));
+
         // Open clicked one if it wasn't active
-        if (!wasActive) item.classList.add('active');
+        if (!wasActive) setAccordionState(item, true);
       });
     });
 
