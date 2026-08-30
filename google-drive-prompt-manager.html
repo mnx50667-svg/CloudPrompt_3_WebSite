@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Google Drive Prompt Manager — Your Prompts, Your Drive, Your Privacy | CloudPrompt</title>
-  <meta content="The only prompt manager that stores everything in your own Google Drive. No servers, no accounts, no data collection. Free Chrome extension." name="description"/>
+  <meta content="Store and manage AI prompts in your own Google Drive with CloudPrompt. Free Chrome extension with no separate CloudPrompt account and no CloudPrompt-hosted prompt database." name="description"/>
   <meta content="Google Drive prompt manager, private prompt manager, prompt storage Google Drive, private AI prompts, prompt manager no servers" name="keywords"/>
   <meta content="CloudPrompt" name="author"/>
   <meta content="index, follow" name="robots"/>
@@ -12,15 +12,24 @@
 
   <!-- Open Graph -->
   <meta content="Google Drive Prompt Manager — Your Prompts, Your Drive, Your Privacy | CloudPrompt" property="og:title"/>
-  <meta content="The only prompt manager that stores everything in your own Google Drive. No servers, no accounts, no data collection. Free Chrome extension." property="og:description"/>
+  <meta content="Store and manage AI prompts in your own Google Drive with CloudPrompt. Free Chrome extension with no separate CloudPrompt account and no CloudPrompt-hosted prompt database." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app/google-drive-prompt-manager.html" property="og:url"/>
   <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Google Drive Prompt Manager — Your Prompts, Your Drive, Your Privacy | CloudPrompt" name="twitter:title"/>
+  <meta content="Store and manage AI prompts in your own Google Drive with CloudPrompt. Free Chrome extension with no separate CloudPrompt account." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
 
   <!-- Theme Color -->
   <meta content="#ffffff" name="theme-color"/>
@@ -55,6 +64,133 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-CN3771NXMX');
+  </script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/google-drive-prompt-manager.html#webpage",
+        "url": "https://cloudprompt.app/google-drive-prompt-manager.html",
+        "name": "Google Drive Prompt Manager — Your Prompts, Your Drive, Your Privacy | CloudPrompt",
+        "description": "Store and manage AI prompts in your own Google Drive with CloudPrompt. Free Chrome extension with no separate CloudPrompt account and no CloudPrompt-hosted prompt database.",
+        "isPartOf": {
+          "@id": "https://cloudprompt.app/#website"
+        },
+        "about": {
+          "@id": "https://cloudprompt.app/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/google-drive-prompt-manager.html#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://cloudprompt.app/google-drive-prompt-manager.html#faq"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/google-drive-prompt-manager.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Google Drive Prompt Manager",
+            "item": "https://cloudprompt.app/google-drive-prompt-manager.html"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://cloudprompt.app/#software",
+        "name": "CloudPrompt",
+        "url": "https://cloudprompt.app/",
+        "applicationCategory": "ProductivityApplication",
+        "applicationSubCategory": "AI Prompt Manager",
+        "operatingSystem": "Chrome, Edge, Comet, Brave, Opera",
+        "description": "CloudPrompt is a browser extension for saving, organizing, finding, and reusing AI prompts. Prompt data is stored in the user's Google Drive.",
+        "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Store prompt data in the user's Google Drive",
+          "Use the Google Drive drive.file scope",
+          "Save and insert prompts with the browser context menu",
+          "Search prompts with a keyboard shortcut",
+          "Organize prompts with folders and tags",
+          "Create reusable prompt templates",
+          "Context-aware prompt sorting",
+          "JSON and CSV export",
+          "Local caching for offline access"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://cloudprompt.app/#organization",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cloudprompt.app/google-drive-prompt-manager.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I see my prompts directly in Google Drive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The page states that CloudPrompt stores prompts in a CloudPrompt folder in Google Drive, including a human-readable prompts.json file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if I uninstall CloudPrompt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The page states that uninstalling the extension removes the local browser cache but leaves prompts.json in Google Drive, so the library can be restored by reinstalling CloudPrompt and reconnecting the same Google account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can CloudPrompt access my other Google Drive files?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CloudPrompt states that it uses the Google Drive drive.file OAuth scope, which limits access to files the application creates or that the user explicitly opens with the application."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data encrypted?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CloudPrompt relies on Google Drive's transport and storage security for the prompt file and does not add a separate application-level encryption layer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if Google Drive goes down?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The page states that CloudPrompt keeps a local cache for temporary offline access and syncs with Google Drive when connectivity returns. Users can also export their library as JSON or CSV."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 
   <style>
@@ -101,11 +237,11 @@
 <body class="bg-white text-apple-dark">
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="index.html">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <div class="flex items-center space-x-6 text-sm">
@@ -115,6 +251,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section class="pt-28 pb-16 px-6 bg-apple-gray-light">
@@ -446,7 +584,7 @@
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-20 px-6 bg-apple-gray-light">
+  <section class="py-20 px-6 bg-apple-gray-light" id="faq">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-12 fade-in">
         <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Questions?</h2>
@@ -454,51 +592,51 @@
 
       <div class="space-y-3">
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-1" aria-expanded="false" aria-controls="faq-answer-1">
             <span class="font-medium">Can I see my prompts directly in Google Drive?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" aria-hidden="true">
             <p class="pb-4">Yes. Open Google Drive, navigate to the <strong>CloudPrompt</strong> folder, and open <strong>prompts.json</strong>. It's a plain JSON file — readable in any text editor or directly in Drive's preview pane. Every prompt, folder, and tag you've created is right there. You can even edit the file directly if you want (though using the extension is much easier).</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-2" aria-expanded="false" aria-controls="faq-answer-2">
             <span class="font-medium">What happens if I uninstall CloudPrompt?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2" aria-hidden="true">
             <p class="pb-4">Uninstalling the extension clears the local cache from your browser. Your <strong>prompts.json</strong> file remains in your Google Drive — your data isn't lost. Reinstall CloudPrompt later (or on another device) and reconnect the same Google account, and your full library reappears. To delete everything permanently, just remove the CloudPrompt folder from Drive.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-3" aria-expanded="false" aria-controls="faq-answer-3">
             <span class="font-medium">Can you access my other Google Drive files?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" aria-hidden="true">
             <p class="pb-4">No, and not because we promise we won't — because Google won't let us. CloudPrompt uses the <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> OAuth scope, which only grants access to files the extension itself creates. Your other documents, photos, and folders are invisible at the API level. Even if we wanted to access them, we couldn't.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-4" aria-expanded="false" aria-controls="faq-answer-4">
             <span class="font-medium">Is my data encrypted?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4" aria-hidden="true">
             <p class="pb-4">Yes, with the same encryption Google Drive uses for everything else: TLS in transit and AES-256 at rest. Your prompts.json file inherits Google's enterprise-grade Drive encryption. CloudPrompt itself doesn't add a separate encryption layer because the OAuth-protected, drive.file-scoped storage is already secure — and adding our own encryption would mean storing keys somewhere, which is exactly the architecture we're avoiding.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-5" aria-expanded="false" aria-controls="faq-answer-5">
             <span class="font-medium">What if Google Drive goes down?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-5" role="region" aria-labelledby="faq-toggle-5" aria-hidden="true">
             <p class="pb-4">CloudPrompt caches your prompts locally, so you can keep accessing your library even if Drive is briefly unavailable. When Drive comes back, your changes sync automatically. For the longer-tail scenario — Google Drive itself disappearing — you can export your full library to JSON or CSV at any time from <strong>Settings → Backup &amp; Restore</strong>. Your data is portable by design.</p>
           </div>
         </div>
@@ -526,12 +664,14 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="py-12 border-t border-black/5">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center space-x-2">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
@@ -558,8 +698,20 @@
       button.addEventListener('click', () => {
         const item = button.closest('.faq-item');
         const wasActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        if (!wasActive) item.classList.add('active');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          const toggle = i.querySelector('.faq-toggle');
+          const answer = i.querySelector('.faq-answer');
+          toggle.setAttribute('aria-expanded', 'false');
+          answer.setAttribute('aria-hidden', 'true');
+        });
+
+        if (!wasActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+        }
       });
     });
 
