@@ -14,9 +14,10 @@
   <meta content="CloudPrompt - Your AI Prompts, Organized" property="og:title"/>
   <meta content="Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
-  <meta content="https://cloudprompt.app" property="og:url"/>
+  <meta content="https://cloudprompt.app/" property="og:url"/>
   <meta content="website" property="og:type"/>
   <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
 
   <!-- Twitter Card -->
   <meta content="summary_large_image" name="twitter:card"/>
@@ -262,38 +263,172 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "CloudPrompt",
-    "description": "Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync. Works on Chrome, Edge, and Comet.",
-    "url": "https://cloudprompt.app",
-    "applicationCategory": "ProductivityApplication",
-    "operatingSystem": "Chrome, Edge, Comet",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "ratingCount": "20"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "CloudPrompt",
-      "url": "https://cloudprompt.app",
-      "email": "support@cloudprompt.app"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cloudprompt.app/#organization",
+        "name": "CloudPrompt",
+        "url": "https://cloudprompt.app/",
+        "email": "support@cloudprompt.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cloudprompt.app/images/logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/cloudprompt-ai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cloudprompt.app/#website",
+        "url": "https://cloudprompt.app/",
+        "name": "CloudPrompt",
+        "description": "Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync.",
+        "publisher": {
+          "@id": "https://cloudprompt.app/#organization"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/#webpage",
+        "url": "https://cloudprompt.app/",
+        "name": "CloudPrompt - Your AI Prompts, Organized | Free Browser Extension",
+        "description": "Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync. Works with ChatGPT, Claude, Gemini, and more. Privacy-first. Chrome, Edge, and Comet.",
+        "isPartOf": {
+          "@id": "https://cloudprompt.app/#website"
+        },
+        "about": {
+          "@id": "https://cloudprompt.app/#software"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://cloudprompt.app/#software",
+        "name": "CloudPrompt",
+        "description": "Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync. Works with ChatGPT, Claude, Gemini, and more.",
+        "url": "https://cloudprompt.app/",
+        "applicationCategory": "ProductivityApplication",
+        "applicationSubCategory": "AI prompt management browser extension",
+        "isAccessibleForFree": true,
+        "softwareRequirements": "Requires a Chromium-based browser with Chrome extension support, including Google Chrome, Microsoft Edge, and Comet.",
+        "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@id": "https://cloudprompt.app/#organization"
+        },
+        "publisher": {
+          "@id": "https://cloudprompt.app/#organization"
+        },
+        "featureList": [
+          "Right-click prompt saving",
+          "Keyboard shortcut access with Ctrl+Shift+Y",
+          "Google Drive sync",
+          "Folders and tags",
+          "Prompt templates with variables",
+          "JSON and CSV export",
+          "Context-aware prompt suggestions",
+          "Chrome, Edge, and Comet support"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cloudprompt.app/#faq",
+        "url": "https://cloudprompt.app/#faq",
+        "isPartOf": {
+          "@id": "https://cloudprompt.app/#website"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is CloudPrompt really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% free with no hidden limits. We may add optional premium features in the future, but the core functionality will always be free."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does right-click save work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Highlight any text on any webpage, right-click, and choose Save to CloudPrompt. A save dialog appears with the title, content preview, and an auto-detected category — click save and it's in your library. No other prompt manager offers this."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is my data stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your prompts are stored in your personal Google Drive, in a folder called 'CloudPrompt'. We never see or access your data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! CloudPrompt caches your prompts locally. Access them offline and changes sync when you're back online."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What permissions does it need?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save. We cannot access your other Drive files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use it with Claude, Gemini, or other AI tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely! CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to open your library, click a prompt to copy it, and paste it into any AI tool."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does \"context-aware\" mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first — pinned prompts, then platform matches, then everything else. Toggle it in Settings → Smart Features."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work on Edge or Comet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! CloudPrompt fully supports Microsoft Edge and Comet by Perplexity, in addition to Google Chrome. Install it from the Chrome Web Store — both browsers support Chrome extensions. Sign-in opens a Google tab that closes automatically when done. If you run into trouble, check that pop-ups are not blocked and try again."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I export my data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Go to Settings → Backup & Restore → Export. You can download all your prompts as JSON or CSV anytime."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
 <body class="bg-white text-apple-dark font-sf">
   <!-- Navigation (light — consistent with help/privacy/terms/whats-new) -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" id="navbar">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" id="navbar" aria-label="Primary navigation">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="./">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" class="h-7 w-7 flex-shrink-0"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <div class="hidden md:flex items-center space-x-8 text-sm">
@@ -304,7 +439,7 @@
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="help.html">Help</a>
           <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="nav-cta">Get CloudPrompt</a>
         </div>
-        <button class="md:hidden p-2" id="mobile-menu-btn" aria-label="Open menu">
+        <button type="button" class="md:hidden p-2" id="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
           </svg>
@@ -314,9 +449,9 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 md:hidden" id="mobile-menu">
+  <nav class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 md:hidden" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true" inert>
     <div class="p-6">
-      <button class="absolute top-4 right-4 p-2" id="mobile-menu-close" aria-label="Close menu">
+      <button type="button" class="absolute top-4 right-4 p-2" id="mobile-menu-close" aria-label="Close menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
         </svg>
@@ -330,8 +465,9 @@
         <a class="bg-apple-blue text-white px-4 py-3 rounded-full text-center font-medium" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt — Free</a>
       </div>
     </div>
-  </div>
+  </nav>
 
+  <main id="main-content">
   <!-- ═══════════ DARK HERO — live demo + keystroke + spotlight ═══════════ -->
   <section class="hero-dark pt-28 pb-24 px-6 relative overflow-hidden">
     <div class="hero-glow"></div>
@@ -361,14 +497,14 @@
           <img src="images/logo.png" alt="" class="w-6 h-6 flex-shrink-0"/>
           <input id="demoSearch" type="text" placeholder="Search your prompts..." class="demo-search" aria-label="Demo prompt search"/>
         </div>
-        <div class="px-4 pt-3 flex gap-2 flex-wrap" id="demoPills">
-          <span class="demo-pill active" data-cat="all">All</span>
-          <span class="demo-pill" data-cat="ChatGPT">ChatGPT</span>
-          <span class="demo-pill" data-cat="Claude">Claude</span>
-          <span class="demo-pill" data-cat="Marketing">Marketing</span>
-          <span class="demo-pill" data-cat="Coding">Coding</span>
+        <div class="px-4 pt-3 flex gap-2 flex-wrap" id="demoPills" role="group" aria-label="Filter demo prompts by category">
+          <button type="button" class="demo-pill active" data-cat="all" aria-pressed="true">All</button>
+          <button type="button" class="demo-pill" data-cat="ChatGPT" aria-pressed="false">ChatGPT</button>
+          <button type="button" class="demo-pill" data-cat="Claude" aria-pressed="false">Claude</button>
+          <button type="button" class="demo-pill" data-cat="Marketing" aria-pressed="false">Marketing</button>
+          <button type="button" class="demo-pill" data-cat="Coding" aria-pressed="false">Coding</button>
         </div>
-        <div class="p-4 space-y-2.5" id="demoList" style="min-height: 290px;"></div>
+        <div class="p-4 space-y-2.5" id="demoList" style="min-height: 290px;" aria-live="polite" aria-label="Demo prompt results"></div>
         <div class="px-4 py-3 border-t border-white/5 text-center text-xs text-white/40">
           Demo data — install to build your own library, synced to your Google Drive
         </div>
@@ -552,7 +688,7 @@
   </section>
 
   <!-- ═══════════ COMPATIBILITY ═══════════ -->
-  <section class="py-16 border-t border-black/5 bg-apple-gray-light">
+  <section class="py-16 border-t border-black/5 bg-apple-gray-light" aria-label="Compatibility">
     <div class="max-w-4xl mx-auto px-6 text-center fade-in">
       <p class="text-apple-gray mb-6">Works with all your favorite AI tools</p>
       <div class="flex flex-wrap justify-center items-center gap-8 text-apple-gray mb-8">
@@ -609,83 +745,83 @@
       </div>
       <div class="space-y-3">
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-1" aria-expanded="false" aria-controls="faq-answer-1">
             <span class="font-medium">Is CloudPrompt really free?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" aria-hidden="true">
             <p class="pb-4">Yes, 100% free with no hidden limits. We may add optional premium features in the future, but the core functionality will always be free.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-2" aria-expanded="false" aria-controls="faq-answer-2">
             <span class="font-medium">How does right-click save work?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-2" aria-hidden="true">
             <p class="pb-4">Highlight any text on any webpage, right-click, and choose <strong>Save to CloudPrompt</strong>. A save dialog appears with the title, content preview, and an auto-detected category — click save and it's in your library. No other prompt manager offers this.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-3" aria-expanded="false" aria-controls="faq-answer-3">
             <span class="font-medium">Where is my data stored?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" aria-hidden="true">
             <p class="pb-4">Your prompts are stored in your personal Google Drive, in a folder called 'CloudPrompt'. We never see or access your data.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-4" aria-expanded="false" aria-controls="faq-answer-4">
             <span class="font-medium">Does it work offline?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-4" aria-hidden="true">
             <p class="pb-4">Yes! CloudPrompt caches your prompts locally. Access them offline and changes sync when you're back online.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-5" aria-expanded="false" aria-controls="faq-answer-5">
             <span class="font-medium">What permissions does it need?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-5" aria-hidden="true">
             <p class="pb-4">Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save. We cannot access your other Drive files.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-6" aria-expanded="false" aria-controls="faq-answer-6">
             <span class="font-medium">Can I use it with Claude, Gemini, or other AI tools?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-6" aria-hidden="true">
             <p class="pb-4">Absolutely! CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to open your library, click a prompt to copy it, and paste it into any AI tool.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-7" aria-expanded="false" aria-controls="faq-answer-7">
             <span class="font-medium">What does "context-aware" mean?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-7" aria-hidden="true">
             <p class="pb-4">When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first — pinned prompts, then platform matches, then everything else. Toggle it in Settings → Smart Features.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-8" aria-expanded="false" aria-controls="faq-answer-8">
             <span class="font-medium">Does it work on Edge or Comet?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-8" aria-hidden="true">
             <p class="pb-4">Yes! CloudPrompt fully supports Microsoft Edge and Comet by Perplexity, in addition to Google Chrome. Install it from the Chrome Web Store — both browsers support Chrome extensions. Sign-in opens a Google tab that closes automatically when done. If you run into trouble, check that pop-ups are not blocked and try again.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-9" aria-expanded="false" aria-controls="faq-answer-9">
             <span class="font-medium">How do I export my data?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-9" aria-hidden="true">
             <p class="pb-4">Go to Settings → Backup &amp; Restore → Export. You can download all your prompts as JSON or CSV anytime.</p>
           </div>
         </div>
@@ -703,13 +839,14 @@
       </a>
     </div>
   </section>
+  </main>
 
   <!-- ═══════════ FOOTER (centered) ═══════════ -->
   <footer class="py-12 border-t border-black/5">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col items-center gap-8 mb-8">
         <div class="flex items-center space-x-2">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" class="h-6 w-6 flex-shrink-0"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
         <div class="flex flex-col items-center gap-3 text-sm text-apple-gray">
@@ -742,19 +879,55 @@
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
-    mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    function setMobileMenu(open) {
+      mobileMenu.classList.toggle('open', open);
+      mobileMenuBtn.setAttribute('aria-expanded', String(open));
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+
+      if (open) {
+        mobileMenu.removeAttribute('inert');
+      } else {
+        mobileMenu.setAttribute('inert', '');
+      }
+    }
+
+    mobileMenuBtn.addEventListener('click', () => setMobileMenu(true));
+    mobileMenuClose.addEventListener('click', () => {
+      setMobileMenu(false);
+      mobileMenuBtn.focus();
+    });
+
     mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+      link.addEventListener('click', () => setMobileMenu(false));
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        setMobileMenu(false);
+        mobileMenuBtn.focus();
+      }
     });
 
     // ── FAQ accordion ──
+    function setFaqState(item, expanded) {
+      const button = item.querySelector('.faq-toggle');
+      const answer = item.querySelector('.faq-answer');
+
+      item.classList.toggle('active', expanded);
+      button.setAttribute('aria-expanded', String(expanded));
+      answer.setAttribute('aria-hidden', String(!expanded));
+    }
+
     document.querySelectorAll('.faq-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const item = button.closest('.faq-item');
         const wasActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        if (!wasActive) item.classList.add('active');
+
+        document.querySelectorAll('.faq-item').forEach(faqItem => setFaqState(faqItem, false));
+
+        if (!wasActive) {
+          setFaqState(item, true);
+        }
       });
     });
 
@@ -804,9 +977,15 @@
 
     demoSearch.addEventListener("input", renderDemo);
     document.getElementById("demoPills").addEventListener("click", e => {
-      if (!e.target.dataset.cat) return;
-      demoActiveCat = e.target.dataset.cat;
-      document.querySelectorAll(".demo-pill").forEach(p => p.classList.toggle("active", p === e.target));
+      const pill = e.target.closest(".demo-pill");
+      if (!pill || !e.currentTarget.contains(pill)) return;
+
+      demoActiveCat = pill.dataset.cat;
+      document.querySelectorAll(".demo-pill").forEach(p => {
+        const active = p === pill;
+        p.classList.toggle("active", active);
+        p.setAttribute("aria-pressed", String(active));
+      });
       renderDemo();
     });
     renderDemo();
