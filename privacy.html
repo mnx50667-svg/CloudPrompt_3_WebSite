@@ -4,20 +4,30 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Privacy Policy - CloudPrompt</title>
-  <meta content="CloudPrompt Privacy Policy - Learn how we protect your data. Your prompts stay in YOUR Google Drive. We never see your data." name="description"/>
+  <meta content="CloudPrompt Privacy Policy explaining how prompt content, Google Drive storage, local browser storage, OAuth, website analytics, retention, permissions, and privacy rights are handled." name="description"/>
   <meta content="index, follow" name="robots"/>
   <link rel="canonical" href="https://cloudprompt.app/privacy.html"/>
   
   <!-- Open Graph -->
   <meta property="og:title" content="Privacy Policy - CloudPrompt"/>
-  <meta property="og:description" content="CloudPrompt Privacy Policy - Your prompts stay in YOUR Google Drive. We never see your data."/>
+  <meta property="og:description" content="How CloudPrompt handles prompt content, Google Drive storage, local browser storage, OAuth, website analytics, retention, permissions, and privacy rights."/>
   <meta property="og:url" content="https://cloudprompt.app/privacy.html"/>
   <meta property="og:type" content="website"/>
+  <meta property="og:image" content="https://cloudprompt.app/images/og-image.png"/>
+  <meta property="og:site_name" content="CloudPrompt"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Privacy Policy - CloudPrompt"/>
+  <meta name="twitter:description" content="How CloudPrompt handles prompt content, Google Drive storage, local browser storage, OAuth, website analytics, retention, permissions, and privacy rights."/>
+  <meta name="twitter:image" content="https://cloudprompt.app/images/twitter-card.png"/>
   
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
   
   <!-- Theme Color -->
   <meta name="theme-color" content="#ffffff"/>
@@ -54,41 +64,73 @@
     gtag('config', 'G-CN3771NXMX');
   </script>
 
-  <!-- Structured Data: Privacy Policy page -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "PrivacyPolicy",
-    "name": "CloudPrompt Privacy Policy",
-    "url": "https://cloudprompt.app/privacy.html",
-    "inLanguage": "en",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "CloudPrompt",
-      "url": "https://cloudprompt.app/"
-    },
-    "about": {
-      "@type": "SoftwareApplication",
-      "name": "CloudPrompt",
-      "applicationCategory": "BrowserApplication",
-      "operatingSystem": "Windows, macOS, Linux, ChromeOS"
-    },
-    "description": "How CloudPrompt handles your data: your prompts and their automatic backups stay in your own Google Drive, and CloudPrompt never sees or stores your data."
-  }
-  </script>
-
-  <!-- Structured Data: Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cloudprompt.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://cloudprompt.app/privacy.html" }
+    "@graph": [
+      {
+        "@type": "PrivacyPolicy",
+        "@id": "https://cloudprompt.app/privacy.html#policy",
+        "name": "CloudPrompt Privacy Policy",
+        "url": "https://cloudprompt.app/privacy.html",
+        "description": "CloudPrompt Privacy Policy explaining how prompt content, Google Drive storage, local browser storage, OAuth, website analytics, retention, permissions, and privacy rights are handled.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://cloudprompt.app/#website"
+        },
+        "about": {
+          "@id": "https://cloudprompt.app/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/privacy.html#breadcrumb"
+        },
+        "publisher": {
+          "@id": "https://cloudprompt.app/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/privacy.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Privacy Policy",
+            "item": "https://cloudprompt.app/privacy.html"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://cloudprompt.app/#software",
+        "name": "CloudPrompt",
+        "url": "https://cloudprompt.app/",
+        "applicationCategory": "ProductivityApplication",
+        "applicationSubCategory": "AI Prompt Manager",
+        "description": "CloudPrompt is a browser extension for saving, organizing, finding, and reusing AI prompts, with prompt content stored in the user's Google Drive.",
+        "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
+        "publisher": {
+          "@id": "https://cloudprompt.app/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://cloudprompt.app/#organization",
+        "name": "CloudPrompt",
+        "url": "https://cloudprompt.app/",
+        "email": "support@cloudprompt.app"
+      }
     ]
   }
   </script>
-  
+
   <style>
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
@@ -98,11 +140,11 @@
 </head>
 <body class="bg-white text-apple-dark">
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
     <div class="max-w-3xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="index.html">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <a class="text-apple-blue text-sm hover:underline" href="index.html">← Back to Home</a>
@@ -111,12 +153,12 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="pt-24 pb-16 px-6">
+  <main class="pt-24 pb-16 px-6" id="main-content">
     <div class="max-w-2xl mx-auto">
       <header class="mb-12">
         <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-3">Privacy Policy</h1>
-        <p class="text-apple-gray">Last Updated: June 2026</p>
-        <p class="text-apple-gray">Effective Date: January 2026</p>
+        <p class="text-apple-gray">Last Updated: <time datetime="2026-06">June 2026</time></p>
+        <p class="text-apple-gray">Effective Date: <time datetime="2026-01">January 2026</time></p>
       </header>
 
       <!-- Core Principle Banner -->
@@ -603,12 +645,13 @@
           <h2 class="text-2xl font-semibold text-apple-dark mb-4">13. Data Processing Summary</h2>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
+              <caption class="sr-only">CloudPrompt data processing summary by data type, storage location, access, and retention</caption>
               <thead>
                 <tr class="bg-apple-gray-light">
-                  <th class="text-left p-3 font-semibold text-apple-dark border-b">Data Type</th>
-                  <th class="text-left p-3 font-semibold text-apple-dark border-b">Storage Location</th>
-                  <th class="text-left p-3 font-semibold text-apple-dark border-b">Who Can Access</th>
-                  <th class="text-left p-3 font-semibold text-apple-dark border-b">Retention</th>
+                  <th scope="col" class="text-left p-3 font-semibold text-apple-dark border-b">Data Type</th>
+                  <th scope="col" class="text-left p-3 font-semibold text-apple-dark border-b">Storage Location</th>
+                  <th scope="col" class="text-left p-3 font-semibold text-apple-dark border-b">Who Can Access</th>
+                  <th scope="col" class="text-left p-3 font-semibold text-apple-dark border-b">Retention</th>
                 </tr>
               </thead>
               <tbody>
