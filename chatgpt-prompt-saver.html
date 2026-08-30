@@ -16,11 +16,20 @@
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app/chatgpt-prompt-saver.html" property="og:url"/>
   <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="ChatGPT Prompt Saver Extension — Save &amp; Reuse Your Best Prompts | CloudPrompt" name="twitter:title"/>
+  <meta content="Save your best ChatGPT prompts and reuse them instantly. Free Chrome extension with Google Drive sync." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
 
   <!-- Theme Color -->
   <meta content="#ffffff" name="theme-color"/>
@@ -55,6 +64,131 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-CN3771NXMX');
+  </script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/chatgpt-prompt-saver.html#webpage",
+        "url": "https://cloudprompt.app/chatgpt-prompt-saver.html",
+        "name": "ChatGPT Prompt Saver Extension — Save & Reuse Your Best Prompts | CloudPrompt",
+        "description": "Save your best ChatGPT prompts and reuse them instantly. Free Chrome extension that organizes prompts by folder and tag, with Google Drive sync.",
+        "isPartOf": {
+          "@id": "https://cloudprompt.app/#website"
+        },
+        "about": {
+          "@id": "https://cloudprompt.app/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/chatgpt-prompt-saver.html#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://cloudprompt.app/chatgpt-prompt-saver.html#faq"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/chatgpt-prompt-saver.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "ChatGPT Prompt Saver",
+            "item": "https://cloudprompt.app/chatgpt-prompt-saver.html"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://cloudprompt.app/#software",
+        "name": "CloudPrompt",
+        "url": "https://cloudprompt.app/",
+        "applicationCategory": "ProductivityApplication",
+        "applicationSubCategory": "AI Prompt Manager",
+        "operatingSystem": "Chrome, Edge, Comet, Brave, Opera",
+        "description": "CloudPrompt is a browser extension for saving, organizing, finding, and reusing AI prompts. Prompt data is stored in the user's Google Drive.",
+        "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Save prompts from highlighted text with the browser context menu",
+          "Insert saved prompts into text fields with the browser context menu",
+          "Search prompts with a keyboard shortcut",
+          "Organize prompts with folders and tags",
+          "Context-aware prompt sorting",
+          "Google Drive synchronization",
+          "JSON and CSV export"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://cloudprompt.app/#organization",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cloudprompt.app/chatgpt-prompt-saver.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I save prompts directly from ChatGPT?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can highlight text on ChatGPT, right-click it, and select Save to CloudPrompt, or open CloudPrompt with the keyboard shortcut and add a prompt manually."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CloudPrompt work across ChatGPT plans?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CloudPrompt works at the browser level on chatgpt.com and does not rely on the ChatGPT API or account system."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will my prompts sync across devices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Prompts are stored in your Google Drive, so devices using CloudPrompt with the same connected Google account can access the same library."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is CloudPrompt free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The page states that CloudPrompt's core prompt-management functionality is free and that optional paid features may be added later."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is CloudPrompt tied to a specific ChatGPT model?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. CloudPrompt works at the browser-page level rather than integrating with a specific OpenAI model API."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 
   <style>
@@ -101,11 +235,11 @@
 <body class="bg-white text-apple-dark">
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="index.html">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <div class="flex items-center space-x-6 text-sm">
@@ -115,6 +249,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section class="pt-28 pb-16 px-6 bg-apple-gray-light">
@@ -439,7 +575,7 @@
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-20 px-6 bg-apple-gray-light">
+  <section class="py-20 px-6 bg-apple-gray-light" id="faq">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-12 fade-in">
         <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Questions?</h2>
@@ -447,51 +583,51 @@
 
       <div class="space-y-3">
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-1" aria-expanded="false" aria-controls="faq-answer-1">
             <span class="font-medium">Can I save prompts directly from ChatGPT?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" aria-hidden="true">
             <p class="pb-4">Yes, two ways. You can highlight any text in ChatGPT (your prompt, a response you want to reuse, anything), right-click it, and select <strong>Save to CloudPrompt</strong>. Or press <strong>Ctrl+Shift+Y</strong> anywhere on chatgpt.com to open your library and click <strong>New Prompt</strong> to add one manually. Both take about five seconds.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-2" aria-expanded="false" aria-controls="faq-answer-2">
             <span class="font-medium">Does it work with ChatGPT Plus and Teams?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2" aria-hidden="true">
             <p class="pb-4">Yes. CloudPrompt is a browser extension that works on chatgpt.com regardless of which plan you're on — Free, Plus, Pro, or Teams. It doesn't interact with ChatGPT's API or account system at all; it simply runs inside your browser on the page. GPT-4o, o1, o3, custom GPTs — it works with all of them.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-3" aria-expanded="false" aria-controls="faq-answer-3">
             <span class="font-medium">Will my prompts sync across devices?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" aria-hidden="true">
             <p class="pb-4">Yes. Your prompts are stored in your Google Drive, so they're available on every device where you install CloudPrompt and connect the same Google account. Install it on your work laptop and home desktop — both see the same library. Changes sync automatically in the background.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-4" aria-expanded="false" aria-controls="faq-answer-4">
             <span class="font-medium">Is it really free?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4" aria-hidden="true">
             <p class="pb-4">Yes, completely free. Unlimited prompt storage, right-click insert, keyboard shortcut, context-aware sorting, Google Drive sync, import/export — all free. We may add optional paid features later, but the core functionality will always be free.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-5" aria-expanded="false" aria-controls="faq-answer-5">
             <span class="font-medium">Does it work with GPT-4o and other models?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-5" role="region" aria-labelledby="faq-toggle-5" aria-hidden="true">
             <p class="pb-4">Yes. CloudPrompt doesn't integrate with the OpenAI API — it works at the browser level, on the chatgpt.com page itself. So it works with every model ChatGPT offers: GPT-4o, o1, o3, GPT-4o mini, and anything released in the future. The same is true for Claude, Gemini, and any other AI tool you use.</p>
           </div>
         </div>
@@ -519,12 +655,14 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="py-12 border-t border-black/5">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center space-x-2">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
@@ -551,8 +689,20 @@
       button.addEventListener('click', () => {
         const item = button.closest('.faq-item');
         const wasActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        if (!wasActive) item.classList.add('active');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          const toggle = i.querySelector('.faq-toggle');
+          const answer = i.querySelector('.faq-answer');
+          toggle.setAttribute('aria-expanded', 'false');
+          answer.setAttribute('aria-hidden', 'true');
+        });
+
+        if (!wasActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+        }
       });
     });
 
