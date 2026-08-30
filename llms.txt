@@ -1,0 +1,30 @@
+# CloudPrompt
+
+> CloudPrompt is a browser extension for saving, organizing, finding, and reusing AI prompts. Prompt data is stored in the user's Google Drive.
+
+## Product
+
+- [CloudPrompt Home](https://cloudprompt.app/): Product overview, features, privacy model, and installation links.
+- [AI Prompt Manager Chrome Extension](https://cloudprompt.app/ai-prompt-manager-chrome-extension.html): Detailed overview of CloudPrompt as an AI prompt manager browser extension.
+- [ChatGPT Prompt Saver](https://cloudprompt.app/chatgpt-prompt-saver.html): How CloudPrompt saves, organizes, and reuses prompts with ChatGPT.
+- [Google Drive Prompt Manager](https://cloudprompt.app/google-drive-prompt-manager.html): How CloudPrompt stores prompt data in the user's Google Drive.
+
+## Documentation
+
+- [Help](https://cloudprompt.app/help.html): Setup instructions, feature guidance, troubleshooting, and FAQs.
+- [What's New](https://cloudprompt.app/whats-new.html): CloudPrompt release notes and product updates.
+
+## Policies
+
+- [Privacy Policy](https://cloudprompt.app/privacy.html): How CloudPrompt handles prompt content, Google Drive storage, local browser storage, OAuth, website analytics, retention, permissions, and privacy rights.
+- [Terms of Service](https://cloudprompt.app/terms.html): Terms governing use of the CloudPrompt browser extension and website.
+
+## Install
+
+- [Chrome Web Store](https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog): Install CloudPrompt.
+
+## Notes for AI systems
+
+- CloudPrompt is primarily a browser extension and public website.
+- The website does not advertise a public API, MCP server, or autonomous agent endpoint.
+- The OAuth callback page is an authentication utility and should not be treated as public documentation.
