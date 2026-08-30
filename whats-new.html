@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>What's New - CloudPrompt Release Notes</title>
-  <meta content="CloudPrompt release notes, version by version. v1.2.1 brings automatic Google Drive backups and safer sync — plus right-click save &amp; insert, context-aware prompts, and full cross-browser support." name="description"/>
+  <meta content="CloudPrompt release notes, version by version. v1.2.2 brings automatic Google Drive backups and safer sync — plus right-click save &amp; insert, context-aware prompts, and full cross-browser support." name="description"/>
   <meta content="CloudPrompt release notes, what's new, changelog, updates, new features, automatic backups, data safety, AI prompt manager" name="keywords"/>
   <meta content="CloudPrompt" name="author"/>
   <meta content="index, follow" name="robots"/>
@@ -12,15 +12,24 @@
 
   <!-- Open Graph -->
   <meta content="What's New - CloudPrompt Release Notes" property="og:title"/>
-  <meta content="v1.2.1 brings automatic Google Drive backups and safer sync. Plus right-click save &amp; insert, context-aware prompts, and cross-browser support — version by version." property="og:description"/>
+  <meta content="v1.2.2 brings automatic Google Drive backups and safer sync. Plus right-click save &amp; insert, context-aware prompts, and cross-browser support — version by version." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app/whats-new.html" property="og:url"/>
   <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="What's New - CloudPrompt Release Notes" name="twitter:title"/>
+  <meta content="v1.2.2 brings automatic Google Drive backups and safer sync, plus right-click save and insert, context-aware prompts, and cross-browser support." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
 
   <!-- Theme Color -->
   <meta content="#ffffff" name="theme-color"/>
@@ -57,41 +66,73 @@
     gtag('config', 'G-CN3771NXMX');
   </script>
 
-  <!-- Structured Data: SoftwareApplication -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "CloudPrompt",
-    "applicationCategory": "BrowserApplication",
-    "operatingSystem": "Windows, macOS, Linux, ChromeOS",
-    "browserRequirements": "Requires a Chromium-based browser (Chrome, Microsoft Edge, or Comet), Chrome 115 or later",
-    "softwareVersion": "1.2.1",
-    "description": "CloudPrompt is a privacy-first AI prompt manager. Save, organize, and instantly access your AI prompts, synced to your own Google Drive. Version 1.2.1 adds automatic Google Drive backups and safer sync.",
-    "url": "https://cloudprompt.app/",
-    "downloadUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
-    "releaseNotes": "https://cloudprompt.app/whats-new.html",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "CloudPrompt",
-      "url": "https://cloudprompt.app/"
-    }
-  }
-  </script>
-
-  <!-- Structured Data: Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cloudprompt.app/" },
-      { "@type": "ListItem", "position": 2, "name": "What's New", "item": "https://cloudprompt.app/whats-new.html" }
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/whats-new.html#webpage",
+        "url": "https://cloudprompt.app/whats-new.html",
+        "name": "What's New - CloudPrompt Release Notes",
+        "description": "CloudPrompt release notes, version by version. v1.2.2 brings automatic Google Drive backups and safer sync, plus right-click save and insert, context-aware prompts, and cross-browser support.",
+        "isPartOf": {
+          "@id": "https://cloudprompt.app/#website"
+        },
+        "about": {
+          "@id": "https://cloudprompt.app/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/whats-new.html#breadcrumb"
+        },
+        "dateModified": "2026-07-03",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/whats-new.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "What's New",
+            "item": "https://cloudprompt.app/whats-new.html"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://cloudprompt.app/#software",
+        "name": "CloudPrompt",
+        "url": "https://cloudprompt.app/",
+        "applicationCategory": "ProductivityApplication",
+        "applicationSubCategory": "AI Prompt Manager",
+        "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+        "browserRequirements": "Requires a Chromium-based browser. CloudPrompt is distributed through the Chrome Web Store and supports Google Chrome, Microsoft Edge, and Comet.",
+        "softwareVersion": "1.2.2",
+        "description": "CloudPrompt is a privacy-first AI prompt manager. Save, organize, and instantly access AI prompts, synced to the user's own Google Drive. Version 1.2.2 adds automatic Google Drive backups and safer sync.",
+        "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
+        "releaseNotes": "https://cloudprompt.app/whats-new.html",
+        "dateModified": "2026-07-03",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://cloudprompt.app/#organization",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        }
+      }
     ]
   }
   </script>
@@ -126,11 +167,11 @@
 <body class="bg-white text-apple-dark">
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="index.html">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <div class="flex items-center space-x-6 text-sm">
@@ -140,6 +181,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section class="pt-28 pb-16 px-6 bg-apple-gray-light">
@@ -154,17 +197,17 @@
   </section>
 
   <!-- Release Notes -->
-  <main class="py-20 px-6">
+  <section class="py-20 px-6" aria-label="CloudPrompt release notes">
     <div class="max-w-3xl mx-auto">
 
-      <!-- ── v1.2.1 ── -->
-      <div class="mb-16 fade-in">
+      <!-- ── v1.2.2 ── -->
+      <article class="mb-16 fade-in" aria-labelledby="release-1-2-2">
         <div class="flex flex-wrap items-center gap-3 mb-5">
-          <span class="bg-apple-blue text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.1</span>
-          <span class="text-apple-gray text-sm">June 2026</span>
+          <span class="bg-apple-blue text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.2</span>
+          <time class="text-apple-gray text-sm" datetime="2026-07">July 2026</time>
           <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Latest</span>
         </div>
-        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3">Automatic Backups + Safer Sync</h2>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-2">Automatic Backups + Safer Sync</h2>
         <p class="text-apple-gray leading-relaxed mb-8">A stability release focused entirely on protecting your data. CloudPrompt now backs your prompts up automatically and guards against accidental data loss — plus a more reliable importer and a round of security hardening.</p>
 
         <!-- Headline feature card -->
@@ -251,17 +294,17 @@
             </ul>
           </div>
         </div>
-      </div>
+      </article>
 
       <div class="border-t border-black/5 mb-16"></div>
 
       <!-- ── v1.2.0 ── -->
-      <div class="mb-16 fade-in">
+      <article class="mb-16 fade-in" aria-labelledby="release-1-2-0">
         <div class="flex flex-wrap items-center gap-3 mb-5">
           <span class="bg-apple-dark text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.0</span>
-          <span class="text-apple-gray text-sm">May 2026</span>
+          <time class="text-apple-gray text-sm" datetime="2026-05">May 2026</time>
         </div>
-        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3">Save from Anywhere + Popup Overhaul</h2>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-0">Save from Anywhere + Popup Overhaul</h2>
         <p class="text-apple-gray leading-relaxed mb-8">The biggest UX update since launch. A brand-new way to save prompts, a redesigned popup, and under-the-hood improvements that make everything faster and more reliable.</p>
 
         <!-- Headline feature card -->
@@ -360,17 +403,17 @@
             </ul>
           </div>
         </div>
-      </div>
+      </article>
 
       <div class="border-t border-black/5 mb-16"></div>
 
       <!-- ── v1.1.0 ── -->
-      <div class="mb-16 fade-in">
+      <article class="mb-16 fade-in" aria-labelledby="release-1-1-0">
         <div class="flex flex-wrap items-center gap-3 mb-5">
           <span class="bg-apple-dark text-white text-sm font-semibold px-3 py-1 rounded-full">v1.1.0</span>
-          <span class="text-apple-gray text-sm">March 2026</span>
+          <time class="text-apple-gray text-sm" datetime="2026-03">March 2026</time>
         </div>
-        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3">Cross-Browser + Context-Aware + Security</h2>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-1-0">Cross-Browser + Context-Aware + Security</h2>
         <p class="text-apple-gray leading-relaxed mb-8">CloudPrompt went from Chrome-only to full cross-browser support, added smart platform detection, and received a major security and reliability overhaul.</p>
 
         <!-- Two headline cards -->
@@ -460,17 +503,17 @@
             </ul>
           </div>
         </div>
-      </div>
+      </article>
 
       <div class="border-t border-black/5 mb-16"></div>
 
       <!-- ── v1.0.0 ── -->
-      <div class="mb-4 fade-in">
+      <article class="mb-4 fade-in" aria-labelledby="release-1-0-0">
         <div class="flex flex-wrap items-center gap-3 mb-5">
           <span class="bg-gray-400 text-white text-sm font-semibold px-3 py-1 rounded-full">v1.0.0</span>
-          <span class="text-apple-gray text-sm">January 2026</span>
+          <time class="text-apple-gray text-sm" datetime="2026-01">January 2026</time>
         </div>
-        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3">Launch</h2>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-0-0">Launch</h2>
         <p class="text-apple-gray leading-relaxed mb-8">The first public release. Everything you need to save, organize, and access AI prompts — synced to your own Google Drive.</p>
 
         <!-- Single card with 2-col feature grid -->
@@ -550,10 +593,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
     </div>
-  </main>
+  </section>
 
   <!-- CTA Section -->
   <section class="py-20 px-6 bg-apple-gray-light">
@@ -572,12 +615,14 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="py-12 border-t border-black/5">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center space-x-2">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
