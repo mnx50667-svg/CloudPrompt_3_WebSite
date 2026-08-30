@@ -16,11 +16,20 @@
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app/ai-prompt-manager-chrome-extension.html" property="og:url"/>
   <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="AI Prompt Manager Chrome Extension — Save &amp; Organize Prompts | CloudPrompt" name="twitter:title"/>
+  <meta content="Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
 
   <!-- Theme Color -->
   <meta content="#ffffff" name="theme-color"/>
@@ -55,6 +64,132 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-CN3771NXMX');
+  </script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html#webpage",
+        "url": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html",
+        "name": "AI Prompt Manager Chrome Extension — Save & Organize Prompts | CloudPrompt",
+        "description": "Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to insert prompts instantly.",
+        "isPartOf": {
+          "@id": "https://cloudprompt.app/#website"
+        },
+        "about": {
+          "@id": "https://cloudprompt.app/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html#faq"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI Prompt Manager Chrome Extension",
+            "item": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://cloudprompt.app/#software",
+        "name": "CloudPrompt",
+        "url": "https://cloudprompt.app/",
+        "applicationCategory": "ProductivityApplication",
+        "applicationSubCategory": "AI Prompt Manager",
+        "operatingSystem": "Chrome, Edge, Comet, Brave, Opera",
+        "description": "CloudPrompt is a browser extension for saving, organizing, finding, and reusing AI prompts. Prompt data is stored in the user's Google Drive.",
+        "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Save prompts from highlighted text with the browser context menu",
+          "Insert saved prompts into text fields with the browser context menu",
+          "Search prompts with a keyboard shortcut",
+          "Organize prompts with folders and tags",
+          "Create reusable prompt templates with variables",
+          "Context-aware prompt sorting",
+          "Google Drive synchronization",
+          "JSON and CSV export"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://cloudprompt.app/#organization",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is CloudPrompt really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, completely free with no hidden limits on prompt storage. CloudPrompt may add optional premium features in the future, but the core functionality — saving, organizing, syncing, and inserting prompts — will remain free."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work with Claude and Gemini too, or just ChatGPT?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CloudPrompt works on every website, not just the AI tools it explicitly detects. You can use the keyboard shortcut on ChatGPT, Claude, Gemini, Perplexity, Poe, or other sites, and you can right-click text fields to insert saved prompts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is my data stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CloudPrompt stores prompt data in your Google Drive in CloudPrompt/prompts.json. CloudPrompt does not host your prompt content on its own servers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use it on Edge, Brave, or Opera?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. CloudPrompt is available for Chrome, Edge, Comet, Brave, and Opera through the Chrome Web Store."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is this different from AIPRM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CloudPrompt is designed as a personal prompt library that works across websites and stores prompt data in the user's own Google Drive. The page contrasts this with AIPRM's community-prompt-library model."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 
   <style>
@@ -101,11 +236,11 @@
 <body class="bg-white text-apple-dark">
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="index.html">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-7 w-7 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <div class="flex items-center space-x-6 text-sm">
@@ -115,6 +250,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section class="pt-28 pb-16 px-6 bg-apple-gray-light">
@@ -375,7 +512,7 @@
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-20 px-6 bg-apple-gray-light">
+  <section class="py-20 px-6 bg-apple-gray-light" id="faq">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-12 fade-in">
         <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Questions?</h2>
@@ -383,51 +520,51 @@
 
       <div class="space-y-3">
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-1" aria-expanded="false" aria-controls="faq-answer-1">
             <span class="font-medium">Is CloudPrompt really free?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" aria-hidden="true">
             <p class="pb-4">Yes, completely free with no hidden limits on prompt storage. We may add optional premium features in the future, but the core functionality — saving, organizing, syncing, and inserting prompts — will always be free.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-2" aria-expanded="false" aria-controls="faq-answer-2">
             <span class="font-medium">Does it work with Claude and Gemini too, or just ChatGPT?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2" aria-hidden="true">
             <p class="pb-4">CloudPrompt works on every website — not just the AI tools it explicitly detects. Press <strong>Ctrl+Shift+Y</strong> on ChatGPT, Claude, Gemini, Perplexity, Poe, or any other site to access your prompts. You can also right-click any text field anywhere and select <strong>Insert CloudPrompt</strong> to insert a prompt directly.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-3" aria-expanded="false" aria-controls="faq-answer-3">
             <span class="font-medium">Where is my data stored?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" aria-hidden="true">
             <p class="pb-4">In your Google Drive, in a file called <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">CloudPrompt/prompts.json</code>. We never see your prompts and we have no servers to send them to. Your data stays private and under your control. You can delete the file from Drive at any time to remove everything.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-4" aria-expanded="false" aria-controls="faq-answer-4">
             <span class="font-medium">Can I use it on Edge, Brave, or Opera?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4" aria-hidden="true">
             <p class="pb-4">Yes. CloudPrompt is available on Chrome, Edge, Comet, Brave, and Opera — all from the Chrome Web Store. Sign-in works slightly differently on non-Chrome browsers: a Google sign-in tab opens, you complete the flow, and the tab closes automatically. Everything else works identically.</p>
           </div>
         </div>
 
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-5" aria-expanded="false" aria-controls="faq-answer-5">
             <span class="font-medium">How is this different from AIPRM?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200">+</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer px-6 text-apple-gray">
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-5" role="region" aria-labelledby="faq-toggle-5" aria-hidden="true">
             <p class="pb-4">AIPRM is a community prompt library built primarily for ChatGPT, with prompts stored on AIPRM's servers. CloudPrompt is a <em>personal</em> prompt library that works on any AI tool or website, with your data stored in your own Google Drive — not our servers. CloudPrompt also offers right-click insert (place prompts directly into any text field), context-aware sorting, and Google Drive sync. If you want a shared community library for ChatGPT, AIPRM is worth trying. If you want a private, organized library of your own prompts that works everywhere, CloudPrompt is built for that.</p>
           </div>
         </div>
@@ -455,12 +592,14 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="py-12 border-t border-black/5">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center space-x-2">
-          <img src="images/logo.png" alt="CloudPrompt" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
@@ -487,8 +626,20 @@
       button.addEventListener('click', () => {
         const item = button.closest('.faq-item');
         const wasActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        if (!wasActive) item.classList.add('active');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          const toggle = i.querySelector('.faq-toggle');
+          const answer = i.querySelector('.faq-answer');
+          toggle.setAttribute('aria-expanded', 'false');
+          answer.setAttribute('aria-hidden', 'true');
+        });
+
+        if (!wasActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+        }
       });
     });
 
