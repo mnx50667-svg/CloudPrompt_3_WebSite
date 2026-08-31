@@ -381,7 +381,7 @@
             "name": "What permissions does it need?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save. We cannot access your other Drive files."
+              "text": "Only the minimum: local storage for caching, limited Google Drive access through the drive.file scope, and context menu access for right-click save. The Drive scope does not grant broad access to all files in your Google Drive."
             }
           },
           {
@@ -786,7 +786,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-5" aria-hidden="true">
-            <p class="pb-4">Only the minimum: local storage for caching, limited Google Drive access (only files we create), and context menu access for right-click save. We cannot access your other Drive files.</p>
+            <p class="pb-4">Only the minimum: local storage for caching, limited Google Drive access through the <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> scope, and context menu access for right-click save. The Drive scope does not grant broad access to all files in your Google Drive.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
