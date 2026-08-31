@@ -164,7 +164,7 @@
       <!-- Core Principle Banner -->
       <div class="bg-green-50 rounded-2xl p-6 mb-12 border border-green-200">
         <p class="text-green-800 font-semibold text-lg">🔒 Our Core Principle</p>
-        <p class="text-green-700 mt-2">Your data is YOUR data. We store your prompts in YOUR Google Drive, and we cannot access your other files.</p>
+        <p class="text-green-700 mt-2">Your data is YOUR data. We store your prompts in YOUR Google Drive and use limited, per-file Drive access rather than broad access to all files in your Drive.</p>
       </div>
 
       <div class="space-y-12 text-apple-gray leading-relaxed">
@@ -246,11 +246,11 @@
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
-              <span>We ONLY access files that CloudPrompt creates</span>
+              <span>We use the limited <code class="bg-apple-gray-light px-2 py-0.5 rounded text-sm">drive.file</code> scope for per-file Google Drive access</span>
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
-              <span>We CANNOT see or access your other Google Drive files</span>
+              <span>This scope does not grant broad access to all files in your Google Drive</span>
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
@@ -307,7 +307,7 @@
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
-              <span>This scope ONLY allows access to files created by CloudPrompt</span>
+              <span>This scope limits access to specific Drive files used with CloudPrompt, including files the app creates or files you explicitly authorize for use with it</span>
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-3">•</span>
@@ -586,8 +586,8 @@
               <p class="font-mono text-sm text-apple-dark mb-2">https://www.googleapis.com/*</p>
               <ul class="text-sm space-y-1">
                 <li><strong>Why:</strong> Communicate with Google Drive API</li>
-                <li><strong>What we access:</strong> Files CloudPrompt creates in your Drive</li>
-                <li><strong>What we DON'T access:</strong> Your other Google Drive files</li>
+                <li><strong>What we access:</strong> Specific Drive files used with CloudPrompt, including files the app creates or files you explicitly authorize for use with it</li>
+                <li><strong>What we DON'T access:</strong> Broad access to all files in your Google Drive</li>
               </ul>
             </div>
 
