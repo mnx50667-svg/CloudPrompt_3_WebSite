@@ -168,7 +168,7 @@
             "name": "Can CloudPrompt access my other Google Drive files?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "CloudPrompt states that it uses the Google Drive drive.file OAuth scope, which limits access to files the application creates or that the user explicitly opens with the application."
+              "text": "CloudPrompt uses the Google Drive drive.file OAuth scope, which provides per-file access to specific Drive files used with the app, including files it creates or files the user explicitly authorizes for use with it. It does not grant broad access to all files in the user's Google Drive."
             }
           },
           {
@@ -392,11 +392,11 @@
         </div>
         <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
           <p class="font-semibold text-sm mb-2">Uses <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> scope</p>
-          <p class="text-apple-gray text-sm leading-relaxed">Google's most restrictive Drive scope. CloudPrompt can <strong>only</strong> access files it created. Period.</p>
+          <p class="text-apple-gray text-sm leading-relaxed">A narrow, per-file Google Drive scope. It does not grant CloudPrompt broad access to all files in your Drive.</p>
         </div>
         <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
-          <p class="font-semibold text-sm mb-2">Cannot see your other files</p>
-          <p class="text-apple-gray text-sm leading-relaxed">Your tax docs, photos, work files — invisible to CloudPrompt. Google enforces this at the API level, not as a promise.</p>
+          <p class="font-semibold text-sm mb-2">No broad Drive access</p>
+          <p class="text-apple-gray text-sm leading-relaxed">CloudPrompt does not request permission to browse all of your Drive. The <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> scope limits access to specific files used with the app.</p>
         </div>
       </div>
     </div>
@@ -572,7 +572,7 @@
         <div class="bg-white border border-black/5 rounded-xl p-5 fade-in">
           <div class="flex flex-col sm:flex-row sm:items-start gap-3">
             <code class="bg-apple-gray-light px-2.5 py-1 rounded text-xs font-mono inline-block self-start whitespace-nowrap">drive.file</code>
-            <p class="text-sm text-apple-gray leading-relaxed">Google's most restrictive Drive scope. Lets CloudPrompt read and write <em>only</em> files it creates. Your other Drive files are invisible to us — Google enforces this, not us.</p>
+            <p class="text-sm text-apple-gray leading-relaxed">A narrow, per-file Google Drive scope. It lets CloudPrompt work with specific files used with the app, including files it creates or files you explicitly authorize for use with it, without granting broad access to all files in your Drive.</p>
           </div>
         </div>
       </div>
@@ -617,7 +617,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" aria-hidden="true">
-            <p class="pb-4">No, and not because we promise we won't — because Google won't let us. CloudPrompt uses the <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> OAuth scope, which only grants access to files the extension itself creates. Your other documents, photos, and folders are invisible at the API level. Even if we wanted to access them, we couldn't.</p>
+            <p class="pb-4">CloudPrompt does not request broad access to your Google Drive. It uses the <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> OAuth scope, which limits access to specific Drive files used with the app, including files the extension creates or files you explicitly authorize for use with it. It does not grant access to all of your documents, photos, or folders.</p>
           </div>
         </div>
 
