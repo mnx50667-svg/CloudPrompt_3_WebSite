@@ -157,7 +157,7 @@
     <div class="max-w-2xl mx-auto">
       <header class="mb-12">
         <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-3">Privacy Policy</h1>
-        <p class="text-apple-gray">Last Updated: <time datetime="2026-08">August 2026</time></p>
+        <p class="text-apple-gray">Last Updated: <time datetime="2026-09">September 2026</time></p>
         <p class="text-apple-gray">Effective Date: <time datetime="2026-01">January 2026</time></p>
       </header>
 
@@ -364,7 +364,7 @@
               <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
-              <span>OAuth tokens are stored securely in your browser's encrypted storage</span>
+              <span>OAuth tokens are stored only on your device, in the extension's local browser storage, and are never sent to CloudPrompt servers. CloudPrompt does not add its own encryption; access is protected by your device and browser profile. You can revoke access at any time in your Google Account settings.</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -435,6 +435,10 @@
               <span class="text-apple-blue mr-3">•</span>
               <span>Prompt data is sent to Google Drive only as needed to provide the Drive storage and sync you authorize</span>
             </li>
+            <li class="flex items-start">
+              <span class="text-apple-blue mr-3">•</span>
+              <span>CloudPrompt's use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.</span>
+            </li>
           </ul>
 
           <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">6.2 Website Analytics</h3>
@@ -461,7 +465,7 @@
           <p>This website analytics data is separate from your CloudPrompt prompt library. Google Analytics uses pseudonymous identifiers, so we do not describe the analytics data as inherently anonymous. <strong>The browser extension itself does not use Google Analytics or send your prompt library to Google Analytics.</strong></p>
 
           <h3 class="text-lg font-semibold text-apple-dark mt-6 mb-3">6.3 Other Third Parties in the Extension</h3>
-          <ul class="space-y-2">
+          <ul class="space-y-2 mb-4">
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -475,6 +479,7 @@
               <span>We do NOT integrate with any other third-party services in the extension</span>
             </li>
           </ul>
+          <p>The Settings page has an optional donation link. It opens PayPal in a new tab only if you click it, and CloudPrompt sends PayPal no data.</p>
         </section>
 
         <!-- 7. Children's Privacy -->
@@ -572,8 +577,8 @@
             <div class="bg-apple-gray-light rounded-xl p-5">
               <p class="font-mono text-sm text-apple-dark mb-2">tabs</p>
               <ul class="text-sm space-y-1">
-                <li><strong>Why:</strong> Handle secure Google sign-in on non-Chrome browsers (Edge, Comet). CloudPrompt opens a temporary sign-in tab, extracts the authentication token, and closes the tab automatically.</li>
-                <li><strong>What we access:</strong> Only the URL of the temporary sign-in tab to complete authentication</li>
+                <li><strong>Why:</strong> Handle secure Google sign-in on non-Chrome browsers (Edge, Comet): CloudPrompt opens a temporary sign-in tab, extracts the authentication token, and closes the tab automatically. Also read the address of your active tab when you open the CloudPrompt popup, to show prompts for the AI site you are on.</li>
+                <li><strong>What we access:</strong> The URL of the temporary sign-in tab to complete authentication, and the URL of your active tab when you open the popup (used on your device only)</li>
                 <li><strong>What we DON'T access:</strong> Your browsing activity, open tabs, tab history, or any other tab content</li>
               </ul>
             </div>
@@ -581,8 +586,8 @@
             <div class="bg-apple-gray-light rounded-xl p-5">
               <p class="font-mono text-sm text-apple-dark mb-2">contextMenus</p>
               <ul class="text-sm space-y-1">
-                <li><strong>Why:</strong> Power CloudPrompt's right-click menu options. When you highlight text and right-click, you can choose <strong>"Save to CloudPrompt"</strong> to save the highlighted text as a new prompt. When you right-click a text field, you can choose <strong>"Insert CloudPrompt"</strong> to place a saved prompt directly into it — no copy-paste required.</li>
-                <li><strong>What we access:</strong> Only the text you have selected (when you choose "Save to CloudPrompt"), or the text field you chose to insert into (when you choose "Insert CloudPrompt") — and only at the moment you make that choice</li>
+                <li><strong>Why:</strong> Power CloudPrompt's right-click menu option. When you highlight text and right-click, you can choose <strong>"Save to CloudPrompt"</strong> to save the highlighted text as a new prompt.</li>
+                <li><strong>What we access:</strong> Only the text you have selected, and only at the moment you choose "Save to CloudPrompt"</li>
                 <li><strong>What we DON'T access:</strong> Page content, other form fields, browsing history, or anything you didn't explicitly select or choose</li>
               </ul>
             </div>
@@ -599,8 +604,8 @@
             <div class="bg-apple-gray-light rounded-xl p-5">
               <p class="font-mono text-sm text-apple-dark mb-2">Host Permissions (All Websites)</p>
               <ul class="text-sm space-y-1">
-                <li><strong>Why:</strong> To let the keyboard shortcut (Ctrl+Shift+Y) open CloudPrompt on any webpage; to let "Save to CloudPrompt" save text you have highlighted; to let "Insert CloudPrompt" place a prompt into a text field; and to show prompts relevant to the AI platform you're currently using (Context-Aware Prompts).</li>
-                <li><strong>What we access (only when you act):</strong> The text you have selected (when you save it), the text field you insert into (when you insert), and the website address (URL) of your active tab (to surface relevant prompts). We inject CloudPrompt's own overlay when you press the shortcut.</li>
+                <li><strong>Why:</strong> To let the keyboard shortcut (Ctrl+Shift+Y) open CloudPrompt on any webpage; to let "Save to CloudPrompt" save text you have highlighted; and to show prompts relevant to the AI platform you're currently using (Context-Aware Prompts).</li>
+                <li><strong>What we access (only when you act):</strong> The text you have selected (when you save it) and the website address (URL) of your active tab (to surface relevant prompts). We inject CloudPrompt's own overlay when you press the shortcut.</li>
                 <li><strong>What we DON'T access:</strong> We do not read, collect, or transmit page content, form data, or browsing history. Selected text is stored only in YOUR Google Drive, and the active-tab URL is used locally on your device and is never transmitted to us.</li>
               </ul>
             </div>
@@ -686,7 +691,7 @@
                 </tr>
                 <tr class="border-b">
                   <td class="p-3">OAuth Token (Chrome)</td>
-                  <td class="p-3">Browser's encrypted storage</td>
+                  <td class="p-3">Extension's local browser storage (Chrome also keeps its own sign-in cache)</td>
                   <td class="p-3">Only you</td>
                   <td class="p-3">Until disconnect</td>
                 </tr>
