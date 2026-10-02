@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta content="ChatGPT Prompt Saver Extension — Save &amp; Reuse Your Best Prompts | CloudPrompt" property="og:title"/>
-  <meta content="Save your best ChatGPT prompts and reuse them instantly. Free Chrome extension with Google Drive sync. Right-click to insert prompts directly into ChatGPT." property="og:description"/>
+  <meta content="Save your best ChatGPT prompts and reuse them instantly. Free Chrome extension with Google Drive sync. Right-click to save selected ChatGPT text as a prompt." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app/chatgpt-prompt-saver.html" property="og:url"/>
   <meta content="website" property="og:type"/>
@@ -127,7 +127,6 @@
         },
         "featureList": [
           "Save prompts from highlighted text with the browser context menu",
-          "Insert saved prompts into text fields with the browser context menu",
           "Search prompts with a keyboard shortcut",
           "Organize prompts with folders and tags",
           "Context-aware prompt sorting",
@@ -174,7 +173,7 @@
             "name": "Is CloudPrompt free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The page states that CloudPrompt's core prompt-management functionality is free and that optional paid features may be added later."
+              "text": "Yes. CloudPrompt is free: unlimited prompts, folders and tags, sync and automatic backups to your own Google Drive, import and export, and up to 5 templates. Optional paid features may be added later."
             }
           },
           {
@@ -263,7 +262,7 @@
         Save Your Best <span class="gradient-text">ChatGPT Prompts</span> — and Reuse Them Instantly
       </h1>
       <p class="text-xl text-apple-gray max-w-2xl mx-auto mb-10 leading-relaxed">
-        You've spent hours crafting the perfect ChatGPT prompt. Don't lose it in a sea of conversations. CloudPrompt saves, organizes, and lets you insert any prompt into ChatGPT with one click — free, and synced to your Google Drive.
+        You've spent hours crafting the perfect ChatGPT prompt. Don't lose it in a sea of conversations. CloudPrompt saves, organizes, and lets you reuse any prompt in ChatGPT — free, and synced to your Google Drive.
       </p>
       <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -341,7 +340,7 @@
   <section class="py-20 px-6 bg-apple-gray-light">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-12 fade-in">
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Save, organize, and insert ChatGPT prompts in seconds</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Save, organize, and reuse ChatGPT prompts in seconds</h2>
         <p class="text-lg text-apple-gray">Three steps. That's the whole workflow.</p>
       </div>
 
@@ -358,7 +357,7 @@
             </li>
             <li class="flex items-start">
               <span class="text-apple-blue mr-2 flex-shrink-0">•</span>
-              <span>Press <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> → click <strong>New Prompt</strong></span>
+              <span>Press <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> → click <strong>New Prompt</strong>. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how.</span>
             </li>
           </ul>
         </div>
@@ -387,16 +386,12 @@
         <!-- Step 3 -->
         <div class="bg-white rounded-2xl p-6 shadow-sm fade-in">
           <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-semibold mb-5">3</div>
-          <h3 class="font-semibold text-lg mb-3">Insert into ChatGPT</h3>
+          <h3 class="font-semibold text-lg mb-3">Reuse in ChatGPT</h3>
           <p class="text-apple-gray text-sm leading-relaxed mb-4">Next time you need that prompt:</p>
           <ul class="space-y-2 text-apple-gray text-sm">
             <li class="flex items-start">
               <span class="text-red-500 mr-2 flex-shrink-0">•</span>
-              <span>Right-click the ChatGPT text box → <strong>Insert CloudPrompt</strong> → pick your prompt — it appears instantly</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-red-500 mr-2 flex-shrink-0">•</span>
-              <span>Or use <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> to search and copy</span>
+              <span>Use <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> to search and copy. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how.</span>
             </li>
           </ul>
         </div>
@@ -522,11 +517,11 @@
     </div>
   </section>
 
-  <!-- Section 5: Free Forever -->
+  <!-- Section 5: Free -->
   <section class="py-20 px-6">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-10 fade-in">
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Free forever — no account needed beyond Google</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Free — no account needed beyond Google</h2>
         <p class="text-lg text-apple-gray">No CloudPrompt login. No subscription. No prompt limits.</p>
       </div>
 
@@ -562,14 +557,8 @@
             </svg>
             <span class="text-sm text-apple-gray"><strong>Offline access</strong> via local cache</span>
           </div>
-          <div class="flex items-center">
-            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span class="text-sm text-apple-gray"><strong>Right-click insert</strong> on any text field</span>
-          </div>
         </div>
-        <p class="text-sm text-apple-gray mt-6 pt-6 border-t border-black/5">We may add optional premium features in the future. Core functionality stays free.</p>
+        <p class="text-sm text-apple-gray mt-6 pt-6 border-t border-black/5">Optional paid features may be added later.</p>
       </div>
     </div>
   </section>
@@ -588,7 +577,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" aria-hidden="true">
-            <p class="pb-4">Yes, two ways. You can highlight any text in ChatGPT (your prompt, a response you want to reuse, anything), right-click it, and select <strong>Save to CloudPrompt</strong>. Or press <strong>Ctrl+Shift+Y</strong> anywhere on chatgpt.com to open your library and click <strong>New Prompt</strong> to add one manually. Both take about five seconds.</p>
+            <p class="pb-4">Yes, two ways. You can highlight any text in ChatGPT (your prompt, a response you want to reuse, anything), right-click it, and select <strong>Save to CloudPrompt</strong>. Or press <strong>Ctrl+Shift+Y</strong> anywhere on chatgpt.com to open your library and click <strong>New Prompt</strong> to add one manually. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how. Both take about five seconds.</p>
           </div>
         </div>
 
@@ -618,7 +607,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4" aria-hidden="true">
-            <p class="pb-4">Yes, completely free. Unlimited prompt storage, right-click insert, keyboard shortcut, context-aware sorting, Google Drive sync, import/export — all free. We may add optional paid features later, but the core functionality will always be free.</p>
+            <p class="pb-4">Yes. CloudPrompt is free: unlimited prompts, folders and tags, sync and automatic backups to your own Google Drive, import and export, and up to 5 templates. Optional paid features may be added later.</p>
           </div>
         </div>
 
@@ -638,7 +627,7 @@
   <!-- CTA Section -->
   <section class="py-20 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
-      <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Stop losing your best ChatGPT prompts.</h2>
+      <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Keep your best ChatGPT prompts in one place.</h2>
       <p class="text-xl text-apple-gray mb-8">Install CloudPrompt once. Your library builds itself from there.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
