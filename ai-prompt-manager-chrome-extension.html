@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>AI Prompt Manager Chrome Extension — Save &amp; Organize Prompts | CloudPrompt</title>
-  <meta content="Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to insert prompts instantly." name="description"/>
+  <meta content="Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to save prompts instantly." name="description"/>
   <meta content="AI prompt manager Chrome extension, prompt organizer, ChatGPT prompts, Claude prompts, Gemini prompts, prompt library, Google Drive sync" name="keywords"/>
   <meta content="CloudPrompt" name="author"/>
   <meta content="index, follow" name="robots"/>
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta content="AI Prompt Manager Chrome Extension — Save &amp; Organize Prompts | CloudPrompt" property="og:title"/>
-  <meta content="Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to insert prompts instantly." property="og:description"/>
+  <meta content="Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to save prompts instantly." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app/ai-prompt-manager-chrome-extension.html" property="og:url"/>
   <meta content="website" property="og:type"/>
@@ -77,7 +77,7 @@
         "@id": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html#webpage",
         "url": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html",
         "name": "AI Prompt Manager Chrome Extension — Save & Organize Prompts | CloudPrompt",
-        "description": "Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to insert prompts instantly.",
+        "description": "Save, organize, and reuse AI prompts across ChatGPT, Claude, and Gemini. Free Chrome extension with Google Drive sync. Right-click to save prompts instantly.",
         "isPartOf": {
           "@id": "https://cloudprompt.app/#website"
         },
@@ -127,7 +127,6 @@
         },
         "featureList": [
           "Save prompts from highlighted text with the browser context menu",
-          "Insert saved prompts into text fields with the browser context menu",
           "Search prompts with a keyboard shortcut",
           "Organize prompts with folders and tags",
           "Create reusable prompt templates with variables",
@@ -151,7 +150,7 @@
             "name": "Is CloudPrompt really free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, completely free with no hidden limits on prompt storage. CloudPrompt may add optional premium features in the future, but the core functionality — saving, organizing, syncing, and inserting prompts — will remain free."
+              "text": "Yes. CloudPrompt is free: unlimited prompts, folders and tags, sync and automatic backups to your own Google Drive, import and export, and up to 5 templates. Optional paid features may be added later."
             }
           },
           {
@@ -159,7 +158,7 @@
             "name": "Does it work with Claude and Gemini too, or just ChatGPT?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "CloudPrompt works on every website, not just the AI tools it explicitly detects. You can use the keyboard shortcut on ChatGPT, Claude, Gemini, Perplexity, Poe, or other sites, and you can right-click text fields to insert saved prompts."
+              "text": "CloudPrompt works on every website, not just the AI tools it explicitly detects. You can use the keyboard shortcut on ChatGPT, Claude, Gemini, Perplexity, Poe, or other sites. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how."
             }
           },
           {
@@ -260,7 +259,7 @@
         The <span class="gradient-text">AI Prompt Manager</span> Chrome Extension That Saves to Your Google Drive
       </h1>
       <p class="text-xl text-apple-gray max-w-2xl mx-auto mb-10 leading-relaxed">
-        Stop rewriting the same prompts. CloudPrompt saves, organizes, and inserts your AI prompts instantly — across ChatGPT, Claude, Gemini, and every other AI tool. Free forever. Your data stays in your Google Drive.
+        Stop rewriting the same prompts. CloudPrompt saves, organizes, and reuses your AI prompts instantly — across ChatGPT, Claude, Gemini, and every other AI tool. Free. Your data stays in your Google Drive.
       </p>
       <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -335,16 +334,15 @@
       </div>
 
       <div class="grid md:grid-cols-2 gap-5">
-        <!-- Right-click to insert -->
+        <!-- Right-click to save -->
         <div class="bg-white rounded-2xl p-6 shadow-sm fade-in">
           <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-400 rounded-2xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Right-click to insert</h3>
-          <p class="text-apple-gray leading-relaxed text-sm">Right-click inside any text field on any page and select <strong>Insert CloudPrompt</strong>. Pick your prompt, and it's placed directly into the field — no copy-pasting, no tab switching. No other prompt manager has this.</p>
-          <p class="text-xs text-apple-gray mt-3 pt-3 border-t border-black/5">Also works in reverse: highlight text on any page → right-click → <strong>Save to CloudPrompt</strong>.</p>
+          <h3 class="text-xl font-semibold mb-2">Right-click to save</h3>
+          <p class="text-apple-gray leading-relaxed text-sm">Highlight text on any page, right-click, and choose <strong>Save to CloudPrompt</strong>. A dialog shows a title, a preview, and an auto-detected folder.</p>
         </div>
 
         <!-- Keyboard shortcut -->
@@ -355,7 +353,7 @@
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">Keyboard shortcut — instant access</h3>
-          <p class="text-apple-gray leading-relaxed text-sm">Press <code class="bg-apple-gray-light px-2 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> (or <code class="bg-apple-gray-light px-2 py-0.5 rounded text-xs">Cmd+Shift+Y</code> on Mac) on any page to open your full prompt library. Search by keyword, title, or tag. Click to copy. Works everywhere your browser works.</p>
+          <p class="text-apple-gray leading-relaxed text-sm">Press <code class="bg-apple-gray-light px-2 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> (or <code class="bg-apple-gray-light px-2 py-0.5 rounded text-xs">Cmd+Shift+Y</code> on Mac) on any page to open your full prompt library. Search by keyword, title, or tag. Click to copy. Works everywhere your browser works. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how.</p>
         </div>
 
         <!-- Context-aware -->
@@ -499,7 +497,7 @@
         <div class="text-center fade-in">
           <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-purple-500 text-white flex items-center justify-center font-semibold text-lg">3</div>
           <h3 class="font-semibold mb-2">Start saving prompts</h3>
-          <p class="text-apple-gray text-sm leading-relaxed">Click <strong>New Prompt</strong>, add a title, paste your prompt, assign a folder. Done. Use <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> anywhere to access it.</p>
+          <p class="text-apple-gray text-sm leading-relaxed">Click <strong>New Prompt</strong>, add a title, paste your prompt, assign a folder. Done. Use <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+Y</code> anywhere to access it. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how.</p>
         </div>
       </div>
 
@@ -523,7 +521,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" aria-hidden="true">
-            <p class="pb-4">Yes, completely free with no hidden limits on prompt storage. We may add optional premium features in the future, but the core functionality — saving, organizing, syncing, and inserting prompts — will always be free.</p>
+            <p class="pb-4">Yes. CloudPrompt is free: unlimited prompts, folders and tags, sync and automatic backups to your own Google Drive, import and export, and up to 5 templates. Optional paid features may be added later.</p>
           </div>
         </div>
 
@@ -533,7 +531,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2" aria-hidden="true">
-            <p class="pb-4">CloudPrompt works on every website — not just the AI tools it explicitly detects. Press <strong>Ctrl+Shift+Y</strong> on ChatGPT, Claude, Gemini, Perplexity, Poe, or any other site to access your prompts. You can also right-click any text field anywhere and select <strong>Insert CloudPrompt</strong> to insert a prompt directly.</p>
+            <p class="pb-4">CloudPrompt works on every website — not just the AI tools it explicitly detects. Press <strong>Ctrl+Shift+Y</strong> on ChatGPT, Claude, Gemini, Perplexity, Poe, or any other site to access your prompts. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how.</p>
           </div>
         </div>
 
@@ -563,7 +561,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-5" role="region" aria-labelledby="faq-toggle-5" aria-hidden="true">
-            <p class="pb-4">AIPRM is a community prompt library built primarily for ChatGPT, with prompts stored on AIPRM's servers. CloudPrompt is a <em>personal</em> prompt library that works on any AI tool or website, with your data stored in your own Google Drive — not our servers. CloudPrompt also offers right-click insert (place prompts directly into any text field), context-aware sorting, and Google Drive sync. If you want a shared community library for ChatGPT, AIPRM is worth trying. If you want a private, organized library of your own prompts that works everywhere, CloudPrompt is built for that.</p>
+            <p class="pb-4">AIPRM is a community prompt library built primarily for ChatGPT, with prompts stored on AIPRM's servers. CloudPrompt is a <em>personal</em> prompt library that works on any AI tool or website, with your data stored in your own Google Drive — not our servers. CloudPrompt also offers right-click save (save selected text as a prompt), context-aware sorting, and Google Drive sync. If you want a shared community library for ChatGPT, AIPRM is worth trying. If you want a private, organized library of your own prompts that works everywhere, CloudPrompt is built for that.</p>
           </div>
         </div>
       </div>
@@ -574,7 +572,7 @@
   <section class="py-20 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
       <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">Ready to organize your AI prompts?</h2>
-      <p class="text-xl text-apple-gray mb-8">Join hundreds of AI users who stopped losing their best prompts. Free forever, synced to your Google Drive.</p>
+      <p class="text-xl text-apple-gray mb-8">Join hundreds of AI users who keep their best prompts in one place. Free, synced to your Google Drive.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
