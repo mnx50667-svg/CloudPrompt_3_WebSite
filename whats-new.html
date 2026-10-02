@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>What's New - CloudPrompt Release Notes</title>
-  <meta content="CloudPrompt release notes, version by version. v1.2.2 brings automatic Google Drive backups and safer sync — plus right-click save, context-aware prompts, and full cross-browser support." name="description"/>
+  <meta content="CloudPrompt release notes, version by version. Version 1.2.3, in Chrome Web Store review, brings more reliable sign-in and clearer sync status." name="description"/>
   <meta content="CloudPrompt release notes, what's new, changelog, updates, new features, automatic backups, data safety, AI prompt manager" name="keywords"/>
   <meta content="CloudPrompt" name="author"/>
   <meta content="index, follow" name="robots"/>
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta content="What's New - CloudPrompt Release Notes" property="og:title"/>
-  <meta content="v1.2.2 brings automatic Google Drive backups and safer sync. Plus right-click save, context-aware prompts, and cross-browser support — version by version." property="og:description"/>
+  <meta content="CloudPrompt release notes, version by version. Version 1.2.3, in Chrome Web Store review, brings more reliable sign-in and clearer sync status." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
   <meta content="https://cloudprompt.app/whats-new.html" property="og:url"/>
   <meta content="website" property="og:type"/>
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="What's New - CloudPrompt Release Notes" name="twitter:title"/>
-  <meta content="v1.2.2 brings automatic Google Drive backups and safer sync, plus right-click save, context-aware prompts, and cross-browser support." name="twitter:description"/>
+  <meta content="CloudPrompt release notes, version by version. Version 1.2.3, in Chrome Web Store review, brings more reliable sign-in and clearer sync status." name="twitter:description"/>
   <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
 
   <!-- Favicons -->
@@ -76,7 +76,7 @@
         "@id": "https://cloudprompt.app/whats-new.html#webpage",
         "url": "https://cloudprompt.app/whats-new.html",
         "name": "What's New - CloudPrompt Release Notes",
-        "description": "CloudPrompt release notes, version by version. v1.2.2 brings automatic Google Drive backups and safer sync, plus right-click save, context-aware prompts, and cross-browser support.",
+        "description": "CloudPrompt release notes, version by version. Version 1.2.3, in Chrome Web Store review, brings more reliable sign-in and clearer sync status.",
         "isPartOf": {
           "@id": "https://cloudprompt.app/#website"
         },
@@ -86,7 +86,7 @@
         "breadcrumb": {
           "@id": "https://cloudprompt.app/whats-new.html#breadcrumb"
         },
-        "dateModified": "2026-07-03",
+        "dateModified": "2026-10-02",
         "inLanguage": "en"
       },
       {
@@ -116,11 +116,11 @@
         "applicationSubCategory": "AI Prompt Manager",
         "operatingSystem": "Windows, macOS, Linux, ChromeOS",
         "browserRequirements": "Requires a Chromium-based browser. CloudPrompt is distributed through the Chrome Web Store and supports Google Chrome, Microsoft Edge, and Comet.",
-        "softwareVersion": "1.2.2",
-        "description": "CloudPrompt is a privacy-first AI prompt manager. Save, organize, and instantly access AI prompts, synced to the user's own Google Drive. Version 1.2.2 adds automatic Google Drive backups and safer sync.",
+        "softwareVersion": "1.2.3",
+        "description": "CloudPrompt is a privacy-first AI prompt manager. Save, organize, and instantly access AI prompts, synced to the user's own Google Drive.",
         "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
         "releaseNotes": "https://cloudprompt.app/whats-new.html",
-        "dateModified": "2026-07-03",
+        "dateModified": "2026-10-02",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -200,14 +200,66 @@
   <section class="py-20 px-6" aria-label="CloudPrompt release notes">
     <div class="max-w-3xl mx-auto">
 
+      <!-- ── v1.2.3 ── -->
+      <article class="mb-16 fade-in" aria-labelledby="release-1-2-3">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="bg-apple-blue text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.3</span>
+          <span class="text-apple-gray text-sm">Submitted to the Chrome Web Store — rolling out automatically after review</span>
+          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-0.5 rounded-full">In review</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-3">More Reliable Sign-in + Clearer Sync Status</h2>
+        <div class="bg-apple-gray-light rounded-xl p-5 fade-in">
+          <ul class="space-y-1.5 text-apple-gray text-sm">
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>More reliable sign-in: fixed a Chrome issue where the library could fail to load after an hour of inactivity</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>No unexpected Google sign-in windows: CloudPrompt only asks when you click Connect or Reconnect</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>If your sign-in expires, your prompts stay on screen, with a clear prompt to reconnect</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>Sync status at a glance: the toolbar icon shows when sign-in is needed or changes are waiting to sync</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>Clearer messages when a save hasn't reached Google Drive yet</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>CloudPrompt now explains why your last remaining prompt can't be deleted</span>
+              </li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="border-t border-black/5 mb-16"></div>
+
       <!-- ── v1.2.2 ── -->
       <article class="mb-16 fade-in" aria-labelledby="release-1-2-2">
         <div class="flex flex-wrap items-center gap-3 mb-5">
-          <span class="bg-apple-blue text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.2</span>
+          <span class="bg-apple-dark text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.2</span>
           <time class="text-apple-gray text-sm" datetime="2026-07">July 2026</time>
-          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Latest</span>
+          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Current version</span>
         </div>
-        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-2">Automatic Backups + Safer Sync</h2>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-2">Version Number Fix</h2>
+        <p class="text-apple-gray leading-relaxed">Corrected the version number shown in Settings. No other changes.</p>
+      </article>
+
+      <div class="border-t border-black/5 mb-16"></div>
+
+      <!-- ── v1.2.1 ── -->
+      <article class="mb-16 fade-in" aria-labelledby="release-1-2-1">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="bg-apple-dark text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.1</span>
+          <time class="text-apple-gray text-sm" datetime="2026-06">June 2026</time>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-1">Automatic Backups + Safer Sync</h2>
         <p class="text-apple-gray leading-relaxed mb-8">A stability release. CloudPrompt saves a timestamped backup to your own Google Drive before changes that could risk data loss, and blocks a sync that would empty your library. Plus a more reliable importer and a round of security hardening.</p>
 
         <!-- Headline feature card -->
