@@ -3,9 +3,11 @@
   "private": true,
   "description": "Build tooling for cloudprompt.app. Only css/site.css is shipped to visitors.",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/tailwind.css -o ./css/site.css --minify"
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./css/site.css --minify",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "devDependencies": {
+    "sharp": "0.35.5",
     "tailwindcss": "3.4.17"
   }
 }
