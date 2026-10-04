@@ -1,0 +1,11 @@
+{
+  "name": "cloudprompt-website",
+  "private": true,
+  "description": "Build tooling for cloudprompt.app. Only css/site.css is shipped to visitors.",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./css/site.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
