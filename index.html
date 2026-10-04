@@ -13,7 +13,7 @@
   <!-- Open Graph -->
   <meta content="CloudPrompt - Your AI Prompts, Organized" property="og:title"/>
   <meta content="Save AI prompts with a right-click, organize them your way, and summon them anywhere with Ctrl+Shift+Y. Free browser extension with Google Drive sync." property="og:description"/>
-  <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" property="og:image"/>
   <meta content="https://cloudprompt.app/" property="og:url"/>
   <meta content="website" property="og:type"/>
   <meta content="CloudPrompt" property="og:site_name"/>
@@ -23,7 +23,7 @@
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="CloudPrompt - Your AI Prompts, Organized" name="twitter:title"/>
   <meta content="Save prompts with a right-click. Summon them with one keystroke. Free browser extension." name="twitter:description"/>
-  <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
+  <meta content="https://cloudprompt.app/images/twitter-card.jpg" name="twitter:image"/>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
@@ -34,13 +34,11 @@
   <!-- Theme Color -->
   <meta content="#ffffff" name="theme-color"/>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <!-- Inter font (self-hosted, see BUILD.md) -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
 
   <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="/css/site.css?v=20261004">
+  <link rel="stylesheet" href="/css/site.css?v=20261004b">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
@@ -410,7 +408,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="/">
-          <img src="images/logo.png" alt="" class="h-7 w-7 flex-shrink-0"/>
+          <img src="images/logo-56.png" alt="" class="h-7 w-7 flex-shrink-0" width="56" height="56"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <div class="hidden md:flex items-center space-x-8 text-sm">
@@ -476,7 +474,7 @@
       <!-- LIVE DEMO — dark, matches the real popup -->
       <div class="demo-shell max-w-xl mx-auto">
         <div class="p-4 flex items-center gap-3 border-b border-white/5">
-          <img src="images/logo.png" alt="" class="w-6 h-6 flex-shrink-0"/>
+          <img src="images/logo-56.png" alt="" class="w-6 h-6 flex-shrink-0" width="56" height="56"/>
           <input id="demoSearch" type="text" placeholder="Search your prompts..." class="demo-search" aria-label="Demo prompt search"/>
         </div>
         <div class="px-4 pt-3 flex gap-2 flex-wrap" id="demoPills" role="group" aria-label="Filter demo prompts by category">
@@ -520,7 +518,7 @@
         <p class="text-xl text-apple-gray max-w-2xl mx-auto">The popup follows your system theme. The Library gives you the full picture — folders, tags, templates, and search across everything.</p>
       </div>
       <div class="rounded-2xl overflow-hidden shadow-2xl border border-black/5 max-w-4xl mx-auto fade-in">
-        <img src="images/hero-library.png" alt="CloudPrompt Library — organize all your AI prompts with folders, tags, and search" class="w-full block"/>
+        <img src="images/hero-library.webp" alt="CloudPrompt Library — organize all your AI prompts with folders, tags, and search" class="w-full block" width="1440" height="791" loading="lazy"/>
       </div>
     </div>
   </section>
@@ -825,7 +823,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col items-center gap-8 mb-8">
         <div class="flex items-center space-x-2">
-          <img src="images/logo.png" alt="" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo-56.png" alt="" class="h-6 w-6 flex-shrink-0" width="56" height="56" loading="lazy"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
         <div class="flex flex-col items-center gap-3 text-sm text-apple-gray">
@@ -969,5 +967,6 @@
     });
     renderDemo();
   </script>
+  <script src="/js/install-click.js" defer></script>
 </body>
 </html>

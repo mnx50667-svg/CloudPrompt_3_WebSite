@@ -13,7 +13,7 @@
   <!-- Open Graph -->
   <meta content="ChatGPT Prompt Saver Extension — Save &amp; Reuse Your Best Prompts | CloudPrompt" property="og:title"/>
   <meta content="Save your best ChatGPT prompts and reuse them instantly. Free Chrome extension with Google Drive sync. Right-click to save selected ChatGPT text as a prompt." property="og:description"/>
-  <meta content="https://cloudprompt.app/images/og-image.png" property="og:image"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" property="og:image"/>
   <meta content="https://cloudprompt.app/chatgpt-prompt-saver.html" property="og:url"/>
   <meta content="website" property="og:type"/>
   <meta content="CloudPrompt" property="og:site_name"/>
@@ -23,7 +23,7 @@
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="ChatGPT Prompt Saver Extension — Save &amp; Reuse Your Best Prompts | CloudPrompt" name="twitter:title"/>
   <meta content="Save your best ChatGPT prompts and reuse them instantly. Free Chrome extension with Google Drive sync." name="twitter:description"/>
-  <meta content="https://cloudprompt.app/images/twitter-card.png" name="twitter:image"/>
+  <meta content="https://cloudprompt.app/images/twitter-card.jpg" name="twitter:image"/>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"/>
@@ -34,13 +34,11 @@
   <!-- Theme Color -->
   <meta content="#ffffff" name="theme-color"/>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <!-- Inter font (self-hosted, see BUILD.md) -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
 
   <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="/css/site.css?v=20261004">
+  <link rel="stylesheet" href="/css/site.css?v=20261004b">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
@@ -223,7 +221,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex items-center justify-between h-12">
         <a class="flex items-center space-x-2" href="/">
-          <img src="images/logo.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0"/>
+          <img src="images/logo-56.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0" width="56" height="56"/>
           <span class="font-semibold text-apple-dark">CloudPrompt</span>
         </a>
         <div class="flex items-center space-x-6 text-sm">
@@ -630,7 +628,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center space-x-2">
-          <img src="images/logo.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0"/>
+          <img src="images/logo-56.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0" width="56" height="56" loading="lazy"/>
           <span class="font-medium text-apple-dark">CloudPrompt</span>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
@@ -685,6 +683,7 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
+  <script src="/js/install-click.js" defer></script>
 </body>
 </html>
 
