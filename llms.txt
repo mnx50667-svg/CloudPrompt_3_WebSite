@@ -14,6 +14,9 @@
 - [Help](https://cloudprompt.app/help.html): Setup instructions, feature guidance, troubleshooting, and FAQs.
 - [FAQ](https://cloudprompt.app/faq.html): Answers to common questions about CloudPrompt: Google Drive sync, privacy and permissions, keyboard shortcuts and supported browsers.
 - [Blog](https://cloudprompt.app/blog/): Guides and how-tos for saving, organizing and reusing AI prompts with CloudPrompt.
+- [How to Build a Personal AI Prompt Library](https://cloudprompt.app/blog/personal-prompt-library.html): Learn how to build a personal AI prompt library: decide what to save, name prompts clearly, use folders, tags and templates, and keep it tidy over time.
+- [Reuse Prompts in Claude, Gemini and Copilot](https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html): Keep one set of prompts for Claude, Gemini and Copilot. Practical tips for saving, adapting and reusing prompts across AI tools, plus a simple workflow.
+- [Sync AI Prompts Across Devices (Google Drive)](https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html): How to sync AI prompts between work and home computers, what to look for in a sync setup, and how CloudPrompt stores prompts in your own Google Drive.
 - [What's New](https://cloudprompt.app/whats-new.html): CloudPrompt release notes and product updates.
 
 ## Policies

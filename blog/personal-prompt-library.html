@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>How to Build a Personal AI Prompt Library | CloudPrompt</title>
+  <meta content="Learn how to build a personal AI prompt library: decide what to save, name prompts clearly, use folders, tags and templates, and keep it tidy over time." name="description"/>
+  <meta content="CloudPrompt" name="author"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://cloudprompt.app/blog/personal-prompt-library.html" rel="canonical"/>
+
+  <!-- Open Graph -->
+  <meta content="How to Build a Personal AI Prompt Library" property="og:title"/>
+  <meta content="Learn how to build a personal AI prompt library: decide what to save, name prompts clearly, use folders, tags and templates, and keep it tidy over time." property="og:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" property="og:image"/>
+  <meta content="https://cloudprompt.app/blog/personal-prompt-library.html" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="How to Build a Personal AI Prompt Library" name="twitter:title"/>
+  <meta content="Learn how to build a personal AI prompt library: decide what to save, name prompts clearly, use folders, tags and templates, and keep it tidy over time." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" name="twitter:image"/>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+  <!-- Theme Color -->
+  <meta content="#ffffff" name="theme-color"/>
+
+  <!-- Inter font (self-hosted, see BUILD.md) -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/css/site.css?v=20261005c">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CN3771NXMX');
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/blog/personal-prompt-library.html#webpage",
+        "url": "https://cloudprompt.app/blog/personal-prompt-library.html",
+        "name": "How to Build a Personal AI Prompt Library | CloudPrompt",
+        "description": "Learn how to build a personal AI prompt library: decide what to save, name prompts clearly, use folders, tags and templates, and keep it tidy over time.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://cloudprompt.app/#website",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/blog/personal-prompt-library.html#breadcrumb"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://cloudprompt.app/blog/personal-prompt-library.html#article",
+        "headline": "How to Build a Personal AI Prompt Library",
+        "description": "Learn how to build a personal AI prompt library: decide what to save, name prompts clearly, use folders, tags and templates, and keep it tidy over time.",
+        "author": {
+          "@type": "Organization",
+          "name": "CloudPrompt Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "CloudPrompt",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cloudprompt.app/images/logo.png"
+          }
+        },
+        "datePublished": "2026-10-05",
+        "dateModified": "2026-10-05",
+        "image": "https://cloudprompt.app/images/og-image.jpg",
+        "mainEntityOfPage": "https://cloudprompt.app/blog/personal-prompt-library.html"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cloudprompt.app/blog/personal-prompt-library.html#faq",
+        "url": "https://cloudprompt.app/blog/personal-prompt-library.html",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is there a limit on how many prompts I can save in CloudPrompt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Prompts, folders and tags are unlimited. Templates are the exception: you can create up to 5 templates with up to 5 variables each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where are my prompts stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In your own Google Drive, in a CloudPrompt folder, as a file named prompts.json. There is no CloudPrompt account and nothing is stored on CloudPrompt servers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CloudPrompt only work with ChatGPT?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It is a personal prompt manager for ChatGPT, Claude, Gemini, Copilot and any other AI tool or website."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CloudPrompt cost anything?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It is a free browser extension for Google Chrome, Microsoft Edge and Comet by Perplexity, installed from the Chrome Web Store."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/blog/personal-prompt-library.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://cloudprompt.app/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How to Build a Personal AI Prompt Library",
+            "item": "https://cloudprompt.app/blog/personal-prompt-library.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #0071E3, #34C759, #5856D6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .article-code {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 0 0 20px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #1D1D1F;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body class="bg-white text-apple-dark">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-white focus:text-apple-dark focus:px-4 focus:py-2 focus:rounded-full focus:shadow-sm">Skip to main content</a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-12">
+        <a class="flex items-center space-x-2" href="/">
+          <img src="/images/logo-56.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0" width="56" height="56"/>
+          <span class="font-semibold text-apple-dark">CloudPrompt</span>
+        </a>
+        <div class="flex items-center space-x-6 text-sm">
+          <a class="text-apple-gray hover:text-apple-dark transition-colors hidden sm:inline" href="/">← Back to Home</a>
+          <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main id="main-content" tabindex="-1">
+
+  <!-- Article header -->
+  <section class="pt-28 pb-12 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-6 leading-tight">How to Build a Personal AI Prompt Library</h1>
+      <p class="text-sm text-apple-gray mb-6">By CloudPrompt Team · Updated <time datetime="2026-10-05">October 2026</time></p>
+    </div>
+  </section>
+
+  <!-- Article -->
+  <section class="py-16 px-6">
+    <article class="max-w-3xl mx-auto">
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">If you use AI tools for more than a few minutes a day, you have probably written a prompt you were proud of and then lost it. It worked once, you moved on, and a week later you were typing it from memory and getting a worse result. A personal prompt library fixes that. It is a small, organized collection of the prompts you actually reuse, kept somewhere you can reach in seconds. This guide walks through how to build one, whether you keep it in a text file, a notes app, or a dedicated tool.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Why good prompts get lost in old chats</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Chat interfaces are built for conversation, not for storage. Every session starts fresh, and your history turns into a long list of titles that rarely describe what you asked for. The prompt that produced a great summary last month is in there somewhere, between "Quick question" and "Untitled."</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">A few things make this worse:</p>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li>Prompts are written in the moment, so they are tuned to one task and rarely saved as a general version.</li>
+        <li>The strongest version of a prompt is usually the third or fourth attempt, buried under earlier tries in the same thread.</li>
+        <li>You use several tools, so your history is <a class="text-apple-blue hover:underline" href="/blog/save-prompts-claude-gemini-copilot.html">split across ChatGPT, Claude, Gemini and Copilot</a> with no shared view.</li>
+      </ul>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Searching chat history also tends to surface the answer, not the question. When you want to reuse your wording, you want the prompt itself, cleaned up and ready to paste.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">What makes a prompt worth saving</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Not every prompt deserves a spot in your library. Save the ones that pass at least one of these tests:</p>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li><strong class="text-apple-dark">You will use it again.</strong> Weekly reports, meeting summaries, code reviews, email replies.</li>
+        <li><strong class="text-apple-dark">It took effort to get right.</strong> If you iterated three times to land the tone or format you wanted, that work is worth keeping.</li>
+        <li><strong class="text-apple-dark">It encodes a standard.</strong> A prompt that lists your team's code-review checklist or your house style for documentation is a policy as much as a prompt.</li>
+        <li><strong class="text-apple-dark">It is hard to remember.</strong> Long role descriptions, strict output formats and detailed constraints are easy to forget and tedious to retype.</li>
+      </ul>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Skip one-off questions and anything you could rewrite in ten seconds. A small library you trust beats a large one you stop opening.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Before you save a prompt, clean it up. Remove references to a specific document or date, state the goal in the first line, and make the expected output format explicit. You are writing it for your future self, who will have forgotten the context.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Naming prompts so you can find them</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">A good name tells you what the prompt does and when to use it, without opening it. A few conventions help:</p>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li>Start with a verb: "Summarize meeting notes into action items" rather than "Meeting notes."</li>
+        <li>Add the output type when it matters: "Draft a polite follow-up email" or "Explain a code diff in plain English."</li>
+        <li>Keep the audience or context if you have variants: "Code review (Python, strict)" and "Code review (quick pass)."</li>
+        <li>Avoid version numbers in the name. Edit the prompt in place instead of saving "v2," "v3" and "final final."</li>
+      </ul>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Once you have more than a dozen prompts, consistent naming matters more than any folder structure, because you will find most things by searching.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Folders or tags?</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Folders and tags solve different problems, and you will probably want both.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Folders</strong> answer "where does this belong?" Each prompt lives in one place. They work well when your prompts split cleanly by area: Work, Writing, Coding, Personal. They also work well when you organize by tool, with a folder for each AI assistant you use.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Tags</strong> answer "what is this about?" One prompt can carry several tags: "email," "formal," "customer." Tags shine when the same prompt fits multiple categories, which happens more often than you expect.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">A practical starting point:</p>
+      <ol class="list-decimal pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li>Create five to eight folders by area or by tool. Resist making more at first.</li>
+        <li>Add tags for recurring qualities: tone, output format, programming language, audience.</li>
+        <li>Pin or star the handful of prompts you use every day so they sit at the top.</li>
+      </ol>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">If you are unsure where a prompt goes, that is a sign it should be tagged rather than filed.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Turn repeated prompts into templates</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Many prompts share one skeleton with a few details swapped in. Instead of editing the text each time, mark the parts that change with placeholders in square brackets.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">An email template might look like this:</p>
+      <pre class="article-code"><code>Write a short, friendly email to [name] about [topic].
+Keep it under 120 words, use a warm but professional tone,
+and end with a clear next step for [name] to take.</code></pre>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">And a code-review checklist:</p>
+      <pre class="article-code"><code>Review the following [language] code for:
+1. Correctness and edge cases
+2. Readability and naming
+3. Error handling
+4. Security concerns
+Explain each issue briefly and suggest a fix.
+Code: [code]</code></pre>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">When you reuse a template, you fill in the brackets and paste. Keep the number of placeholders small. Two to five variables is usually enough; beyond that, the template becomes a form and you lose the speed benefit.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Keep your library tidy over time</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">A prompt library decays like any other collection. Set a light routine:</p>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li><strong class="text-apple-dark">Prune monthly.</strong> Delete prompts you have not touched in a few months, or move them to an "Archive" folder if deleting feels drastic.</li>
+        <li><strong class="text-apple-dark">Merge duplicates.</strong> When two prompts do nearly the same job, combine them and keep the better wording.</li>
+        <li><strong class="text-apple-dark">Update, do not fork.</strong> When a prompt improves, edit the original rather than saving a new copy for each small change.</li>
+        <li><strong class="text-apple-dark">Review folders quarterly.</strong> If a folder holds two prompts, fold it into another. If one holds forty, split it.</li>
+        <li><strong class="text-apple-dark">Keep an export.</strong> Whatever tool you use, have a copy of your library in a plain format you could open anywhere.</li>
+      </ul>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">The goal is not a perfect taxonomy. It is a library you open without hesitation because you know what is in it.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">How CloudPrompt handles this</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">CloudPrompt is a <a class="text-apple-blue hover:underline" href="/ai-prompt-manager-chrome-extension.html">free browser extension</a> for Chrome, Edge and Comet that applies the ideas above without a separate app to run.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Saving is built into the browser. When a prompt works, you select the text on the page, right-click, and choose "Save to CloudPrompt." It's saved to your library, with no detour through a notes app.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Organizing works the way this guide describes. You get folders, tags, fast full-text search, filters, and pinning for favorite prompts, with no limit on how many prompts, folders or tags you create. If you organize by tool, CloudPrompt detects when you are on ChatGPT, Claude, Gemini or Copilot and shows matching prompts first, so on ChatGPT your ChatGPT folder comes to the top.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">For repeated prompts, CloudPrompt supports templates with [variable] placeholders that you fill in each time. You can create up to 5 templates with up to 5 variables each, which lines up with the advice to keep placeholders few.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Your library is <a class="text-apple-blue hover:underline" href="/blog/sync-ai-prompts-across-devices.html">stored in your own Google Drive</a>, in a CloudPrompt folder as a file called prompts.json. There is no CloudPrompt account to create, and nothing is stored on CloudPrompt servers. That covers the "keep an export" advice by default: the file is already yours, in a plain format, in your own storage.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">If you would like a home for the prompts you keep retyping, install CloudPrompt from the Chrome Web Store and start by saving the three prompts you used most this week.</p>
+      <div class="mt-8">
+      <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/>
+        </svg>
+        <span>Get CloudPrompt — Free</span>
+      </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 bg-apple-gray-light" id="faq">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">FAQ</h2>
+      </div>
+
+      <div class="space-y-3">
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-1" aria-expanded="false" aria-controls="faq-answer-1">
+            <span class="font-medium">Is there a limit on how many prompts I can save in CloudPrompt?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" aria-hidden="true">
+            <p class="pb-4">No. Prompts, folders and tags are unlimited. Templates are the exception: you can create up to 5 templates with up to 5 variables each.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-2" aria-expanded="false" aria-controls="faq-answer-2">
+            <span class="font-medium">Where are my prompts stored?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2" aria-hidden="true">
+            <p class="pb-4">In your own Google Drive, in a CloudPrompt folder, as a file named prompts.json. There is no CloudPrompt account and nothing is stored on CloudPrompt servers.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-3" aria-expanded="false" aria-controls="faq-answer-3">
+            <span class="font-medium">Does CloudPrompt only work with ChatGPT?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" aria-hidden="true">
+            <p class="pb-4">No. It is a personal prompt manager for ChatGPT, Claude, Gemini, Copilot and any other AI tool or website.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-4" aria-expanded="false" aria-controls="faq-answer-4">
+            <span class="font-medium">Does CloudPrompt cost anything?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4" aria-hidden="true">
+            <p class="pb-4">No. It is a free browser extension for Google Chrome, Microsoft Edge and Comet by Perplexity, installed from the Chrome Web Store.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-8 text-center fade-in">Related guides</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <a class="text-xl font-semibold hover:text-apple-blue transition-colors" href="/blog/save-prompts-claude-gemini-copilot.html">How to Save and Reuse Prompts in Claude, Gemini and Copilot</a>
+        </div>
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <a class="text-xl font-semibold hover:text-apple-blue transition-colors" href="/blog/sync-ai-prompts-across-devices.html">How to Sync Your AI Prompts Across Devices with Google Drive</a>
+        </div>
+      </div>
+      <div class="text-center mt-8 fade-in">
+        <a class="inline-flex items-center text-apple-blue hover:underline font-medium" href="/blog/">All guides</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-2">
+          <img src="/images/logo-56.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0" width="56" height="56" loading="lazy"/>
+          <span class="font-medium text-apple-dark">CloudPrompt</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
+          <a class="hover:text-apple-dark transition-colors" href="/">Home</a>
+          <a class="hover:text-apple-dark transition-colors" href="/#features">Features</a>
+          <a class="hover:text-apple-dark transition-colors" href="/faq.html">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="/whats-new.html">What's New</a>
+          <a class="hover:text-apple-dark transition-colors" href="/help.html">Help</a>
+          <a class="hover:text-apple-dark transition-colors" href="/blog/">Blog</a>
+          <a class="hover:text-apple-dark transition-colors" href="/privacy.html">Privacy</a>
+          <a class="hover:text-apple-dark transition-colors" href="/terms.html">Terms</a>
+          <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
+          <a class="hover:text-apple-dark transition-colors" href="https://www.linkedin.com/company/cloudprompt-ai" rel="noopener" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-black/5 text-center text-sm text-apple-gray">
+        <p>© 2026 CloudPrompt. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const wasActive = item.classList.contains('active');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          const toggle = i.querySelector('.faq-toggle');
+          const answer = i.querySelector('.faq-answer');
+          toggle.setAttribute('aria-expanded', 'false');
+          answer.setAttribute('aria-hidden', 'true');
+        });
+
+        if (!wasActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+  <script src="/js/install-click.js" defer></script>
+</body>
+</html>

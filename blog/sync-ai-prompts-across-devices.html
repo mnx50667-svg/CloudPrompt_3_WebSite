@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Sync AI Prompts Across Devices (Google Drive) | CloudPrompt</title>
+  <meta content="How to sync AI prompts between work and home computers, what to look for in a sync setup, and how CloudPrompt stores prompts in your own Google Drive." name="description"/>
+  <meta content="CloudPrompt" name="author"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html" rel="canonical"/>
+
+  <!-- Open Graph -->
+  <meta content="Sync AI Prompts Across Devices (Google Drive)" property="og:title"/>
+  <meta content="How to sync AI prompts between work and home computers, what to look for in a sync setup, and how CloudPrompt stores prompts in your own Google Drive." property="og:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" property="og:image"/>
+  <meta content="https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Sync AI Prompts Across Devices (Google Drive)" name="twitter:title"/>
+  <meta content="How to sync AI prompts between work and home computers, what to look for in a sync setup, and how CloudPrompt stores prompts in your own Google Drive." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" name="twitter:image"/>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+  <!-- Theme Color -->
+  <meta content="#ffffff" name="theme-color"/>
+
+  <!-- Inter font (self-hosted, see BUILD.md) -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/css/site.css?v=20261005c">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CN3771NXMX');
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html#webpage",
+        "url": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html",
+        "name": "Sync AI Prompts Across Devices (Google Drive) | CloudPrompt",
+        "description": "How to sync AI prompts between work and home computers, what to look for in a sync setup, and how CloudPrompt stores prompts in your own Google Drive.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://cloudprompt.app/#website",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html#breadcrumb"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html#article",
+        "headline": "How to Sync Your AI Prompts Across Devices with Google Drive",
+        "description": "How to sync AI prompts between work and home computers, what to look for in a sync setup, and how CloudPrompt stores prompts in your own Google Drive.",
+        "author": {
+          "@type": "Organization",
+          "name": "CloudPrompt Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "CloudPrompt",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cloudprompt.app/images/logo.png"
+          }
+        },
+        "datePublished": "2026-10-05",
+        "dateModified": "2026-10-05",
+        "image": "https://cloudprompt.app/images/og-image.jpg",
+        "mainEntityOfPage": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html#faq",
+        "url": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where exactly are my prompts stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In your own Google Drive, in a CloudPrompt folder, in a file named prompts.json. Nothing is stored on CloudPrompt servers and there is no CloudPrompt account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can CloudPrompt see my other Google Drive files?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It uses Google's drive.file access, which limits it to files it creates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get the same prompts on two computers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Install CloudPrompt on each computer and connect the same Google account. Both see the same library, and changes sync automatically in the background."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I get my prompts out if I stop using CloudPrompt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can export your whole library as JSON or CSV, and the prompts.json file remains in your Google Drive."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://cloudprompt.app/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How to Sync Your AI Prompts Across Devices with Google Drive",
+            "item": "https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #0071E3, #34C759, #5856D6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .article-code {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 0 0 20px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #1D1D1F;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body class="bg-white text-apple-dark">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-white focus:text-apple-dark focus:px-4 focus:py-2 focus:rounded-full focus:shadow-sm">Skip to main content</a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-12">
+        <a class="flex items-center space-x-2" href="/">
+          <img src="/images/logo-56.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0" width="56" height="56"/>
+          <span class="font-semibold text-apple-dark">CloudPrompt</span>
+        </a>
+        <div class="flex items-center space-x-6 text-sm">
+          <a class="text-apple-gray hover:text-apple-dark transition-colors hidden sm:inline" href="/">← Back to Home</a>
+          <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main id="main-content" tabindex="-1">
+
+  <!-- Article header -->
+  <section class="pt-28 pb-12 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-6 leading-tight">How to Sync Your AI Prompts Across Devices with Google Drive</h1>
+      <p class="text-sm text-apple-gray mb-6">By CloudPrompt Team · Updated <time datetime="2026-10-05">October 2026</time></p>
+    </div>
+  </section>
+
+  <!-- Article -->
+  <section class="py-16 px-6">
+    <article class="max-w-3xl mx-auto">
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">You write a prompt on your work laptop that finally gets the summary format right. That evening, at your home desktop, you need it and it is not there. You either retype it from memory or dig through a chat history that lives in a different browser profile. If you use AI tools on more than one computer, keeping your prompts in step is a real, daily friction. This guide looks at the common ways people move prompts between machines, what to look for in a sync setup that respects your data, and how CloudPrompt approaches it using your own Google Drive.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">How people usually move prompts between machines</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Most of us start with whatever is at hand. Each of these works, up to a point.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Emailing or messaging yourself.</strong> Fast and familiar. The downside is that your prompts are now scattered across dozens of messages with no structure, and finding "that one about meeting notes" means searching your inbox. Updates create new messages rather than replacing the old one, so you end up with several versions and no clear current one.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">A notes app.</strong> Better, because notes are organized and searchable. The problems appear at scale: one long note becomes a wall of text, notes apps are not built for quickly inserting text into a web page, and if the app is tied to one ecosystem, your other computer may not have it.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">A text file in a cloud folder.</strong> Simple, portable and under your control. It works well for a handful of prompts. Past that, you are scrolling a long file, editing in two places risks conflicts, and there is no quick way to pull a prompt into the browser without switching windows.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Relying on chat history.</strong> The assistant remembers your conversations, so why not just scroll back? Because history is per tool, often per account, and organized by time rather than by task. It also stores the whole exchange rather than the reusable prompt.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Browser sync of bookmarks or tabs.</strong> Some people save prompts as bookmark names or keep tabs open. This is fragile, hard to search, and breaks the moment you clear a session.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">None of these are wrong. They just stop scaling once you have <a class="text-apple-blue hover:underline" href="/blog/personal-prompt-library.html">more than a dozen prompts you care about</a>.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">What to look for in a sync setup</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">If you are going to rely on something to keep prompts in step across devices, it is worth being deliberate about what you want from it.</p>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li><strong class="text-apple-dark">Your own storage.</strong> Prefer a setup where the data sits in an account you already control, rather than on a third party's server. If the tool disappears, your prompts should still be yours.</li>
+        <li><strong class="text-apple-dark">Narrow access.</strong> If a tool connects to your cloud storage, it should only be able to touch the files it creates, not everything else in there.</li>
+        <li><strong class="text-apple-dark">No extra account.</strong> Every new account is another password and another place your data lives. Fewer is better.</li>
+        <li><strong class="text-apple-dark">Automatic background sync.</strong> You should not have to remember to upload or download anything. Change a prompt on one machine, see it on the other.</li>
+        <li><strong class="text-apple-dark">Backups before risky changes.</strong> Imports, bulk edits and merges are where things go wrong. A copy taken right before helps.</li>
+        <li><strong class="text-apple-dark">Export in a plain format.</strong> JSON or CSV you can open in a text editor or spreadsheet. This is your exit route if you ever change tools.</li>
+        <li><strong class="text-apple-dark">Offline access.</strong> You should still be able to read your prompts on a plane or a flaky connection.</li>
+        <li><strong class="text-apple-dark">Visible status.</strong> Some signal that tells you whether you are signed in and whether changes have synced, so you are not guessing.</li>
+      </ul>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">You can meet most of these with a careful manual setup. The question is whether you want to maintain it.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Sync, backups and export do different jobs</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Sync keeps the same library on every computer. A backup is a copy taken before a risky change, so you can step back if something goes wrong. An export is a separate file you keep or move to another tool. A good setup gives you all three, because sync copies mistakes to every device just as faithfully as it copies improvements.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">The manual approach with Google Drive</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">If you prefer to do it yourself, a reasonable baseline is a single plain-text or JSON file in a Google Drive folder, opened from each computer. Keep one prompt per block with a short title line, and edit in one place at a time to avoid conflicts. Export is trivial because the file already is the export. Backups are up to you: copy the file before a big reorganization.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">What this approach lacks is the last mile. The prompts are synced, but getting one into a chat window still means switching to the file, finding the prompt, copying, switching back and pasting. For a few prompts a day that is fine. For twenty, it adds up.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">How CloudPrompt syncs with Google Drive</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">CloudPrompt is a free browser extension for Chrome, Edge and Comet that takes the manual approach above and removes the friction, while keeping your data where you can see it.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Your prompts are <a class="text-apple-blue hover:underline" href="/google-drive-prompt-manager.html">stored in your own Google Drive</a>, in a CloudPrompt folder, as a file called prompts.json. There is no CloudPrompt account to create, and nothing is stored on CloudPrompt servers. The file is yours, in your Drive, in a readable format.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Access is narrow. CloudPrompt uses Google's drive.file permission, which means it can only access files it creates. It cannot see the rest of your Drive.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Syncing across computers is a matter of installing CloudPrompt on each one and connecting the same Google account. Each installation then sees the same library, and changes sync automatically in the background. You connect once with Google's secure sign-in (OAuth). If your sign-in ever expires, your prompts stay on screen and CloudPrompt asks you to reconnect.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Before changes that could risk data loss, CloudPrompt makes an automatic backup to your Drive. You can also <a class="text-apple-blue hover:underline" href="/faq.html">import and export your whole library</a> as JSON or CSV at any time, so you have a plain copy independent of the extension.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">When you are offline, prompts cached on your device remain available. The toolbar icon shows sync status, including whether you need to sign in or whether changes are waiting to sync, and you get storage usage alerts.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">If you would like your prompts to follow you between your work and home computers without an extra account to manage, install CloudPrompt from the Chrome Web Store and connect your Google account on each machine.</p>
+      <div class="mt-8">
+      <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/>
+        </svg>
+        <span>Get CloudPrompt — Free</span>
+      </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 bg-apple-gray-light" id="faq">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">FAQ</h2>
+      </div>
+
+      <div class="space-y-3">
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-1" aria-expanded="false" aria-controls="faq-answer-1">
+            <span class="font-medium">Where exactly are my prompts stored?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" aria-hidden="true">
+            <p class="pb-4">In your own Google Drive, in a CloudPrompt folder, in a file named prompts.json. Nothing is stored on CloudPrompt servers and there is no CloudPrompt account.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-2" aria-expanded="false" aria-controls="faq-answer-2">
+            <span class="font-medium">Can CloudPrompt see my other Google Drive files?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2" aria-hidden="true">
+            <p class="pb-4">No. It uses Google's drive.file access, which limits it to files it creates.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-3" aria-expanded="false" aria-controls="faq-answer-3">
+            <span class="font-medium">How do I get the same prompts on two computers?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" aria-hidden="true">
+            <p class="pb-4">Install CloudPrompt on each computer and connect the same Google account. Both see the same library, and changes sync automatically in the background.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-4" aria-expanded="false" aria-controls="faq-answer-4">
+            <span class="font-medium">Can I get my prompts out if I stop using CloudPrompt?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4" aria-hidden="true">
+            <p class="pb-4">Yes. You can export your whole library as JSON or CSV, and the prompts.json file remains in your Google Drive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-8 text-center fade-in">Related guides</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <a class="text-xl font-semibold hover:text-apple-blue transition-colors" href="/blog/personal-prompt-library.html">How to Build a Personal AI Prompt Library</a>
+        </div>
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <a class="text-xl font-semibold hover:text-apple-blue transition-colors" href="/blog/save-prompts-claude-gemini-copilot.html">How to Save and Reuse Prompts in Claude, Gemini and Copilot</a>
+        </div>
+      </div>
+      <div class="text-center mt-8 fade-in">
+        <a class="inline-flex items-center text-apple-blue hover:underline font-medium" href="/blog/">All guides</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-2">
+          <img src="/images/logo-56.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0" width="56" height="56" loading="lazy"/>
+          <span class="font-medium text-apple-dark">CloudPrompt</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
+          <a class="hover:text-apple-dark transition-colors" href="/">Home</a>
+          <a class="hover:text-apple-dark transition-colors" href="/#features">Features</a>
+          <a class="hover:text-apple-dark transition-colors" href="/faq.html">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="/whats-new.html">What's New</a>
+          <a class="hover:text-apple-dark transition-colors" href="/help.html">Help</a>
+          <a class="hover:text-apple-dark transition-colors" href="/blog/">Blog</a>
+          <a class="hover:text-apple-dark transition-colors" href="/privacy.html">Privacy</a>
+          <a class="hover:text-apple-dark transition-colors" href="/terms.html">Terms</a>
+          <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
+          <a class="hover:text-apple-dark transition-colors" href="https://www.linkedin.com/company/cloudprompt-ai" rel="noopener" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-black/5 text-center text-sm text-apple-gray">
+        <p>© 2026 CloudPrompt. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const wasActive = item.classList.contains('active');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          const toggle = i.querySelector('.faq-toggle');
+          const answer = i.querySelector('.faq-answer');
+          toggle.setAttribute('aria-expanded', 'false');
+          answer.setAttribute('aria-hidden', 'true');
+        });
+
+        if (!wasActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+  <script src="/js/install-click.js" defer></script>
+</body>
+</html>
