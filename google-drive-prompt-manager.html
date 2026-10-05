@@ -135,7 +135,7 @@
             "name": "Can I see my prompts directly in Google Drive?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The page states that CloudPrompt stores prompts in a CloudPrompt folder in Google Drive, including a human-readable prompts.json file."
+              "text": "Yes. Open Google Drive, navigate to the CloudPrompt folder, and open prompts.json. It's a plain JSON file — readable in any text editor or directly in Drive's preview pane. Every prompt, folder, and tag you've created is right there. You can even edit the file directly if you want (though using the extension is much easier)."
             }
           },
           {
@@ -143,15 +143,15 @@
             "name": "What happens if I uninstall CloudPrompt?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The page states that uninstalling the extension removes the local browser cache but leaves prompts.json in Google Drive, so the library can be restored by reinstalling CloudPrompt and reconnecting the same Google account."
+              "text": "Uninstalling the extension clears the local cache from your browser. Your prompts.json file remains in your Google Drive — your data isn't lost. Reinstall CloudPrompt later (or on another device) and reconnect the same Google account, and your full library reappears. To delete everything permanently, just remove the CloudPrompt folder from Drive."
             }
           },
           {
             "@type": "Question",
-            "name": "Can CloudPrompt access my other Google Drive files?",
+            "name": "Can you access my other Google Drive files?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "CloudPrompt uses the Google Drive drive.file OAuth scope, which provides per-file access to specific Drive files used with the app, including files it creates or files the user explicitly authorizes for use with it. It does not grant broad access to all files in the user's Google Drive."
+              "text": "CloudPrompt does not request broad access to your Google Drive. It uses the drive.file OAuth scope, which limits access to specific Drive files used with the app, including files the extension creates or files you explicitly authorize for use with it. It does not grant access to all of your documents, photos, or folders."
             }
           },
           {
@@ -159,7 +159,7 @@
             "name": "Is my data encrypted?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "CloudPrompt relies on Google Drive's transport and storage security for the prompt file and does not add a separate application-level encryption layer."
+              "text": "Yes, with the same encryption Google Drive uses for everything else: TLS in transit and AES-256 at rest. Your prompts.json file inherits Google's enterprise-grade Drive encryption. CloudPrompt itself doesn't add a separate encryption layer because the OAuth-protected, drive.file-scoped storage is already secure — and adding our own encryption would mean storing keys somewhere, which is exactly the architecture we're avoiding."
             }
           },
           {
