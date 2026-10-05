@@ -38,7 +38,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
 
   <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="/css/site.css?v=20261005">
+  <link rel="stylesheet" href="/css/site.css?v=20261005c">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
@@ -132,7 +132,7 @@
             "name": "Can I save prompts directly from ChatGPT?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. You can highlight text on ChatGPT, right-click it, and select Save to CloudPrompt, or open CloudPrompt with the keyboard shortcut and add a prompt manually."
+              "text": "Yes, two ways. You can highlight any text in ChatGPT (your prompt, a response you want to reuse, anything), right-click it, and select Save to CloudPrompt. Or press Ctrl+Shift+Y anywhere on chatgpt.com to open your library and click New Prompt to add one manually. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how. Both take about five seconds."
             }
           },
           {
@@ -148,7 +148,7 @@
             "name": "Will my prompts sync across devices?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Prompts are stored in your Google Drive, so devices using CloudPrompt with the same connected Google account can access the same library."
+              "text": "Yes. Your prompts are stored in your Google Drive, so they're available on every device where you install CloudPrompt and connect the same Google account. Install it on your work laptop and home desktop — both see the same library. Changes sync automatically in the background."
             }
           },
           {
@@ -168,6 +168,28 @@
             }
           }
         ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://cloudprompt.app/chatgpt-prompt-saver.html#article",
+        "headline": "Save Your Best ChatGPT Prompts — and Reuse Them Instantly",
+        "description": "Save your best ChatGPT prompts and reuse them instantly. Free Chrome extension that organizes prompts by folder and tag, with Google Drive sync.",
+        "author": {
+          "@type": "Organization",
+          "name": "CloudPrompt Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "CloudPrompt",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cloudprompt.app/images/logo.png"
+          }
+        },
+        "datePublished": "2026-05-15",
+        "dateModified": "2026-10-05",
+        "image": "https://cloudprompt.app/images/og-image.jpg",
+        "mainEntityOfPage": "https://cloudprompt.app/chatgpt-prompt-saver.html"
       }
     ]
   }
@@ -215,6 +237,7 @@
   </style>
 </head>
 <body class="bg-white text-apple-dark">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-white focus:text-apple-dark focus:px-4 focus:py-2 focus:rounded-full focus:shadow-sm">Skip to main content</a>
 
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
@@ -232,7 +255,7 @@
     </div>
   </nav>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
 
   <!-- Hero Section -->
   <section class="pt-28 pb-16 px-6 bg-apple-gray-light">
@@ -244,6 +267,7 @@
       <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-6 leading-tight">
         Save Your Best <span class="gradient-text">ChatGPT Prompts</span> — and Reuse Them Instantly
       </h1>
+      <p class="text-sm text-apple-gray mb-6">By CloudPrompt Team · Updated <time datetime="2026-10-05">October 2026</time></p>
       <p class="text-xl text-apple-gray max-w-2xl mx-auto mb-10 leading-relaxed">
         You've spent hours crafting the perfect ChatGPT prompt. Don't lose it in a sea of conversations. CloudPrompt saves, organizes, and lets you reuse any prompt in ChatGPT — free, and synced to your Google Drive.
       </p>
@@ -473,7 +497,7 @@
               <svg class="w-4 h-4 text-green-500 mr-2.5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>CloudPrompt has no servers — we never see your prompts</span>
+              <span>Nothing is stored on CloudPrompt servers.</span>
             </li>
             <li class="flex items-start">
               <svg class="w-4 h-4 text-green-500 mr-2.5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -617,6 +641,24 @@
           <span>Get CloudPrompt — Free</span>
         </a>
         <a class="text-apple-blue hover:underline font-medium" href="help.html">See the setup guide →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-8 text-center fade-in">Related guides</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <a class="text-xl font-semibold hover:text-apple-blue transition-colors" href="/ai-prompt-manager-chrome-extension.html">The AI Prompt Manager Chrome Extension That Saves to Your Google Drive</a>
+        </div>
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <a class="text-xl font-semibold hover:text-apple-blue transition-colors" href="/google-drive-prompt-manager.html">The Prompt Manager That Stores Everything in Your Google Drive</a>
+        </div>
+      </div>
+      <div class="text-center mt-8 fade-in">
+        <a class="inline-flex items-center text-apple-blue hover:underline font-medium" href="/blog/">All guides</a>
       </div>
     </div>
   </section>

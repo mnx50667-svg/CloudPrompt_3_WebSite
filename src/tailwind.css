@@ -255,3 +255,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+main:focus {
+  outline: none;
+}
