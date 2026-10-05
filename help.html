@@ -38,7 +38,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
 
   <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="/css/site.css?v=20261004b">
+  <link rel="stylesheet" href="/css/site.css?v=20261005">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
@@ -74,49 +74,7 @@
         },
         "breadcrumb": {
           "@id": "https://cloudprompt.app/help.html#breadcrumb"
-        },
-        "mainEntity": {
-          "@id": "https://cloudprompt.app/help.html#faq"
         }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://cloudprompt.app/help.html#faq",
-        "url": "https://cloudprompt.app/help.html#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Does CloudPrompt work on ChatGPT / Claude / Gemini?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes — because it works on any website. Use the keyboard shortcut to copy a prompt and paste it anywhere."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What's the difference between the keyboard shortcut and right-click save?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The keyboard shortcut opens your library on any page so you can search and copy a prompt. Right-click save does the opposite: it saves text you've selected on a page as a new prompt."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do I need an account?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No separate CloudPrompt account. Google Drive connection is used for storage + sync."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is CloudPrompt free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. CloudPrompt is free: unlimited prompts, folders and tags, sync and automatic backups to your own Google Drive, import and export, and up to 5 templates. Optional paid features may be added later."
-            }
-          }
-        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -779,56 +737,8 @@
 
   <!-- FAQ Section -->
   <section class="py-20 px-6" id="faq">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12 fade-in">
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">Frequently Asked Questions</h2>
-      </div>
-
-      <div class="space-y-3">
-        <!-- FAQ Item 1 -->
-        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-8" aria-expanded="false" aria-controls="accordion-panel-8">
-            <span class="font-medium">Does CloudPrompt work on ChatGPT / Claude / Gemini?</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
-          </button>
-          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-8" aria-labelledby="accordion-button-8" aria-hidden="true">
-            <p class="pb-4">Yes — because it works on <strong>any website</strong>. Use the keyboard shortcut to copy a prompt and paste it anywhere.</p>
-          </div>
-        </div>
-
-        <!-- FAQ Item — Right-click save -->
-        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-9" aria-expanded="false" aria-controls="accordion-panel-9">
-            <span class="font-medium">What's the difference between the keyboard shortcut and right-click save?</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
-          </button>
-          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-9" aria-labelledby="accordion-button-9" aria-hidden="true">
-            <p class="pb-4">The keyboard shortcut opens your library on any page so you can search and copy a prompt. Right-click save does the opposite: it saves text you've selected on a page as a new prompt.</p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 2 -->
-        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-10" aria-expanded="false" aria-controls="accordion-panel-10">
-            <span class="font-medium">Do I need an account?</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
-          </button>
-          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-10" aria-labelledby="accordion-button-10" aria-hidden="true">
-            <p class="pb-4">No separate CloudPrompt account. Google Drive connection is used for storage + sync.</p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 3 -->
-        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
-          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-11" aria-expanded="false" aria-controls="accordion-panel-11">
-            <span class="font-medium">Is CloudPrompt free?</span>
-            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
-          </button>
-          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-11" aria-labelledby="accordion-button-11" aria-hidden="true">
-            <p class="pb-4">Yes. CloudPrompt is free: unlimited prompts, folders and tags, sync and automatic backups to your own Google Drive, import and export, and up to 5 templates. Optional paid features may be added later.</p>
-          </div>
-        </div>
-      </div>
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <p class="text-lg text-apple-gray">Looking for answers? <a class="text-apple-blue hover:underline font-medium" href="/faq.html">See the full FAQ</a></p>
     </div>
   </section>
 
@@ -866,7 +776,8 @@
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
           <a class="hover:text-apple-dark transition-colors" href="/">Home</a>
           <a class="hover:text-apple-dark transition-colors" href="/#features">Features</a>
-          <a class="hover:text-apple-dark transition-colors" href="/#faq">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="/faq.html">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="/blog/">Blog</a>
           <a class="hover:text-apple-dark transition-colors" href="whats-new.html">What's New</a>
           <a class="hover:text-apple-dark transition-colors" href="privacy.html">Privacy</a>
           <a class="hover:text-apple-dark transition-colors" href="terms.html">Terms</a>

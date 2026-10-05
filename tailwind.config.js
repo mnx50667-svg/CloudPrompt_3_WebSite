@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './*.html',
+    './blog/**/*.html',
     '!./oauth-callback.html',
   ],
   safelist: [],

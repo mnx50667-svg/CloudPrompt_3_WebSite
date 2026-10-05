@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>CloudPrompt Blog: Guides for Managing AI Prompts</title>
+  <meta content="Guides and how-tos for saving, organizing and reusing AI prompts with CloudPrompt." name="description"/>
+  <meta content="CloudPrompt" name="author"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://cloudprompt.app/blog/" rel="canonical"/>
+
+  <!-- Open Graph -->
+  <meta content="CloudPrompt Blog: Guides for Managing AI Prompts" property="og:title"/>
+  <meta content="Guides and how-tos for saving, organizing and reusing AI prompts with CloudPrompt." property="og:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" property="og:image"/>
+  <meta content="https://cloudprompt.app/blog/" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="CloudPrompt Blog: Guides for Managing AI Prompts" name="twitter:title"/>
+  <meta content="Guides and how-tos for saving, organizing and reusing AI prompts with CloudPrompt." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/twitter-card.jpg" name="twitter:image"/>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+
+  <!-- Theme Color -->
+  <meta content="#ffffff" name="theme-color"/>
+
+  <!-- Inter font (self-hosted, see BUILD.md) -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/css/site.css?v=20261005">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CN3771NXMX');
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://cloudprompt.app/blog/#blog",
+        "url": "https://cloudprompt.app/blog/",
+        "name": "CloudPrompt Blog: Guides for Managing AI Prompts",
+        "description": "Guides and how-tos for saving, organizing and reusing AI prompts with CloudPrompt.",
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "AI Prompt Manager Chrome Extension",
+            "url": "https://cloudprompt.app/ai-prompt-manager-chrome-extension.html",
+            "author": {
+              "@type": "Organization",
+              "name": "CloudPrompt Team"
+            }
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "ChatGPT Prompt Saver: Save & Reuse Prompts",
+            "url": "https://cloudprompt.app/chatgpt-prompt-saver.html",
+            "author": {
+              "@type": "Organization",
+              "name": "CloudPrompt Team"
+            }
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Google Drive Prompt Manager",
+            "url": "https://cloudprompt.app/google-drive-prompt-manager.html",
+            "author": {
+              "@type": "Organization",
+              "name": "CloudPrompt Team"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/blog/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://cloudprompt.app/blog/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white text-apple-dark">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-12">
+        <a class="flex items-center space-x-2" href="/">
+          <img src="/images/logo-56.png" alt="" class="h-7 w-7 flex-shrink-0" width="56" height="56"/>
+          <span class="font-semibold text-apple-dark">CloudPrompt</span>
+        </a>
+        <div class="flex items-center space-x-6 text-sm">
+          <a class="text-apple-gray hover:text-apple-dark transition-colors hidden sm:inline" href="/">← Back to Home</a>
+          <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-12 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">Blog</h1>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <h2 class="text-xl font-semibold mb-2">AI Prompt Manager Chrome Extension</h2>
+          <p class="text-apple-gray leading-relaxed mb-4">Save, organize and reuse AI prompts in Chrome, Edge and Comet. CloudPrompt keeps your prompt library in your own Google Drive.</p>
+          <a class="inline-flex items-center text-apple-blue hover:underline font-medium text-sm" href="/ai-prompt-manager-chrome-extension.html">Learn more →</a>
+        </div>
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <h2 class="text-xl font-semibold mb-2">ChatGPT Prompt Saver: Save &amp; Reuse Prompts</h2>
+          <p class="text-apple-gray leading-relaxed mb-4">Save your best ChatGPT prompts and reuse them instantly. Free Chrome extension that organizes prompts by folder and tag, with Google Drive sync.</p>
+          <a class="inline-flex items-center text-apple-blue hover:underline font-medium text-sm" href="/chatgpt-prompt-saver.html">Learn more →</a>
+        </div>
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <h2 class="text-xl font-semibold mb-2">Google Drive Prompt Manager</h2>
+          <p class="text-apple-gray leading-relaxed mb-4">Store and manage AI prompts in your own Google Drive with CloudPrompt. Free Chrome extension with no separate CloudPrompt account and no CloudPrompt-hosted prompt database.</p>
+          <a class="inline-flex items-center text-apple-blue hover:underline font-medium text-sm" href="/google-drive-prompt-manager.html">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-2">
+          <img src="/images/logo-56.png" alt="" class="h-6 w-6 flex-shrink-0" width="56" height="56" loading="lazy"/>
+          <span class="font-medium text-apple-dark">CloudPrompt</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
+          <a class="hover:text-apple-dark transition-colors" href="/">Home</a>
+          <a class="hover:text-apple-dark transition-colors" href="/#features">Features</a>
+          <a class="hover:text-apple-dark transition-colors" href="/faq.html">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="/whats-new.html">What's New</a>
+          <a class="hover:text-apple-dark transition-colors" href="/help.html">Help</a>
+          <a class="hover:text-apple-dark transition-colors" href="/privacy.html">Privacy</a>
+          <a class="hover:text-apple-dark transition-colors" href="/terms.html">Terms</a>
+          <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-black/5 text-center text-sm text-apple-gray">
+        <p>© 2026 CloudPrompt. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Fade in on scroll ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+  <script src="/js/install-click.js" defer></script>
+</body>
+</html>

@@ -38,7 +38,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
 
   <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="/css/site.css?v=20261004b">
+  <link rel="stylesheet" href="/css/site.css?v=20261005">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
@@ -363,38 +363,6 @@
               "@type": "Answer",
               "text": "CloudPrompt asks for: Google sign-in and Drive access limited to the files it creates (the drive.file scope), to store your prompts file and its backups; local storage, for a copy of your library and your settings; tabs, to handle Google sign-in on Edge and Comet and to read the active tab's address so prompts for that AI site show first; the right-click menu, for Save to CloudPrompt; and access to all sites, so the keyboard shortcut and right-click save work on any page. CloudPrompt does not track your browsing or send your data to CloudPrompt servers."
             }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use it with Claude, Gemini, or other AI tools?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely! CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to open your library, click a prompt to copy it, and paste it into any AI tool. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What does \"context-aware\" mean?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first — pinned prompts, then platform matches, then everything else. Toggle it in Settings → Smart Features."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does it work on Edge or Comet?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! CloudPrompt fully supports Microsoft Edge and Comet by Perplexity, in addition to Google Chrome. Install it from the Chrome Web Store — both browsers support Chrome extensions. Sign-in opens a Google tab that closes automatically when done. If you run into trouble, check that pop-ups are not blocked and try again."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I export my data?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Go to Settings → Backup & Restore → Export. You can download all your prompts as JSON or CSV anytime."
-            }
           }
         ]
       }
@@ -414,9 +382,10 @@
         <div class="hidden md:flex items-center space-x-8 text-sm">
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#features">Features</a>
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#how-it-works">How It Works</a>
-          <a class="text-apple-gray hover:text-apple-dark transition-colors" href="#faq">FAQ</a>
+          <a class="text-apple-gray hover:text-apple-dark transition-colors" href="/faq.html">FAQ</a>
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="whats-new.html">What's New</a>
           <a class="text-apple-gray hover:text-apple-dark transition-colors" href="help.html">Help</a>
+          <a class="text-apple-gray hover:text-apple-dark transition-colors" href="/blog/">Blog</a>
           <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog" id="nav-cta">Get CloudPrompt</a>
         </div>
         <button type="button" class="md:hidden p-2" id="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
@@ -439,9 +408,10 @@
       <div class="mt-12 flex flex-col space-y-6">
         <a class="text-apple-dark hover:text-apple-blue transition-colors" href="#features">Features</a>
         <a class="text-apple-dark hover:text-apple-blue transition-colors" href="#how-it-works">How It Works</a>
-        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="#faq">FAQ</a>
+        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="/faq.html">FAQ</a>
         <a class="text-apple-dark hover:text-apple-blue transition-colors" href="whats-new.html">What's New</a>
         <a class="text-apple-dark hover:text-apple-blue transition-colors" href="help.html">Help</a>
+        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="/blog/">Blog</a>
         <a class="bg-apple-blue text-white px-4 py-3 rounded-full text-center font-medium" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt — Free</a>
       </div>
     </div>
@@ -766,42 +736,9 @@
             <p class="pb-4">CloudPrompt asks for: Google sign-in and Drive access limited to the files it creates (the <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">drive.file</code> scope), to store your prompts file and its backups; local storage, for a copy of your library and your settings; tabs, to handle Google sign-in on Edge and Comet and to read the active tab's address so prompts for that AI site show first; the right-click menu, for Save to CloudPrompt; and access to all sites, so the keyboard shortcut and right-click save work on any page. CloudPrompt does not track your browsing or send your data to CloudPrompt servers.</p>
           </div>
         </div>
-        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-6" aria-expanded="false" aria-controls="faq-answer-6">
-            <span class="font-medium">Can I use it with Claude, Gemini, or other AI tools?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-6" aria-hidden="true">
-            <p class="pb-4">Absolutely! CloudPrompt works on any website. Press Ctrl+Shift+Y anywhere to open your library, click a prompt to copy it, and paste it into any AI tool. Microsoft Edge reserves this shortcut; choose another, such as Ctrl+Shift+X. CloudPrompt shows you how.</p>
-          </div>
-        </div>
-        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-7" aria-expanded="false" aria-controls="faq-answer-7">
-            <span class="font-medium">What does "context-aware" mean?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-7" aria-hidden="true">
-            <p class="pb-4">When you open CloudPrompt on ChatGPT, Claude, Gemini, or Copilot, it automatically shows your most relevant prompts for that platform first — pinned prompts, then platform matches, then everything else. Toggle it in Settings → Smart Features.</p>
-          </div>
-        </div>
-        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-8" aria-expanded="false" aria-controls="faq-answer-8">
-            <span class="font-medium">Does it work on Edge or Comet?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-8" aria-hidden="true">
-            <p class="pb-4">Yes! CloudPrompt fully supports Microsoft Edge and Comet by Perplexity, in addition to Google Chrome. Install it from the Chrome Web Store — both browsers support Chrome extensions. Sign-in opens a Google tab that closes automatically when done. If you run into trouble, check that pop-ups are not blocked and try again.</p>
-          </div>
-        </div>
-        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
-          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-9" aria-expanded="false" aria-controls="faq-answer-9">
-            <span class="font-medium">How do I export my data?</span>
-            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-9" aria-hidden="true">
-            <p class="pb-4">Go to Settings → Backup &amp; Restore → Export. You can download all your prompts as JSON or CSV anytime.</p>
-          </div>
-        </div>
+      </div>
+      <div class="text-center mt-8 fade-in">
+        <a class="inline-flex items-center text-apple-blue hover:underline font-medium" href="/faq.html">See all questions</a>
       </div>
     </div>
   </section>
@@ -829,9 +766,10 @@
         <div class="flex flex-col items-center gap-3 text-sm text-apple-gray">
           <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <a class="hover:text-apple-dark transition-colors" href="#features">Features</a>
-            <a class="hover:text-apple-dark transition-colors" href="#faq">FAQ</a>
+            <a class="hover:text-apple-dark transition-colors" href="/faq.html">FAQ</a>
             <a class="hover:text-apple-dark transition-colors" href="whats-new.html">What's New</a>
             <a class="hover:text-apple-dark transition-colors" href="help.html">Help</a>
+            <a class="hover:text-apple-dark transition-colors" href="/blog/">Blog</a>
             <a class="hover:text-apple-dark transition-colors" href="privacy.html">Privacy</a>
             <a class="hover:text-apple-dark transition-colors" href="terms.html">Terms</a>
             <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
