@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Reuse Prompts in Claude, Gemini and Copilot | CloudPrompt</title>
+  <meta content="Keep one set of prompts for Claude, Gemini and Copilot. Practical tips for saving, adapting and reusing prompts across AI tools, plus a simple workflow." name="description"/>
+  <meta content="CloudPrompt" name="author"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html" rel="canonical"/>
+
+  <!-- Open Graph -->
+  <meta content="Reuse Prompts in Claude, Gemini and Copilot" property="og:title"/>
+  <meta content="Keep one set of prompts for Claude, Gemini and Copilot. Practical tips for saving, adapting and reusing prompts across AI tools, plus a simple workflow." property="og:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" property="og:image"/>
+  <meta content="https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="CloudPrompt" property="og:site_name"/>
+  <meta content="en_US" property="og:locale"/>
+
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Reuse Prompts in Claude, Gemini and Copilot" name="twitter:title"/>
+  <meta content="Keep one set of prompts for Claude, Gemini and Copilot. Practical tips for saving, adapting and reusing prompts across AI tools, plus a simple workflow." name="twitter:description"/>
+  <meta content="https://cloudprompt.app/images/og-image.jpg" name="twitter:image"/>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+  <!-- Theme Color -->
+  <meta content="#ffffff" name="theme-color"/>
+
+  <!-- Inter font (self-hosted, see BUILD.md) -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/css/site.css?v=20261005c">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3771NXMX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CN3771NXMX');
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html#webpage",
+        "url": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html",
+        "name": "Reuse Prompts in Claude, Gemini and Copilot | CloudPrompt",
+        "description": "Keep one set of prompts for Claude, Gemini and Copilot. Practical tips for saving, adapting and reusing prompts across AI tools, plus a simple workflow.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://cloudprompt.app/#website",
+          "name": "CloudPrompt",
+          "url": "https://cloudprompt.app/"
+        },
+        "breadcrumb": {
+          "@id": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html#breadcrumb"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html#article",
+        "headline": "How to Save and Reuse Prompts in Claude, Gemini and Copilot",
+        "description": "Keep one set of prompts for Claude, Gemini and Copilot. Practical tips for saving, adapting and reusing prompts across AI tools, plus a simple workflow.",
+        "author": {
+          "@type": "Organization",
+          "name": "CloudPrompt Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "CloudPrompt",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cloudprompt.app/images/logo.png"
+          }
+        },
+        "datePublished": "2026-10-05",
+        "dateModified": "2026-10-05",
+        "image": "https://cloudprompt.app/images/og-image.jpg",
+        "mainEntityOfPage": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html#faq",
+        "url": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does CloudPrompt work with Claude, Gemini and Copilot, or just ChatGPT?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It works with ChatGPT, Claude, Gemini, Copilot and any other AI tool or website."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I open my prompts while I am in a chat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Press Ctrl+Shift+Y (Cmd+Shift+Y on Mac) to open your library on any page and search, copy and paste a prompt. Microsoft Edge reserves this shortcut, so Edge users choose another, such as Ctrl+Shift+X, and CloudPrompt shows how."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I save a prompt without copying and pasting it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Select the text on any webpage, right-click, and choose \"Save to CloudPrompt.\""
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I save fill-in-the-blank prompts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. CloudPrompt supports templates with [variable] placeholders, up to 5 templates with up to 5 variables each."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cloudprompt.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://cloudprompt.app/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How to Save and Reuse Prompts in Claude, Gemini and Copilot",
+            "item": "https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #0071E3, #34C759, #5856D6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .article-code {
+      background: #F5F5F7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 0 0 20px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #1D1D1F;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body class="bg-white text-apple-dark">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-white focus:text-apple-dark focus:px-4 focus:py-2 focus:rounded-full focus:shadow-sm">Skip to main content</a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5" aria-label="Primary navigation">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-12">
+        <a class="flex items-center space-x-2" href="/">
+          <img src="/images/logo-56.png" alt="" aria-hidden="true" class="h-7 w-7 flex-shrink-0" width="56" height="56"/>
+          <span class="font-semibold text-apple-dark">CloudPrompt</span>
+        </a>
+        <div class="flex items-center space-x-6 text-sm">
+          <a class="text-apple-gray hover:text-apple-dark transition-colors hidden sm:inline" href="/">← Back to Home</a>
+          <a class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main id="main-content" tabindex="-1">
+
+  <!-- Article header -->
+  <section class="pt-28 pb-12 px-6 bg-apple-gray-light">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-6 leading-tight">How to Save and Reuse Prompts in Claude, Gemini and Copilot</h1>
+      <p class="text-sm text-apple-gray mb-6">By CloudPrompt Team · Updated <time datetime="2026-10-05">October 2026</time></p>
+    </div>
+  </section>
+
+  <!-- Article -->
+  <section class="py-16 px-6">
+    <article class="max-w-3xl mx-auto">
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Few people use a single AI assistant. You might draft in Claude, research in Gemini, and lean on Copilot inside your work tools, with ChatGPT somewhere in the mix. Each one is good at something, and each one keeps its own history. The result is that your prompts end up scattered across four places, and the version you want is in the tool you are not using right now. This guide covers how to keep one prompt set that works everywhere, how to adapt it per tool without rewriting it, and a workflow you can follow with any storage method.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">The problem with several tools and one set of prompts</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">When you only used one assistant, your chat history was a rough but workable archive. With several, it falls apart:</p>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li>Each tool has its own history, so a prompt you refined in Claude is invisible when you open Gemini.</li>
+        <li>You end up with slightly different versions of the same prompt in each place, and no idea which one is current.</li>
+        <li>Switching tools means retyping, and retyping means drift. Small wording changes creep in and results become less consistent.</li>
+        <li>If one tool is unavailable or you move to a new one, your prompts do not come with you.</li>
+      </ul>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">The fix is to treat your prompts as something you own, separate from any one chat window. Where they live matters less than the habit of saving them somewhere outside the conversation.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Save the prompt, not the conversation</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Chat histories hold the whole exchange: your prompt, the answer, your follow-ups, the corrections. What you want to reuse is usually just the prompt, in its final form.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">When a prompt works well, pause and extract it:</p>
+      <ol class="list-decimal pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li>Copy the final wording, not the first attempt.</li>
+        <li>Strip out anything specific to that session, such as a pasted document or a date.</li>
+        <li>Add one line at the top that states the goal, so you understand it later.</li>
+        <li>Store it with a name that starts with a verb: "Summarize a long thread," "Rewrite for a non-technical reader."</li>
+      </ol>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Do this while the prompt is fresh. Going back through history a week later to find the good version is the step most people skip.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Adapting a prompt for each tool</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Most of a good prompt is portable. The task, the constraints, the output format and the examples work the same wherever you paste them. What tends to need adjusting is the framing around the edges.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Some general patterns:</p>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-apple-gray leading-relaxed mb-5">
+        <li><strong class="text-apple-dark">Keep a tool-neutral core.</strong> Write the main instruction so it does not depend on how any one assistant behaves. "Respond in a numbered list with one sentence per item" is clear everywhere.</li>
+        <li><strong class="text-apple-dark">Adjust the opening line, not the body.</strong> If one tool responds better to a short role statement and another to a direct instruction, change the first sentence and leave the rest alone.</li>
+        <li><strong class="text-apple-dark">Be explicit about format.</strong> Different assistants have different defaults for length and structure. Stating "under 150 words" or "use a table" reduces the variation.</li>
+        <li><strong class="text-apple-dark">Test once per tool and note what changed.</strong> A single line in your saved prompt, such as "Gemini: add 'be concise' at the end," saves you from rediscovering it.</li>
+      </ul>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Some assistants offer their own ways to store instructions or reusable context inside the tool. These can be useful, but they stay inside that one tool, which is the problem you are trying to solve.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Avoid maintaining full separate copies for each assistant unless the prompts really diverge. Three versions of the same prompt is three things to keep in sync.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">A simple cross-tool workflow</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Here is a workflow that works with a notes app, a text file, or a dedicated prompt manager.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Step 1: Write once, in neutral form.</strong> Draft the prompt as if you did not know which tool would receive it. Put the task first, constraints second, output format last.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Step 2: Test in each tool you use.</strong> Paste it into Claude, Gemini and Copilot. Note where the output differs from what you want.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Step 3: Record small per-tool tweaks.</strong> If one tool needs an extra sentence, add a short note inside the saved prompt rather than a new copy.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Step 4: Organize by task, then by tool.</strong> Folders for the kind of work (writing, coding, research) and tags for the tool when a prompt is tool-specific. If you prefer a folder per assistant, that works too; just keep the structure consistent.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Step 5: Reuse from one place.</strong> Whenever you start a task, open your library first, not your chat history. Paste the prompt, fill in any placeholders, and go.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Two example prompts that travel well between tools:</p>
+      <pre class="article-code"><code>Summarize the following text in five bullet points for a reader
+who has not seen it. Lead with the decision or main finding.
+Text: [text]</code></pre>
+      <pre class="article-code"><code>You are reviewing a pull request. For the [language] code below,
+list bugs, risky assumptions and unclear naming. Keep each item
+to one line and suggest a fix. Code: [code]</code></pre>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Both state the task, the audience, the format and the length. Neither depends on anything a specific assistant does.</p>
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">Where CloudPrompt fits</h2>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">CloudPrompt is a free browser extension that works as a personal prompt manager for ChatGPT, Claude, Gemini, Copilot and any other AI tool or website. Because it lives in the browser rather than in any one assistant, the same library is available in every tab.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Saving follows the "extract it while it is fresh" advice. When a prompt works in Claude, you select the text, right-click, and choose "Save to CloudPrompt." The same gesture works in Gemini, in Copilot, or on a documentation page where you found a prompt worth keeping.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Reusing is a keyboard shortcut away. Ctrl+Shift+Y (Cmd+Shift+Y on Mac) opens your prompt library on any page so you can search, copy and paste a prompt without leaving the chat. Microsoft Edge reserves this shortcut, so if you use Edge you choose a different one, such as Ctrl+Shift+X, and CloudPrompt shows you how.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">CloudPrompt also handles the "organize by tool" step for you. It detects when you are on ChatGPT, Claude, Gemini or Copilot and shows matching prompts first, so prompts for Claude come first while you are in Claude, and prompts for Gemini when you switch.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">For the per-tool tweaks and fill-in-the-blank prompts above, CloudPrompt supports templates with [variable] placeholders. You can create up to 5 templates with up to 5 variables each, and fill them in each time you use them.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">If you are tired of rebuilding the same prompt in three different chat windows, install CloudPrompt from the Chrome Web Store and save the next prompt that works.</p>
+      <div class="mt-8">
+      <a class="inline-flex items-center space-x-2 bg-apple-blue text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-apple-blue-hover transition-colors" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/>
+        </svg>
+        <span>Get CloudPrompt — Free</span>
+      </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 bg-apple-gray-light" id="faq">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">FAQ</h2>
+      </div>
+
+      <div class="space-y-3">
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-1" aria-expanded="false" aria-controls="faq-answer-1">
+            <span class="font-medium">Does CloudPrompt work with Claude, Gemini and Copilot, or just ChatGPT?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" aria-hidden="true">
+            <p class="pb-4">It works with ChatGPT, Claude, Gemini, Copilot and any other AI tool or website.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-2" aria-expanded="false" aria-controls="faq-answer-2">
+            <span class="font-medium">How do I open my prompts while I am in a chat?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2" aria-hidden="true">
+            <p class="pb-4">Press Ctrl+Shift+Y (Cmd+Shift+Y on Mac) to open your library on any page and search, copy and paste a prompt. Microsoft Edge reserves this shortcut, so Edge users choose another, such as Ctrl+Shift+X, and CloudPrompt shows how.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-3" aria-expanded="false" aria-controls="faq-answer-3">
+            <span class="font-medium">Can I save a prompt without copying and pasting it?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" aria-hidden="true">
+            <p class="pb-4">Yes. Select the text on any webpage, right-click, and choose "Save to CloudPrompt."</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-toggle-4" aria-expanded="false" aria-controls="faq-answer-4">
+            <span class="font-medium">Can I save fill-in-the-blank prompts?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4" aria-hidden="true">
+            <p class="pb-4">Yes. CloudPrompt supports templates with [variable] placeholders, up to 5 templates with up to 5 variables each.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-8 text-center fade-in">Related guides</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <a class="text-xl font-semibold hover:text-apple-blue transition-colors" href="/blog/personal-prompt-library.html">How to Build a Personal AI Prompt Library</a>
+        </div>
+        <div class="bg-apple-gray-light rounded-2xl p-6 fade-in">
+          <a class="text-xl font-semibold hover:text-apple-blue transition-colors" href="/blog/sync-ai-prompts-across-devices.html">How to Sync Your AI Prompts Across Devices with Google Drive</a>
+        </div>
+      </div>
+      <div class="text-center mt-8 fade-in">
+        <a class="inline-flex items-center text-apple-blue hover:underline font-medium" href="/blog/">All guides</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-2">
+          <img src="/images/logo-56.png" alt="" aria-hidden="true" class="h-6 w-6 flex-shrink-0" width="56" height="56" loading="lazy"/>
+          <span class="font-medium text-apple-dark">CloudPrompt</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-apple-gray">
+          <a class="hover:text-apple-dark transition-colors" href="/">Home</a>
+          <a class="hover:text-apple-dark transition-colors" href="/#features">Features</a>
+          <a class="hover:text-apple-dark transition-colors" href="/faq.html">FAQ</a>
+          <a class="hover:text-apple-dark transition-colors" href="/whats-new.html">What's New</a>
+          <a class="hover:text-apple-dark transition-colors" href="/help.html">Help</a>
+          <a class="hover:text-apple-dark transition-colors" href="/blog/">Blog</a>
+          <a class="hover:text-apple-dark transition-colors" href="/privacy.html">Privacy</a>
+          <a class="hover:text-apple-dark transition-colors" href="/terms.html">Terms</a>
+          <a class="hover:text-apple-dark transition-colors" href="mailto:support@cloudprompt.app">Support</a>
+          <a class="hover:text-apple-dark transition-colors" href="https://www.linkedin.com/company/cloudprompt-ai" rel="noopener" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-black/5 text-center text-sm text-apple-gray">
+        <p>© 2026 CloudPrompt. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const wasActive = item.classList.contains('active');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          const toggle = i.querySelector('.faq-toggle');
+          const answer = i.querySelector('.faq-answer');
+          toggle.setAttribute('aria-expanded', 'false');
+          answer.setAttribute('aria-hidden', 'true');
+        });
+
+        if (!wasActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+  <script src="/js/install-click.js" defer></script>
+</body>
+</html>
