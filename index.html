@@ -99,13 +99,161 @@
       transform: rotate(45deg);
     }
 
-    .mobile-menu {
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
+    /* ── Mobile menu ── */
+    .mm-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 200ms ease-out, visibility 0s linear 200ms;
     }
 
-    .mobile-menu.open {
+    .mm-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 200ms ease-out, visibility 0s linear 0s;
+    }
+
+    .mm-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 61;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      width: min(85vw, 360px);
+      height: 100vh;
+      height: 100dvh;
+      padding-bottom: env(safe-area-inset-bottom);
+      background: #FFFFFF;
+      box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+      transform: translateX(100%);
+      visibility: hidden;
+      transition: transform 250ms ease-out, visibility 0s linear 250ms;
+    }
+
+    .mm-panel.open {
       transform: translateX(0);
+      visibility: visible;
+      transition: transform 250ms ease-out, visibility 0s linear 0s;
+    }
+
+    .mm-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      height: 60px;
+      padding: 0 8px 0 20px;
+      border-bottom: 1px solid #E5E5EA;
+    }
+
+    .mm-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #1D1D1F;
+    }
+
+    .mm-brand img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .mm-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: #1D1D1F;
+      cursor: pointer;
+    }
+
+    .mm-close:hover { background: #F5F5F7; }
+
+    .mm-links {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+    }
+
+    .mm-links a {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      min-height: 48px;
+      padding: 0 20px;
+      font-size: 17px;
+      color: #1D1D1F;
+      text-decoration: none;
+    }
+
+    .mm-links a + a { border-top: 1px solid #E5E5EA; }
+
+    .mm-links a:hover,
+    .mm-links a:active { background: #F5F5F7; }
+
+    .mm-cta-wrap {
+      flex-shrink: 0;
+      padding: 16px 20px 20px;
+    }
+
+    .mm-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 9999px;
+      background: #0071E3;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .mm-cta:hover { background: #0077ED; }
+
+    .mm-close:focus-visible,
+    .mm-links a:focus-visible {
+      outline: 2px solid #0071E3;
+      outline-offset: -2px;
+    }
+
+    .mm-cta:focus-visible {
+      outline: 2px solid #0071E3;
+      outline-offset: 2px;
+    }
+
+    html.mm-lock,
+    html.mm-lock body { overflow: hidden; }
+
+    @media (min-width: 768px) {
+      .mm-backdrop,
+      .mm-panel { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mm-backdrop,
+      .mm-backdrop.open,
+      .mm-panel,
+      .mm-panel.open { transition: none; }
     }
 
     /* ── Dark hero ── */
@@ -398,24 +546,31 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <nav class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 md:hidden" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true" inert>
-    <div class="p-6">
-      <button type="button" class="absolute top-4 right-4 p-2" id="mobile-menu-close" aria-label="Close menu">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div class="mm-backdrop" id="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div class="mm-panel" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true" inert>
+    <div class="mm-header">
+      <div class="mm-brand">
+        <img src="/images/logo-56.png" alt="" width="28" height="28"/>
+        <span>CloudPrompt</span>
+      </div>
+      <button type="button" class="mm-close" id="mobile-menu-close" aria-label="Close menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
         </svg>
       </button>
-      <div class="mt-12 flex flex-col space-y-6">
-        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="#features">Features</a>
-        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="#how-it-works">How It Works</a>
-        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="/faq.html">FAQ</a>
-        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="whats-new.html">What's New</a>
-        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="help.html">Help</a>
-        <a class="text-apple-dark hover:text-apple-blue transition-colors" href="/blog/">Blog</a>
-        <a class="bg-apple-blue text-white px-4 py-3 rounded-full text-center font-medium" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt — Free</a>
-      </div>
     </div>
-  </nav>
+    <nav class="mm-links" aria-label="Mobile navigation">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="whats-new.html">What's New</a>
+      <a href="help.html">Help</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <div class="mm-cta-wrap">
+      <a class="mm-cta" href="https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog">Get CloudPrompt — Free</a>
+    </div>
+  </div>
 
   <main id="main-content">
   <!-- ═══════════ DARK HERO — live demo + keystroke + spotlight ═══════════ -->
@@ -793,34 +948,61 @@
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
 
-    function setMobileMenu(open) {
+    function setMobileMenu(open, returnFocus = true) {
       mobileMenu.classList.toggle('open', open);
+      mobileMenuBackdrop.classList.toggle('open', open);
+      document.documentElement.classList.toggle('mm-lock', open);
       mobileMenuBtn.setAttribute('aria-expanded', String(open));
       mobileMenu.setAttribute('aria-hidden', String(!open));
 
       if (open) {
         mobileMenu.removeAttribute('inert');
+        mobileMenuClose.focus();
       } else {
         mobileMenu.setAttribute('inert', '');
+        if (returnFocus) mobileMenuBtn.focus();
       }
     }
 
     mobileMenuBtn.addEventListener('click', () => setMobileMenu(true));
-    mobileMenuClose.addEventListener('click', () => {
-      setMobileMenu(false);
-      mobileMenuBtn.focus();
-    });
+    mobileMenuClose.addEventListener('click', () => setMobileMenu(false));
+    mobileMenuBackdrop.addEventListener('click', () => setMobileMenu(false));
 
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => setMobileMenu(false));
     });
 
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      if (!mobileMenu.classList.contains('open')) return;
+
+      if (event.key === 'Escape') {
         setMobileMenu(false);
-        mobileMenuBtn.focus();
+        return;
       }
+
+      if (event.key === 'Tab') {
+        const focusable = mobileMenu.querySelectorAll('a[href], button');
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (!mobileMenu.contains(document.activeElement)) {
+          event.preventDefault();
+          first.focus();
+        } else if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    // Close the menu if the window is widened to desktop size while it is open.
+    window.matchMedia('(min-width: 768px)').addEventListener('change', event => {
+      if (event.matches && mobileMenu.classList.contains('open')) setMobileMenu(false, false);
     });
 
     // ── FAQ accordion ──
