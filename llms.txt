@@ -12,6 +12,8 @@
 ## Documentation
 
 - [Help](https://cloudprompt.app/help.html): Setup instructions, feature guidance, troubleshooting, and FAQs.
+- [FAQ](https://cloudprompt.app/faq.html): Answers to common questions about CloudPrompt: Google Drive sync, privacy and permissions, keyboard shortcuts and supported browsers.
+- [Blog](https://cloudprompt.app/blog/): Guides and how-tos for saving, organizing and reusing AI prompts with CloudPrompt.
 - [What's New](https://cloudprompt.app/whats-new.html): CloudPrompt release notes and product updates.
 
 ## Policies
