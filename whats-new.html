@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>What's New - CloudPrompt Release Notes</title>
-  <meta content="CloudPrompt release notes, version by version. Version 1.2.3 brings more reliable sign-in, clearer sync status and better error messages." name="description"/>
+  <meta content="CloudPrompt release notes, version by version. Version 1.2.4, a data-safety update, is submitted to the Chrome Web Store, rolling out after review." name="description"/>
   <meta content="CloudPrompt release notes, what's new, changelog, updates, new features, automatic backups, data safety, AI prompt manager" name="keywords"/>
   <meta content="CloudPrompt" name="author"/>
   <meta content="index, follow" name="robots"/>
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta content="What's New - CloudPrompt Release Notes" property="og:title"/>
-  <meta content="CloudPrompt release notes, version by version. Version 1.2.3 brings more reliable sign-in, clearer sync status and better error messages." property="og:description"/>
+  <meta content="CloudPrompt release notes, version by version. Version 1.2.4, a data-safety update, is submitted to the Chrome Web Store, rolling out after review." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.jpg" property="og:image"/>
   <meta content="https://cloudprompt.app/whats-new.html" property="og:url"/>
   <meta content="website" property="og:type"/>
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="What's New - CloudPrompt Release Notes" name="twitter:title"/>
-  <meta content="CloudPrompt release notes, version by version. Version 1.2.3 brings more reliable sign-in, clearer sync status and better error messages." name="twitter:description"/>
+  <meta content="CloudPrompt release notes, version by version. Version 1.2.4, a data-safety update, is submitted to the Chrome Web Store, rolling out after review." name="twitter:description"/>
   <meta content="https://cloudprompt.app/images/twitter-card.jpg" name="twitter:image"/>
 
   <!-- Favicons -->
@@ -59,7 +59,7 @@
         "@id": "https://cloudprompt.app/whats-new.html#webpage",
         "url": "https://cloudprompt.app/whats-new.html",
         "name": "What's New - CloudPrompt Release Notes",
-        "description": "CloudPrompt release notes, version by version. Version 1.2.3 brings more reliable sign-in, clearer sync status and better error messages.",
+        "description": "CloudPrompt release notes, version by version. Version 1.2.4, a data-safety update, is submitted to the Chrome Web Store, rolling out after review.",
         "isPartOf": {
           "@id": "https://cloudprompt.app/#website"
         },
@@ -69,7 +69,7 @@
         "breadcrumb": {
           "@id": "https://cloudprompt.app/whats-new.html#breadcrumb"
         },
-        "dateModified": "2026-10-04T09:00:00+03:00",
+        "dateModified": "2026-10-26T09:00:00+03:00",
         "inLanguage": "en"
       },
       {
@@ -103,7 +103,7 @@
         "description": "CloudPrompt is a privacy-first AI prompt manager. Save, organize, and instantly access AI prompts, synced to the user's own Google Drive.",
         "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
         "releaseNotes": "https://cloudprompt.app/whats-new.html",
-        "dateModified": "2026-10-04T09:00:00+03:00",
+        "dateModified": "2026-10-26T09:00:00+03:00",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -184,12 +184,52 @@
   <section class="py-20 px-6" aria-label="CloudPrompt release notes">
     <div class="max-w-3xl mx-auto">
 
+      <!-- ── v1.2.4 ── -->
+      <article class="mb-16 fade-in" aria-labelledby="release-1-2-4">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="bg-apple-blue text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.4</span>
+          <span class="text-apple-gray text-sm">Submitted to the Chrome Web Store, rolling out after review</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-4">Version 1.2.4</h2>
+        <p class="text-apple-gray leading-relaxed mb-8">A data-safety update. No new permissions and no change to how your prompts are stored.</p>
+        <div class="bg-apple-gray-light rounded-xl p-5 fade-in">
+          <ul class="space-y-1.5 text-apple-gray text-sm">
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>Safer offline saves: a prompt saved while you're offline stays on your device and syncs the next time you use CloudPrompt online, instead of being lost when the library refreshes</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>CloudPrompt no longer replaces your Google Drive library with an empty or out-of-date copy from this device</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>Safer account switching: when you connect a different Google account, the previous account's prompts are not added to the new account's Drive</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>Safer updates: changes still waiting to sync when CloudPrompt updates are kept on this device instead of overwriting your library</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>New "Changes kept aside" section in Settings → Backup &amp; Restore: anything CloudPrompt held back to protect your library stays on this device, ready to export and import</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>After updating, reload tabs that were already open to use right-click save on them</span>
+              </li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="border-t border-black/5 mb-16"></div>
+
       <!-- ── v1.2.3 ── -->
       <article class="mb-16 fade-in" aria-labelledby="release-1-2-3">
         <div class="flex flex-wrap items-center gap-3 mb-5">
           <span class="bg-apple-blue text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.3</span>
           <time class="text-apple-gray text-sm" datetime="2026-10">October 2026</time>
-          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Latest</span>
+          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Current version</span>
         </div>
         <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-3">More Reliable Sign-in + Clearer Sync Status</h2>
         <div class="bg-apple-gray-light rounded-xl p-5 fade-in">
@@ -228,10 +268,10 @@
       <article class="mb-16 fade-in" aria-labelledby="release-1-2-2">
         <div class="flex flex-wrap items-center gap-3 mb-5">
           <span class="bg-apple-dark text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.2</span>
-          <time class="text-apple-gray text-sm" datetime="2026-07">July 2026</time>
+          <time class="text-apple-gray text-sm" datetime="2026-06">June 2026</time>
         </div>
         <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-2">Version Number Fix</h2>
-        <p class="text-apple-gray leading-relaxed">Corrected the version number shown in Settings. No other changes.</p>
+        <p class="text-apple-gray leading-relaxed">Corrected the version number shown in Settings.</p>
       </article>
 
       <div class="border-t border-black/5 mb-16"></div>
