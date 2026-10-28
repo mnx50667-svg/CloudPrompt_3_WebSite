@@ -116,7 +116,7 @@
             "name": "How do I get the same prompts on two computers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Install CloudPrompt on each computer and connect the same Google account. Both see the same library, and changes sync automatically in the background."
+              "text": "Install CloudPrompt on each computer and connect the same Google account. Both see the same prompts, and changes you save go to your Drive in the background. Two limits to know: custom folder lists stay on each computer, and if two computers change the library at the same time, the most recent save wins, so edit on one machine at a time."
             }
           },
           {
@@ -244,7 +244,7 @@
       <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mt-12 mb-4">How people usually move prompts between machines</h2>
       <p class="text-lg text-apple-gray leading-relaxed mb-5">Most of us start with whatever is at hand. Each of these works, up to a point.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Emailing or messaging yourself.</strong> Fast and familiar. The downside is that your prompts are now scattered across dozens of messages with no structure, and finding "that one about meeting notes" means searching your inbox. Updates create new messages rather than replacing the old one, so you end up with several versions and no clear current one.</p>
-      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">A notes app.</strong> Better, because notes are organized and searchable. The problems appear at scale: one long note becomes a wall of text, notes apps are not built for quickly inserting text into a web page, and if the app is tied to one ecosystem, your other computer may not have it.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">A notes app.</strong> Better, because notes are organized and searchable. The problems appear at scale: one long note becomes a wall of text, notes apps are not built for pulling up a prompt quickly while you're working in the browser, and if the app is tied to one ecosystem, your other computer may not have it.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">A text file in a cloud folder.</strong> Simple, portable and under your control. It works well for a handful of prompts. Past that, you are scrolling a long file, editing in two places risks conflicts, and there is no quick way to pull a prompt into the browser without switching windows.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Relying on chat history.</strong> The assistant remembers your conversations, so why not just scroll back? Because history is per tool, often per account, and organized by time rather than by task. It also stores the whole exchange rather than the reusable prompt.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5"><strong class="text-apple-dark">Browser sync of bookmarks or tabs.</strong> Some people save prompts as bookmark names or keep tabs open. This is fragile, hard to search, and breaks the moment you clear a session.</p>
@@ -255,7 +255,7 @@
         <li><strong class="text-apple-dark">Your own storage.</strong> Prefer a setup where the data sits in an account you already control, rather than on a third party's server. If the tool disappears, your prompts should still be yours.</li>
         <li><strong class="text-apple-dark">Narrow access.</strong> If a tool connects to your cloud storage, it should only be able to touch the files it creates, not everything else in there.</li>
         <li><strong class="text-apple-dark">No extra account.</strong> Every new account is another password and another place your data lives. Fewer is better.</li>
-        <li><strong class="text-apple-dark">Automatic background sync.</strong> You should not have to remember to upload or download anything. Change a prompt on one machine, see it on the other.</li>
+        <li><strong class="text-apple-dark">Automatic background sync.</strong> You should not have to remember to upload or download anything. Change a prompt on one machine, and see it on the other the next time you open your library there.</li>
         <li><strong class="text-apple-dark">Backups before risky changes.</strong> Imports, bulk edits and merges are where things go wrong. A copy taken right before helps.</li>
         <li><strong class="text-apple-dark">Export in a plain format.</strong> JSON or CSV you can open in a text editor or spreadsheet. This is your exit route if you ever change tools.</li>
         <li><strong class="text-apple-dark">Offline access.</strong> You should still be able to read your prompts on a plane or a flaky connection.</li>
@@ -271,7 +271,7 @@
       <p class="text-lg text-apple-gray leading-relaxed mb-5">CloudPrompt is a free browser extension for Chrome, Edge and Comet that takes the manual approach above and removes the friction, while keeping your data where you can see it.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5">Your prompts are <a class="text-apple-blue hover:underline" href="/google-drive-prompt-manager.html">stored in your own Google Drive</a>, in a CloudPrompt folder, as a file called prompts.json. There is no CloudPrompt account to create, and nothing is stored on CloudPrompt servers. The file is yours, in your Drive, in a readable format.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5">Access is narrow. CloudPrompt uses Google's drive.file permission, which means it can only access files it creates. It cannot see the rest of your Drive.</p>
-      <p class="text-lg text-apple-gray leading-relaxed mb-5">Syncing across computers is a matter of installing CloudPrompt on each one and connecting the same Google account. Each installation then sees the same library, and changes sync automatically in the background. You connect once with Google's secure sign-in (OAuth). If your sign-in ever expires, your prompts stay on screen and CloudPrompt asks you to reconnect.</p>
+      <p class="text-lg text-apple-gray leading-relaxed mb-5">Syncing across computers is a matter of installing CloudPrompt on each one and connecting the same Google account. Each installation then sees the same prompts, and changes you save go to your Drive in the background. Two limits to know: custom folder lists stay on each computer, and if two computers change the library at the same time, the most recent save wins, so edit on one machine at a time. You connect once with Google's secure sign-in (OAuth). If your sign-in ever expires, your prompts stay on screen and CloudPrompt asks you to reconnect.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5">Before changes that could risk data loss, CloudPrompt makes an automatic backup to your Drive. You can also <a class="text-apple-blue hover:underline" href="/faq.html">import and export your whole library</a> as JSON or CSV at any time, so you have a plain copy independent of the extension.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5">When you are offline, prompts cached on your device remain available. The toolbar icon shows sync status, including whether you need to sign in or whether changes are waiting to sync, and you get storage usage alerts.</p>
       <p class="text-lg text-apple-gray leading-relaxed mb-5">If you would like your prompts to follow you between your work and home computers without an extra account to manage, install CloudPrompt from the Chrome Web Store and connect your Google account on each machine.</p>
@@ -320,7 +320,7 @@
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" aria-hidden="true">
-            <p class="pb-4">Install CloudPrompt on each computer and connect the same Google account. Both see the same library, and changes sync automatically in the background.</p>
+            <p class="pb-4">Install CloudPrompt on each computer and connect the same Google account. Both see the same prompts, and changes you save go to your Drive in the background. Two limits to know: custom folder lists stay on each computer, and if two computers change the library at the same time, the most recent save wins, so edit on one machine at a time.</p>
           </div>
         </div>
 
