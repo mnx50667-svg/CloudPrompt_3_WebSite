@@ -76,7 +76,8 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
-          }
+          },
+          "softwareVersion": "1.2.4"
         },
         "breadcrumb": {
           "@id": "https://cloudprompt.app/help.html#breadcrumb"
@@ -543,7 +544,7 @@
             <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span><strong>Offline?</strong> You can still open and copy the prompts cached on your device.</span>
+            <span><strong>Offline?</strong> Yes. A prompt you save offline stays on this device and syncs the next time you use CloudPrompt online. You can also open and copy prompts cached on your device.</span>
           </li>
         </ul>
         <p class="text-sm text-apple-gray">
@@ -602,6 +603,27 @@
     </div>
   </section>
 
+  <!-- Changes kept aside Section -->
+  <section class="py-20 px-6" id="changes-kept-aside">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">Changes kept aside</h2>
+      </div>
+
+      <div class="bg-apple-gray-light rounded-2xl p-8 fade-in">
+        <p class="text-apple-gray mb-4">If CloudPrompt holds back a change to protect your library, it keeps a copy on this device instead of uploading it. When that happens, the CloudPrompt toolbar icon shows an amber "!".</p>
+        <p class="text-apple-gray mb-4">After updating to 1.2.4, you'll usually see one line here, "Copy from before the update". That's expected: CloudPrompt keeps a copy of your prompts from before the update, in case anything hadn't synced yet.</p>
+        <ol class="space-y-2 text-apple-gray list-decimal list-inside mb-4">
+          <li>Open CloudPrompt Settings → Backup &amp; Restore. The <strong>Changes kept aside</strong> section appears only when there's something there.</li>
+          <li>Each line is a copy of this device's prompts at that moment. Most are probably already in your library.</li>
+          <li>To recover anything missing, click <strong>Export</strong> on that line, then use <strong>Import File</strong> to import it. Import skips prompts you already have.</li>
+          <li><strong>Discard</strong> permanently deletes that copy from this device. Export it first if you might need it.</li>
+        </ol>
+        <p class="text-apple-gray">Kept-aside copies are stored only on this device. Uninstalling CloudPrompt or clearing browser data deletes them.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Troubleshooting Section -->
   <section class="py-20 px-6 bg-apple-gray-light" id="troubleshooting">
     <div class="max-w-3xl mx-auto">
@@ -610,6 +632,19 @@
       </div>
 
       <div class="space-y-3">
+        <!-- Accordion Item — Amber ! after updating (1.2.4) -->
+        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-10" aria-expanded="false" aria-controls="accordion-panel-10">
+            <span class="font-medium">Why does CloudPrompt show an amber "!" after updating to 1.2.4?</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-10" aria-labelledby="accordion-button-10" aria-hidden="true">
+            <div class="pb-4">
+              <p>Version 1.2.4 keeps a copy of your prompts from before the update, in case any change on your device hadn't reached Google Drive yet. Nothing has been lost: for almost everyone, the copy matches the library you already have. To check, open Settings → Backup &amp; Restore → "Changes kept aside". If your library looks complete, click Export to keep a file, then Discard; the "!" disappears. Please don't uninstall or reinstall CloudPrompt to clear it, because that deletes the copy. A small follow-up update is being prepared so this clears by itself when nothing is missing.</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Accordion Item 1 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
           <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-1" aria-expanded="false" aria-controls="accordion-panel-1">
@@ -748,6 +783,18 @@
           <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-8" aria-labelledby="accordion-button-8" aria-hidden="true">
             <div class="pb-4">
               <p>On Microsoft Edge with several Google accounts signed in, the sign-in may not renew by itself after about an hour. Click Connect again to continue.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion Item — Clear Cache (1.2.4) -->
+        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-9" aria-expanded="false" aria-controls="accordion-panel-9">
+            <span class="font-medium">Clear Cache says some changes haven't synced</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-9" aria-labelledby="accordion-button-9" aria-hidden="true">
+            <div class="pb-4">
+              <p>Click Sync Now, then try Clear Cache again. CloudPrompt won't clear its cache while changes are waiting to sync.</p>
             </div>
           </div>
         </div>

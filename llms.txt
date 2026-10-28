@@ -18,6 +18,7 @@
 - [Reuse Prompts in Claude, Gemini and Copilot](https://cloudprompt.app/blog/save-prompts-claude-gemini-copilot.html): Keep one set of prompts for Claude, Gemini and Copilot. Practical tips for saving, adapting and reusing prompts across AI tools, plus a simple workflow.
 - [Sync AI Prompts Across Devices (Google Drive)](https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html): How to sync AI prompts between work and home computers, what to look for in a sync setup, and how CloudPrompt stores prompts in your own Google Drive.
 - [What's New](https://cloudprompt.app/whats-new.html): CloudPrompt release notes and product updates.
+- Version 1.2.4 (data-safety update): offline saves stay on the device and sync the next time CloudPrompt is used online; CloudPrompt won't replace the Google Drive library with an empty or out-of-date copy from the device; switching Google accounts keeps the previous account's prompts out of the new account's Drive; anything held back appears in Settings → Backup & Restore → Changes kept aside, where it can be exported and imported.
 
 ## Policies
 

@@ -119,10 +119,18 @@
           },
           {
             "@type": "Question",
+            "name": "Why does CloudPrompt show an amber \"!\" after updating to 1.2.4?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Version 1.2.4 keeps a copy of your prompts from before the update, in case any change on your device hadn't reached Google Drive yet. Nothing has been lost: for almost everyone, the copy matches the library you already have. To check, open Settings → Backup & Restore → \"Changes kept aside\". If your library looks complete, click Export to keep a file, then Discard; the \"!\" disappears. Please don't uninstall or reinstall CloudPrompt to clear it, because that deletes the copy. A small follow-up update is being prepared so this clears by itself when nothing is missing."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Does it work offline?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. CloudPrompt keeps a copy of your prompts on your device, so you can open and copy them offline."
+              "text": "Yes. A prompt you save offline stays on this device and syncs the next time you use CloudPrompt online. You can also open and copy prompts cached on your device."
             }
           },
           {
@@ -305,12 +313,21 @@
       <h2 class="text-2xl font-semibold tracking-tight mb-4 mt-12 fade-in">Google Drive &amp; sync</h2>
       <div class="space-y-3">
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
+          <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-12" aria-expanded="false" aria-controls="faq-answer-12">
+            <span class="font-medium">Why does CloudPrompt show an amber "!" after updating to 1.2.4?</span>
+            <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer px-6 text-apple-gray" id="faq-answer-12" aria-hidden="true">
+            <p class="pb-4">Version 1.2.4 keeps a copy of your prompts from before the update, in case any change on your device hadn't reached Google Drive yet. Nothing has been lost: for almost everyone, the copy matches the library you already have. To check, open Settings → Backup &amp; Restore → "Changes kept aside". If your library looks complete, click Export to keep a file, then Discard; the "!" disappears. Please don't uninstall or reinstall CloudPrompt to clear it, because that deletes the copy. A small follow-up update is being prepared so this clears by itself when nothing is missing.</p>
+          </div>
+        </div>
+        <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
           <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="faq-question-6" aria-expanded="false" aria-controls="faq-answer-6">
             <span class="font-medium">Does it work offline?</span>
             <span class="faq-icon text-apple-gray transition-transform duration-200" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer px-6 text-apple-gray" id="faq-answer-6" aria-hidden="true">
-            <p class="pb-4">Yes. CloudPrompt keeps a copy of your prompts on your device, so you can open and copy them offline.</p>
+            <p class="pb-4">Yes. A prompt you save offline stays on this device and syncs the next time you use CloudPrompt online. You can also open and copy prompts cached on your device.</p>
           </div>
         </div>
         <div class="faq-item bg-white rounded-xl overflow-hidden fade-in">
