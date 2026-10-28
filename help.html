@@ -612,6 +612,7 @@
 
       <div class="bg-apple-gray-light rounded-2xl p-8 fade-in">
         <p class="text-apple-gray mb-4">If CloudPrompt holds back a change to protect your library, it keeps a copy on this device instead of uploading it. When that happens, the CloudPrompt toolbar icon shows an amber "!".</p>
+        <p class="text-apple-gray mb-4">After updating to 1.2.4, you'll usually see one line here, "Copy from before the update". That's expected: CloudPrompt keeps a copy of your prompts from before the update, in case anything hadn't synced yet.</p>
         <ol class="space-y-2 text-apple-gray list-decimal list-inside mb-4">
           <li>Open CloudPrompt Settings → Backup &amp; Restore. The <strong>Changes kept aside</strong> section appears only when there's something there.</li>
           <li>Each line is a copy of this device's prompts at that moment. Most are probably already in your library.</li>
@@ -631,6 +632,19 @@
       </div>
 
       <div class="space-y-3">
+        <!-- Accordion Item — Amber ! after updating (1.2.4) -->
+        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-10" aria-expanded="false" aria-controls="accordion-panel-10">
+            <span class="font-medium">Why does CloudPrompt show an amber "!" after updating to 1.2.4?</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-10" aria-labelledby="accordion-button-10" aria-hidden="true">
+            <div class="pb-4">
+              <p>Version 1.2.4 keeps a copy of your prompts from before the update, in case any change on your device hadn't reached Google Drive yet. Nothing has been lost: for almost everyone, the copy matches the library you already have. To check, open Settings → Backup &amp; Restore → "Changes kept aside". If your library looks complete, click Export to keep a file, then Discard; the "!" disappears. Please don't uninstall or reinstall CloudPrompt to clear it, because that deletes the copy. A small follow-up update is being prepared so this clears by itself when nothing is missing.</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Accordion Item 1 -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
           <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-1" aria-expanded="false" aria-controls="accordion-panel-1">
