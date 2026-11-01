@@ -77,7 +77,7 @@
             "price": "0",
             "priceCurrency": "USD"
           },
-          "softwareVersion": "1.2.4"
+          "softwareVersion": "1.2.5"
         },
         "breadcrumb": {
           "@id": "https://cloudprompt.app/help.html#breadcrumb"
@@ -611,12 +611,12 @@
       </div>
 
       <div class="bg-apple-gray-light rounded-2xl p-8 fade-in">
-        <p class="text-apple-gray mb-4">If CloudPrompt holds back a change to protect your library, it keeps a copy on this device instead of uploading it. When that happens, the CloudPrompt toolbar icon shows an amber "!".</p>
-        <p class="text-apple-gray mb-4">After updating to 1.2.4, you'll usually see one line here, "Copy from before the update". That's expected: CloudPrompt keeps a copy of your prompts from before the update, in case anything hadn't synced yet.</p>
+        <p class="text-apple-gray mb-4">After updating, you may see a line here called "Copy from before the update". When you open CloudPrompt while online, it checks that copy, and the "!" clears by itself if everything in it is already in your library.</p>
         <ol class="space-y-2 text-apple-gray list-decimal list-inside mb-4">
-          <li>Open CloudPrompt Settings → Backup &amp; Restore. The <strong>Changes kept aside</strong> section appears only when there's something there.</li>
-          <li>Each line is a copy of this device's prompts at that moment. Most are probably already in your library.</li>
-          <li>To recover anything missing, click <strong>Export</strong> on that line, then use <strong>Import File</strong> to import it. Import skips prompts you already have.</li>
+          <li>Open Settings → Backup &amp; Restore. The section appears only when there's something there.</li>
+          <li>CloudPrompt shows which prompts in each copy are missing from your library or different there.</li>
+          <li>To bring back missing prompts, click <strong>Export these</strong>, then use <strong>Import File</strong>.</li>
+          <li>If the differences are changes you made yourself, click <strong>Keep copy, hide warning</strong>. Nothing is deleted. This applies only on this device.</li>
           <li><strong>Discard</strong> permanently deletes that copy from this device. Export it first if you might need it.</li>
         </ol>
         <p class="text-apple-gray">Kept-aside copies are stored only on this device. Uninstalling CloudPrompt or clearing browser data deletes them.</p>
@@ -635,12 +635,12 @@
         <!-- Accordion Item — Amber ! after updating (1.2.4) -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
           <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-10" aria-expanded="false" aria-controls="accordion-panel-10">
-            <span class="font-medium">Why does CloudPrompt show an amber "!" after updating to 1.2.4?</span>
+            <span class="font-medium">Why does CloudPrompt show an amber "!" after updating?</span>
             <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
           <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-10" aria-labelledby="accordion-button-10" aria-hidden="true">
             <div class="pb-4">
-              <p>Version 1.2.4 keeps a copy of your prompts from before the update, in case any change on your device hadn't reached Google Drive yet. Nothing has been lost: for almost everyone, the copy matches the library you already have. To check, open Settings → Backup &amp; Restore → "Changes kept aside". If your library looks complete, click Export to keep a file, then Discard; the "!" disappears. Please don't uninstall or reinstall CloudPrompt to clear it, because that deletes the copy. A small follow-up update is being prepared so this clears by itself when nothing is missing.</p>
+              <p>Version 1.2.4 kept a copy of your prompts from before the update, in case any change hadn't reached Google Drive. From 1.2.5, CloudPrompt checks that copy when you open it while online: if everything in it is already in your library, the "!" goes away by itself. If it stays, open Settings → Backup &amp; Restore → "Changes kept aside" to see which prompts are missing or different. If those are changes you made yourself, choose "Keep copy, hide warning"; nothing is deleted, and this applies only on that device. To bring back a missing prompt, choose "Export these", then Import the file. Please don't uninstall or reinstall to clear the "!", because that deletes the copy.</p>
             </div>
           </div>
         </div>
@@ -769,6 +769,7 @@
                 <li>Go to <strong>Settings → Backup & Restore</strong></li>
                 <li>Export <strong>JSON</strong> for full fidelity; export <strong>CSV</strong> for spreadsheets</li>
                 <li>Import supports JSON and CSV with validation (duplicates are skipped)</li>
+                <li>Import skips prompts you already have. If a prompt in the file is different from the one in your library, it asks you: Keep mine, or Add as separate prompts (added with "(restored)" at the end of the title).</li>
               </ul>
             </div>
           </div>
