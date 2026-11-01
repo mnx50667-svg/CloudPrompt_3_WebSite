@@ -19,6 +19,7 @@
 - [Sync AI Prompts Across Devices (Google Drive)](https://cloudprompt.app/blog/sync-ai-prompts-across-devices.html): How to sync AI prompts between work and home computers, what to look for in a sync setup, and how CloudPrompt stores prompts in your own Google Drive.
 - [What's New](https://cloudprompt.app/whats-new.html): CloudPrompt release notes and product updates.
 - Version 1.2.4 (data-safety update): offline saves stay on the device and sync the next time CloudPrompt is used online; CloudPrompt won't replace the Google Drive library with an empty or out-of-date copy from the device; switching Google accounts keeps the previous account's prompts out of the new account's Drive; anything held back appears in Settings → Backup & Restore → Changes kept aside, where it can be exported and imported.
+- Version 1.2.5: the amber "!" from the 1.2.4 update clears by itself when the user opens CloudPrompt online and the kept copy is already in their library; Settings shows which prompts are missing or different, with "Export these" and "Keep copy, hide warning"; Import asks before adding a different version of an existing prompt and never creates duplicates.
 
 ## Policies
 

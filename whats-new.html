@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>What's New - CloudPrompt Release Notes</title>
-  <meta content="CloudPrompt release notes, version by version. Latest: v1.2.4, a data-safety update with safer offline saves, safer account switching and a Changes kept aside section." name="description"/>
+  <meta content="CloudPrompt release notes, version by version. Latest: v1.2.5, which clears the amber &quot;!&quot; by itself when the kept copy is already in your library, and makes Import safer." name="description"/>
   <meta content="CloudPrompt release notes, what's new, changelog, updates, new features, automatic backups, data safety, AI prompt manager" name="keywords"/>
   <meta content="CloudPrompt" name="author"/>
   <meta content="index, follow" name="robots"/>
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta content="What's New - CloudPrompt Release Notes" property="og:title"/>
-  <meta content="CloudPrompt release notes, version by version. Latest: v1.2.4, a data-safety update with safer offline saves, safer account switching and a Changes kept aside section." property="og:description"/>
+  <meta content="CloudPrompt release notes, version by version. Latest: v1.2.5, which clears the amber &quot;!&quot; by itself when the kept copy is already in your library, and makes Import safer." property="og:description"/>
   <meta content="https://cloudprompt.app/images/og-image.jpg" property="og:image"/>
   <meta content="https://cloudprompt.app/whats-new.html" property="og:url"/>
   <meta content="website" property="og:type"/>
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="What's New - CloudPrompt Release Notes" name="twitter:title"/>
-  <meta content="CloudPrompt release notes, version by version. Latest: v1.2.4, a data-safety update with safer offline saves, safer account switching and a Changes kept aside section." name="twitter:description"/>
+  <meta content="CloudPrompt release notes, version by version. Latest: v1.2.5, which clears the amber &quot;!&quot; by itself when the kept copy is already in your library, and makes Import safer." name="twitter:description"/>
   <meta content="https://cloudprompt.app/images/twitter-card.jpg" name="twitter:image"/>
 
   <!-- Favicons -->
@@ -59,7 +59,7 @@
         "@id": "https://cloudprompt.app/whats-new.html#webpage",
         "url": "https://cloudprompt.app/whats-new.html",
         "name": "What's New - CloudPrompt Release Notes",
-        "description": "CloudPrompt release notes, version by version. Latest: v1.2.4, a data-safety update with safer offline saves, safer account switching and a Changes kept aside section.",
+        "description": "CloudPrompt release notes, version by version. Latest: v1.2.5, which clears the amber \"!\" by itself when the kept copy is already in your library, and makes Import safer.",
         "isPartOf": {
           "@id": "https://cloudprompt.app/#website"
         },
@@ -69,7 +69,7 @@
         "breadcrumb": {
           "@id": "https://cloudprompt.app/whats-new.html#breadcrumb"
         },
-        "dateModified": "2026-10-28T09:00:00+03:00",
+        "dateModified": "2026-11-01T09:00:00+03:00",
         "inLanguage": "en"
       },
       {
@@ -99,11 +99,11 @@
         "applicationSubCategory": "AI Prompt Manager",
         "operatingSystem": "Chrome, Microsoft Edge, Comet",
         "browserRequirements": "Requires a Chromium-based browser. CloudPrompt is distributed through the Chrome Web Store and supports Google Chrome, Microsoft Edge, and Comet.",
-        "softwareVersion": "1.2.4",
+        "softwareVersion": "1.2.5",
         "description": "CloudPrompt is a privacy-first AI prompt manager. Save, organize, and instantly access AI prompts, synced to the user's own Google Drive.",
         "installUrl": "https://chromewebstore.google.com/detail/cloudprompt/pihepfhlibcboglgpnpdamkgjlgaadog",
         "releaseNotes": "https://cloudprompt.app/whats-new.html",
-        "dateModified": "2026-10-28T09:00:00+03:00",
+        "dateModified": "2026-11-01T09:00:00+03:00",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -184,11 +184,43 @@
   <section class="py-20 px-6" aria-label="CloudPrompt release notes">
     <div class="max-w-3xl mx-auto">
 
+      <!-- ── v1.2.5 ── -->
+      <article class="mb-16 fade-in" aria-labelledby="release-1-2-5">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="bg-apple-blue text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.5</span>
+          <span class="text-apple-gray text-sm">Latest version · November 2026</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-5">Version 1.2.5</h2>
+        <p class="text-apple-gray leading-relaxed mb-8">A follow-up to 1.2.4. No new permissions, and no change to how your prompts are stored.</p>
+        <div class="bg-apple-gray-light rounded-xl p-5 fade-in">
+          <ul class="space-y-1.5 text-apple-gray text-sm">
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>The amber "!" that appeared after updating to 1.2.4 now clears by itself the next time you open CloudPrompt, if the copy it kept is already in your library</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>New "Keep copy, hide warning" button in Settings → Backup &amp; Restore: hide a warning without deleting the copy</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>Settings now shows which prompts are missing from your library or different there, and "Export these" restores just those</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-apple-blue mr-2 mt-0.5 flex-shrink-0">•</span>
+                <span>Import now asks before adding a different version of a prompt you already have, and never creates duplicates</span>
+              </li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="border-t border-black/5 mb-16"></div>
+
       <!-- ── v1.2.4 ── -->
       <article class="mb-16 fade-in" aria-labelledby="release-1-2-4">
         <div class="flex flex-wrap items-center gap-3 mb-5">
           <span class="bg-apple-blue text-white text-sm font-semibold px-3 py-1 rounded-full">v1.2.4</span>
-          <span class="text-apple-gray text-sm">Latest version · October 2026</span>
+          <span class="text-apple-gray text-sm">October 2026</span>
         </div>
         <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-3" id="release-1-2-4">Version 1.2.4</h2>
         <p class="text-apple-gray leading-relaxed mb-8">A data-safety update. No new permissions and no change to how your prompts are stored.</p>
