@@ -77,7 +77,7 @@
             "price": "0",
             "priceCurrency": "USD"
           },
-          "softwareVersion": "1.2.5"
+          "softwareVersion": "1.2.6"
         },
         "breadcrumb": {
           "@id": "https://cloudprompt.app/help.html#breadcrumb"
@@ -611,7 +611,7 @@
       </div>
 
       <div class="bg-apple-gray-light rounded-2xl p-8 fade-in">
-        <p class="text-apple-gray mb-4">After updating, you may see a line here called "Copy from before the update". When you open CloudPrompt while online, it checks that copy, and the "!" clears by itself if everything in it is already in your library.</p>
+        <p class="text-apple-gray mb-4">After updating from an older version, you may see a line here called "Copy from before the update". The next time CloudPrompt loads your library, it checks that copy, and the "!" clears by itself if everything in it is already in your library. Copies kept aside from an older window or a window that was closing (new in 1.2.6), and any other kept copy, do not clear by themselves.</p>
         <ol class="space-y-2 text-apple-gray list-decimal list-inside mb-4">
           <li>Open Settings → Backup &amp; Restore. The section appears only when there's something there.</li>
           <li>CloudPrompt shows which prompts in each copy are missing from your library or different there.</li>
@@ -619,7 +619,7 @@
           <li>If the differences are changes you made yourself, click <strong>Keep copy, hide warning</strong>. Nothing is deleted. This applies only on this device.</li>
           <li><strong>Discard</strong> permanently deletes that copy from this device. Export it first if you might need it.</li>
         </ol>
-        <p class="text-apple-gray">Kept-aside copies are stored only on this device. Uninstalling CloudPrompt or clearing browser data deletes them.</p>
+        <p class="text-apple-gray">Kept-aside copies are stored separately on each device and browser profile, so clear them on each device where you see the "!". Uninstalling CloudPrompt or clearing browser data deletes them. Don't uninstall or reinstall CloudPrompt to clear the "!"; it won't help.</p>
       </div>
     </div>
   </section>
@@ -632,15 +632,92 @@
       </div>
 
       <div class="space-y-3">
-        <!-- Accordion Item — Amber ! after updating (1.2.4) -->
+        <!-- Accordion Item — Amber ! -->
         <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
           <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-10" aria-expanded="false" aria-controls="accordion-panel-10">
-            <span class="font-medium">Why does CloudPrompt show an amber "!" after updating?</span>
+            <span class="font-medium">Why does CloudPrompt show an amber "!"?</span>
             <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
           </button>
           <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-10" aria-labelledby="accordion-button-10" aria-hidden="true">
             <div class="pb-4">
-              <p>Version 1.2.4 kept a copy of your prompts from before the update, in case any change hadn't reached Google Drive. From 1.2.5, CloudPrompt checks that copy when you open it while online: if everything in it is already in your library, the "!" goes away by itself. If it stays, open Settings → Backup &amp; Restore → "Changes kept aside" to see which prompts are missing or different. If those are changes you made yourself, choose "Keep copy, hide warning"; nothing is deleted, and this applies only on that device. To bring back a missing prompt, choose "Export these", then Import the file. Please don't uninstall or reinstall to clear the "!", because that deletes the copy.</p>
+              <p class="mb-2">The amber "!" means CloudPrompt needs your attention. The usual reasons are:</p>
+              <ul class="space-y-1 list-disc list-inside mb-3">
+                <li>Changes are waiting to sync. This clears by itself once they sync, or you can click Sync Now in Settings.</li>
+                <li>A copy was kept aside to protect your work. Open Settings → Backup &amp; Restore to see it.</li>
+              </ul>
+              <p class="mb-3">A copy labelled "Copy from before the update" clears by itself the next time CloudPrompt loads your library, if everything in it is already in your library. Copies kept aside from an older window or a window that was closing (new in 1.2.6), and any other kept copy, do not clear by themselves. Review the copy, then choose "Keep copy, hide warning" (keeps the copy and hides the warning) or "Discard" (deletes that copy).</p>
+              <p class="mb-3">Kept-aside copies are stored separately on each device and browser profile. Clear them on each device where you see the "!".</p>
+              <p>Please don't uninstall or reinstall CloudPrompt to clear the "!". It won't help, and uninstalling deletes the copies stored on that device.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item — Not applied: older window (1.2.6) -->
+        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-11" aria-expanded="false" aria-controls="accordion-panel-11">
+            <span class="font-medium">"Not applied: this window was showing an older copy of your library"</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-11" aria-labelledby="accordion-button-11" aria-hidden="true">
+            <div class="pb-4">
+              <p class="mb-3">You may see: "Not applied: this window was showing an older copy of your library. Your change is kept aside in Settings → Backup &amp; Restore." The same applies to a copy labelled "Change kept aside as a window closed", and to this message: "This window started to close, so your last changes were kept aside instead of applied. They're in Settings → Backup &amp; Restore."</p>
+              <p>Nothing was lost; your newer changes were kept. To recover something from the kept copy, choose Export, then Import the file (Import adds prompts you don't have and asks about different versions). Deletions and pin changes are not re-applied, so redo them by hand. When you're done, choose "Keep copy, hide warning" or "Discard".</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item — Sync is paused (1.2.6) -->
+        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-12" aria-expanded="false" aria-controls="accordion-panel-12">
+            <span class="font-medium">"Sync is paused: the prompt file in your Google Drive contains data CloudPrompt can't read safely"</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-12" aria-labelledby="accordion-button-12" aria-hidden="true">
+            <div class="pb-4">
+              <p class="mb-3">You may see: "Sync is paused: the prompt file in your Google Drive contains data CloudPrompt can't read safely, so nothing was uploaded or changed. Your prompts on this device are unchanged. Contact CloudPrompt support at cloudprompt.app."</p>
+              <ol class="space-y-2 list-decimal list-inside">
+                <li>In Settings, choose <strong>Export</strong> and keep the file.</li>
+                <li><strong>Disconnect.</strong></li>
+                <li>In Google Drive, move <code class="bg-apple-gray-light px-1.5 py-0.5 rounded text-xs">CloudPrompt/prompts.json</code> to the trash.</li>
+                <li>Connect again. CloudPrompt creates a new file and keeps your old list aside.</li>
+                <li>Import the exported file. Any prompt it can't read safely is counted as "couldn't be read".</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item — Can't read the prompt list in this browser (1.2.6) -->
+        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-13" aria-expanded="false" aria-controls="accordion-panel-13">
+            <span class="font-medium">"CloudPrompt can't read the prompt list stored in this browser"</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-13" aria-labelledby="accordion-button-13" aria-hidden="true">
+            <div class="pb-4">
+              <p class="mb-3">You may see: "CloudPrompt can't read the prompt list stored in this browser, so changes in this window are paused to protect your prompts. Nothing has been deleted. Try restarting your browser. If this message stays, contact CloudPrompt support at cloudprompt.app."</p>
+              <p class="mb-2">If the file in your Google Drive is fine:</p>
+              <ol class="space-y-2 list-decimal list-inside mb-3">
+                <li>In Settings, choose <strong>Export</strong>.</li>
+                <li>Choose <strong>Clear cache</strong>.</li>
+                <li>Open the CloudPrompt popup. Your prompts reload from Google Drive.</li>
+              </ol>
+              <p>If you also see "Sync is paused", follow the "Sync is paused" steps above instead.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item — Other messages (1.2.6) -->
+        <div class="accordion-item bg-white border border-black/5 rounded-xl overflow-hidden fade-in">
+          <button type="button" class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between" id="accordion-button-14" aria-expanded="false" aria-controls="accordion-panel-14">
+            <span class="font-medium">Other messages</span>
+            <span class="accordion-icon text-apple-gray transition-transform duration-200 text-xl" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-14" aria-labelledby="accordion-button-14" aria-hidden="true">
+            <div class="pb-4">
+              <ul class="space-y-2 list-disc list-inside">
+                <li>"CloudPrompt couldn't confirm whether this change was saved. Check your library before trying again."</li>
+                <li>"Deleted on this device. Syncing with Google Drive didn't finish yet — CloudPrompt will try again." It uploads at the next save, at browser start, at sign-in, or straight away with Sync Now in Settings.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -766,7 +843,7 @@
           <div class="accordion-content px-6 text-apple-gray" id="accordion-panel-7" aria-labelledby="accordion-button-7" aria-hidden="true">
             <div class="pb-4">
               <ul class="space-y-2 list-disc list-inside">
-                <li>Go to <strong>Settings → Backup & Restore</strong></li>
+                <li>Go to <strong>Settings → Backup &amp; Restore</strong></li>
                 <li>Export <strong>JSON</strong> for full fidelity; export <strong>CSV</strong> for spreadsheets</li>
                 <li>Import supports JSON and CSV with validation (duplicates are skipped)</li>
                 <li>Import skips prompts you already have. If a prompt in the file is different from the one in your library, it asks you: Keep mine, or Add as separate prompts (added with "(restored)" at the end of the title).</li>
